@@ -1,6 +1,8 @@
 package org.music.pojo;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * User entity. @author MyEclipse Persistence Tools
@@ -17,6 +19,9 @@ public class User implements java.io.Serializable {
 	private Boolean gender;
 	private String email;
 	private Date registDate;
+	private Set mymusics = new HashSet(0);
+	private Set questions = new HashSet(0);
+	private Set comments = new HashSet(0);
 
 	// Constructors
 
@@ -24,21 +29,19 @@ public class User implements java.io.Serializable {
 	public User() {
 	}
 
-	/** minimal constructor */
-	public User(Integer id) {
-		this.id = id;
-	}
-
 	/** full constructor */
-	public User(Integer id, String userName, String password, String nickname,
-			Boolean gender, String email, Date registDate) {
-		this.id = id;
+	public User(String userName, String password, String nickname,
+			Boolean gender, String email, Date registDate, Set mymusics,
+			Set questions, Set comments) {
 		this.userName = userName;
 		this.password = password;
 		this.nickname = nickname;
 		this.gender = gender;
 		this.email = email;
 		this.registDate = registDate;
+		this.mymusics = mymusics;
+		this.questions = questions;
+		this.comments = comments;
 	}
 
 	// Property accessors
@@ -97,6 +100,30 @@ public class User implements java.io.Serializable {
 
 	public void setRegistDate(Date registDate) {
 		this.registDate = registDate;
+	}
+
+	public Set getMymusics() {
+		return this.mymusics;
+	}
+
+	public void setMymusics(Set mymusics) {
+		this.mymusics = mymusics;
+	}
+
+	public Set getQuestions() {
+		return this.questions;
+	}
+
+	public void setQuestions(Set questions) {
+		this.questions = questions;
+	}
+
+	public Set getComments() {
+		return this.comments;
+	}
+
+	public void setComments(Set comments) {
+		this.comments = comments;
 	}
 
 }

@@ -1,5 +1,5 @@
 #MyEclipse Hibernate Properties
-#Sat Apr 08 13:03:10 CST 2017
+#Sun Apr 09 09:43:32 CST 2017
 genBasicCompId=false
 sessionFactoryName=org.music.dbc.HibernateSessionFactory
 profile=
@@ -10,11 +10,11 @@ reStrategyClass=
 detectO2O=false
 springDaoFile=
 useJavaTypes=true
-keyGenerator=assigned
+keyGenerator=increment
 genVersionTag=false
 sessionFactoryId=
 basePersistenceClass=
 genAnnotations=false
-reSettingsFile=
+reSettingsFile=/WebMusic/hibernate.reveng.xml
 configFile=/WebMusic/src/hibernate.cfg.xml
 createConfigFile=true
