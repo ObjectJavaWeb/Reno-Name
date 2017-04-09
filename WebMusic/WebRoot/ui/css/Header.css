@@ -11,19 +11,11 @@
 }
 
 .topbar_1{
-	position: relative;
-	top:0;
-	left:0;
 	width:100%;
 	height:70px;
-	border: 1px solid black;
+	padding:0;
+	margin:0;
 	
-}
-.ul_1 li{
-	display: inline;
-}
-.ul_1 a:hover{
-	background: url('../image/bg_move.jpg');
 }
 .topbar_1_1{
 	width:25%;
@@ -44,16 +36,28 @@
 .ul_1{
 	list-style: none;
 	height:100%;
-	margin-top: 28px;
-	margin-left: 0px;
+	margin: 0;
 }
 .ul_1 li{
+	display:block;
+	height:75px;
 	list-style: none;
 	float:left;
-	text-align: center;
-	margin-left: 60px;
+	line-height:75px;
+	width:120px;
+	text-align:center;
 	color: white;
-	
+}
+.ul_1 li:hover{
+	background: url('../image/bg_move.jpg');
+	cursor: pointer;
+}
+.ul_1 li:active{
+	background: url('../image/bg_click.jpg');
+	cursor: pointer;
+}
+.header{
+	display: none;
 }
 .search{
 	display:block;
@@ -93,13 +97,15 @@
 .ul_2{
 	list-style: none;
 	height:100%;
-	margin-top:5px;
     margin-left: 325px;
 }
 .ul_2 li{
+	display:block;
 	list-style: none;
 	float:left;
+	height:30px;
+	line-height:30px;
+	width:110px;
 	text-align: center;
-	margin-left: 90px;
 	color: white;
 }
