@@ -1,0 +1,156 @@
+@CHARSET "UTF-8";
+
+.body {
+	position: relative;
+	top: 0;
+	width: 70%;
+	height: 100%;
+	text-align: center;
+	margin: 0 auto;
+	background-color: white;
+	border: 1px solid black;
+}
+
+.left {
+	float: left;
+	width: 25%;
+	height: 100%;
+	background-color: blue;
+	border: 1px solid black;
+	width: 25%;
+}
+
+.left_1 {
+	width: 100%;
+	height: 70px;
+	background-color: red;
+	border: 1px solid black;
+	margin-left: 0px;
+}
+
+.left_1_1 {
+	width: 60%;
+	height: 70px;
+	background-color: blue;
+	float: left;
+}
+
+.left_1_1 a {
+	text-decoration: none;
+	display: block;
+	font-size: 1em;
+	color: black;
+	margin-left: -20px;
+	margin-top: 45px;
+}
+
+.left_1_2 {
+	width: 40%;
+	height: 70px;
+	background-color: blue;
+	float: left;
+}
+
+.left_1_2_btn {
+	text-decoration: none;
+	display: block;
+	font-size: 0.2em;
+	color: black;
+	margin-left: 10px;
+	margin-top: 45px;
+}
+
+.left_2 {
+	width: 100%;
+	height: 50px;
+	background-color: blue;
+	border: 1px solid black;
+	margin-left: 0px;
+}
+
+.right {
+	float: left;
+	width: 70%;
+	height: 200px;
+	background-color: red;
+	border: 1px solid black;
+}
+
+.right_1 {
+	float: left;
+	width: 100%;
+	height: 70%;
+	background-color: blue;
+}
+
+.right_1_1 {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.right_1_1 img {
+	width: 120px;
+	height: 120px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.right_1_2 {
+	width: 70%;
+	height: 100%;
+	background-color: white;
+	float: left;
+}
+
+.chevron {
+	margin-left: -10px;
+	margin-top: 10px;
+}
+
+.right_1_2 img {
+	width: 30px;
+	height: 30px;
+	margin-left: -440px;
+	margin-top: 50px;
+}
+
+.right_1_2 a {
+	text-decoration: none;
+	display: block;
+	font-size: 1em;
+	color: black;
+	margin-left: -180px;
+	margin-top: -25px;
+	color: green;
+}
+
+.right_1_2_btn {
+	text-decoration: none;
+	display: block;
+	font-size: 0.2em;
+	color: black;
+	margin-left: 25px;
+	margin-top: 25px;
+	float: left;
+}
+
+.right_2 {
+	float: left;
+	width: 100%;
+	height: 30%;
+	background-color: gray;
+}
+
+.right_3 {
+	width: 100%;
+	height: 2px;
+	margin-top: 200px;
+	background-color: red;
+}
+
+.right_4 {
+	width: 100%;
+	height: 500px;
+	background-color: gray;
+}
