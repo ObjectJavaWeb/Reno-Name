@@ -37,7 +37,10 @@ public class UserAction extends ActionSupport {
 
 		return "input";//默认input,当然自己可随便起名。
 	}
-	
+	public String Register() throws Exception {
+		ServiceFactory.getIUserServiceInstance().insert(user);
+		return "input";
+	}
 
 }
 

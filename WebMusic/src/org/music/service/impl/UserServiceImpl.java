@@ -1,5 +1,8 @@
 package org.music.service.impl;
 
+import java.util.Date;
+
+import org.hibernate.Transaction;
 import org.music.dbc.HibernateSessionFactory;
 import org.music.factory.DAOFactory;
 import org.music.pojo.User;
@@ -9,7 +12,19 @@ public abstract class UserServiceImpl implements IUserService {
 
 	@Override
 	public void insert(User user) throws Exception {
-		// TODO Auto-generated method stub
+		// 加入事务处理功能
+				Transaction tx = HibernateSessionFactory.getSession()
+						.beginTransaction();
+				try {
+					DAOFactory.getIUserDAOInstance().doCreate(user);
+					tx.commit();
+				} catch (Exception e) {
+					e.printStackTrace();
+					tx.rollback();
+					throw e;
+				} finally {
+					HibernateSessionFactory.closeSession();
+				}
 
 	}
 
