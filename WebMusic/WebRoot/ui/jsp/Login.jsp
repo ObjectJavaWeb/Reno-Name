@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<s:actionerror/>
     	</font>
     	<span>用户登录</span>
-    	<form form action="user!login.action" method="post">
+    	<form form action="userlogin!login.action" method="post">
     		用户名：<input type="text"  name="user.userName"> <br>
     		密码：<input type="password" name="user.password"> <br>
     		<input type="submit" value="登录">&nbsp;&nbsp;&nbsp;
