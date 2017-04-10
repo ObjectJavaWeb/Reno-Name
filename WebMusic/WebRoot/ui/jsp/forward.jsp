@@ -42,7 +42,7 @@
 				// 设置定时跳转
 				response.setHeader("refresh","5;" + basePath + request.getAttribute("url"));
 			%>
-			${message}，<span id="time_span">5</span> 秒后自动跳转！<br/>
+			${message}，<span id="time_span">5</span> 秒后自动跳转到登录页！<br/>
 			如果没有跳转，请点<a href="${url }">这里</a>！ 
 		</center>
 	</body>

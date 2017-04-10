@@ -50,7 +50,7 @@ public abstract class UserServiceImpl implements IUserService {
 			e.printStackTrace();
 			throw e;
 		} finally {
-				HibernateSessionFactory.closeSession();
+				//HibernateSessionFactory.closeSession();
 		}
 		return flag;
 	}
