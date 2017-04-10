@@ -29,7 +29,7 @@
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body class="container">
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
@@ -73,7 +73,7 @@
 				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
 			</form>
 			<a href="ui/jsp/Login.jsp"  target="_blank" class="reg"
-				style="padding-left: 200px; font-size: 20;">登  录</a>
+				style=" font-size: 20;">登  录</a>
 		</div>
 	</div>
 </body>
