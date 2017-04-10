@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   center>
+   <center>
 			用户登陆成功,当前用户为: ${user.userName}
 		</center>
 

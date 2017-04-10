@@ -28,7 +28,7 @@ public class UserAction extends ActionSupport {
 			// 登陆成功时,用户信息需要保存到Session属性范围
 			ServletActionContext.getRequest().getSession().setAttribute("user",
 					user);
-             //登陆成功时，放入sessionn时。
+             //登陆成功时，放入session时。
 			return "suc";
 		}
 
