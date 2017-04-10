@@ -1,27 +1,32 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'index.jsp' starting page</title>
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
+<head>
+<base href="<%=basePath%>">
+
+<title>My JSP 'index.jsp' starting page</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-  </head>
-  
-  <body>
-    <a href="ui/jsp/Register.jsp">注册</a>
-     <a href="ui/jsp/Login.jsp">登录</a>
-  </body>
+</head>
+
+<body>
+
+	<jsp:include page="ui/jsp/Header.jsp"></jsp:include>
+	<!--下面这个div 是留来控制格式  后期要删除  -->
+	<div style="height: 500px;\"></div>
+	<jsp:include page="ui/jsp/foot.jsp"></jsp:include>
+</body>
 </html>
