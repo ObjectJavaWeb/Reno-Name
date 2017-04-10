@@ -22,6 +22,7 @@
 	height:100%;
 	margin-top: 0px;
 	margin-left: 0px;
+	
 }
 .ul_1 li{
 	color: white;
@@ -29,6 +30,7 @@
 	margin-left:30px;
 	margin-top: 15px;
 }
+
 
 .name{
 	display:block;
@@ -95,9 +97,8 @@
 }
 
 .all{
-	background:url('../image/bg.jpg');
-	width:1340px;
-	height:650px;
+	background:url('../image/bg_1.jpg');
+	background-size:1400px 1000px;
 }
 
 .save{
@@ -109,7 +110,6 @@
 	float: left;
 	font-size: 1em;
     margin-top: 20px;
-    mar
 }
 
 
