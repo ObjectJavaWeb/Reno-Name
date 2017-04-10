@@ -4,41 +4,46 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageOutputStream;
 /**
- * ���ͼƬ��֤��
- * @author ������
+ * 生成图片验证码
+ * @author 梁城月
  *
  */
 public class VerificatCode {
-	private int len;//��֤��ĳ���
-	private int height;//ͼƬ�߶�
-	private int width;//ͼƬ����
-	private Font font;//����ͼƬ���弰��С
-	private int interfere=1550;//���ø����ߵ�����
+	private int len;//验证码的长度
+	private int height;//图片高度
+	private int width;//图片长度
+	private Font font;//设置图片字体及大小
+	private int interfere=1550;//设置干扰线的数量
 	private String[] str={"A","B","C","D","E","F","G","H",
 						  "J","K","L","M","N","P","Q","R",
 						  "S","T","U","V","W","X","Y","Z",
 						  "a","b","c","d","e","f","g","h",
 						  "i","j","k","m","n","p","s","t",
 						  "u","v","w","x","y","z","1","2",
-						  "3","4","5","6","7","8","9"} ;//������֤�������ַ�
+						  "3","4","5","6","7","8","9"} ;//设置验证码产生的字符集
 	
-	private String rand;
+	private String rand;//验证码产生的字符串
 	/**
 	 * 
-	 * @param len ��֤���ַ�����
-	 * @param height ͼƬ�߶�
+	 * @param len 验证码字符数量
+	 * @param height 图片高度
 	 */
 	public VerificatCode(int len,int height) {
 		this.len=len;
 		this.height=height;
 		this.width=len*((int)Math.floor(height/2))+12;
-		this.font=new Font("����", Font.PLAIN, height);
+		this.font=new Font("宋体", Font.PLAIN, height);
 	}
 	/**
-	 * ��ȡ��֤��ͼƬ�ϵ��ַ�
-	 * @return ��֤��ͼƬ�ϵ��ַ�
+	 * 获取验证码图片上的字符
+	 * @return 验证码图片上的字符
 	 */
 	public String getRand() {
 		return rand;
@@ -57,21 +62,21 @@ public class VerificatCode {
 		return new Color(r, g, b);
 	}
 	/**
-	 * ��ȡ��֤��ͼƬ
-	 * @return ��֤��ͼƬ
+	 * 获取验证码图片
+	 * @return 验证码图片
 	 */
-	public BufferedImage getImage() {
+	public ByteArrayInputStream getImage() {
 		BufferedImage image=new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
 		Graphics g=image.getGraphics();
 		Random random=new Random();
-		//���ñ���ɫ
+		//设置背景色
 		g.setColor(getRanColor(200, 250));
-		//��һ��ʵ�ĵĳ����Σ���Ϊ����
+		//画一个实心的长方形，作为背景
 		g.fillRect(0, 0, width, height);
-		//��������
+		//设置字体
 		g.setFont(font);
 		g.setColor(getRanColor(160, 200));
-		//�����������
+		//随机产生干扰线
 		for (int i = 0; i < interfere; i++) {
 			int x=random.nextInt(width);
 			int y=random.nextInt(height);
@@ -83,13 +88,24 @@ public class VerificatCode {
 		for (int i = 0; i < len; i++) {
 			String rand=str[random.nextInt(str.length)];
 			sRand+=rand;
-			//����֤����ʾ��ͼ����
+			//将验证码显示到图像中
 			g.setColor(new Color(20+random.nextInt(110),20+random.nextInt(110),20+random.nextInt(110)));
 			g.drawString(rand, (int)Math.floor((height/2))*i+6, height-(int)Math.floor(height/6));
 		}
 		rand=sRand;
 		g.dispose();
-		return image;
+		ByteArrayInputStream input=null;      
+		ByteArrayOutputStream output = new ByteArrayOutputStream(); 
+		try{      
+			ImageOutputStream imageOut = ImageIO.createImageOutputStream(output);      
+			ImageIO.write(image, "JPEG", imageOut);      
+			imageOut.close();      
+			input = new ByteArrayInputStream(output.toByteArray());      
+			}catch(Exception e){      
+			System.out.println("验证码图片产生出现错误："+e.toString());      
+			} 
+		return input;
 		
 	}
+	
 }

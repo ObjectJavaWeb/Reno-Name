@@ -1,10 +1,19 @@
 package org.music.action;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Date;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.User;
+import org.music.util.VerificatCode;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -39,7 +48,6 @@ public class UserAction extends ActionSupport {
 	private String url;
 
 	public String login() throws Exception {
-		
 
 		boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
 		if (flag) {
@@ -63,6 +71,25 @@ public class UserAction extends ActionSupport {
 		message = "恭喜您已注册成功！";
 		url = "/ui/jsp/Login.jsp";
 		return "forward";
+	}
+
+	private InputStream inputStream;
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	public String processImage() {
+		try {
+			inputStream = new FileInputStream(new File("D:\\学习\\数字图像处理\\index.jpg"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return SUCCESS;
 	}
 
 }

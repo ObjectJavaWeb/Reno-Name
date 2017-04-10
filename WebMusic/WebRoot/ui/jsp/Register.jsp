@@ -21,33 +21,74 @@
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<link rel="stylesheet" type="text/css"
+	href="ui/bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="ui/jquery/jquery-2.0.0.js"></script>
+<script type="text/javascript" src="ui/js/Register.js"></script>
 
 </head>
 
 <body>
-	<center>
-		<span>新用户注册</span>
-		<form method="post" action="userregister!Register.action">
-			用户名：
-			<input type="text" name="user.userName">
-			<small><samp style="color: red;">*</samp>为必填项</small><br> 设置密码：
-			<input type="password" name="user.password">
-			<small><samp style="color: red;">*</samp>为必填项</small> <br> 确认密码：
-			<input type="password" name="password2">
-			<small><samp style="color: red;">*</samp>为必填项</small> <br> 邮箱：
-			<input type="email" name="user.email">
-			<br> 性别：
-			<input type="text" name="user.gender">
-			<br> 昵称：
-			<input type="text" name="user.nickname">
-			<br> 验证码：
-			<input type="text" name="verification_code">
-			<img alt="" src="getImage()">
-			<br>
-			<input type="submit" value="立即注册">
-			&nbsp;&nbsp;&nbsp;
-			<input type="reset" value="全部重置">
-		</form>
-	</center>
+	<h2 class="h2" style="text-align: center;">新用户注册</h2>
+	<form method="post" action="userregister!Register.action" class="form-inline">
+		<table class="table">
+			<tr>
+				<th>用户名：</th>
+				<td>
+					<input type="text" name="user.userName">
+					<small><samp style="color: red;">*</samp>为必填项</small>
+				</td>
+			</tr>
+			<tr>
+				<th>设置密码：</th>
+				<td>
+					<input type="password" name="user.password">
+					<small><samp style="color: red;">*</samp>为必填项</small>
+				</td>
+			</tr>
+			<tr>
+				<th>确认密码：</th>
+				<td>
+					<input type="password" name="password2">
+					<small><samp style="color: red;">*</samp>为必填项</small>
+				</td>
+			</tr>
+			<tr>
+				<th>邮箱：</th>
+				<td>
+					<input type="text" name="user.email">
+				</td>
+			</tr>
+			<tr>
+				<th>性别：</th>
+				<td>
+					男：
+					<input type="radio" name="user.gender" value="男">
+					女：
+					<input type="radio" name="user.gender" value="女">
+				</td>
+			</tr>
+			<tr>
+				<th>昵称：</th>
+				<td>
+					<input type="text" name="user.nickname">
+				</td>
+			</tr>
+			<tr>
+				<th>验证码：</th>
+				<td>
+					<input type="text" name="verification_code">
+					<img alt="" src="readImgAction" onclick="verificatCodeClick()">
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<input class="btn btn-info" type="submit" value="立即注册">
+					<input class="btn btn-info" type="reset" value="全部重置">
+				</td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>

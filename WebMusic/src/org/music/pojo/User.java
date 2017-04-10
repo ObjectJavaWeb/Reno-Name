@@ -16,7 +16,7 @@ public class User implements java.io.Serializable {
 	private String userName;
 	private String password;
 	private String nickname;
-	private Boolean gender;
+	private String gender;
 	private String email;
 	private Date registDate;
 	private Set mymusics = new HashSet(0);
@@ -31,7 +31,7 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String userName, String password, String nickname,
-			Boolean gender, String email, Date registDate, Set mymusics,
+			String gender, String email, Date registDate, Set mymusics,
 			Set questions, Set comments) {
 		this.userName = userName;
 		this.password = password;
@@ -78,11 +78,11 @@ public class User implements java.io.Serializable {
 		this.nickname = nickname;
 	}
 
-	public Boolean getGender() {
+	public String getGender() {
 		return this.gender;
 	}
 
-	public void setGender(Boolean gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 

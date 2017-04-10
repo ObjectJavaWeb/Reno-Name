@@ -19,8 +19,8 @@
         <property name="nickname" type="java.lang.String">
             <column name="nickname" length="50" />
         </property>
-        <property name="gender" type="java.lang.Boolean">
-            <column name="gender" />
+        <property name="gender" type="java.lang.String">
+            <column name="gender" length="20" />
         </property>
         <property name="email" type="java.lang.String">
             <column name="email" length="50" />
