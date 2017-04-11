@@ -5,7 +5,7 @@
 		<action name="userlogin" class="org.music.action.UserAction">
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<result name="input">/ui/jsp/Login.jsp</result>
-			
+			<result name="register">/ui/jsp/Register.jsp</result>
 		</action>
 		<action name="userregister" class="org.music.action.UserAction">
 			<result name="forward">/ui/jsp/forward.jsp</result>
@@ -20,5 +20,14 @@
 			</result>
 		</action>
 	</package>
-
+	<package name="ajax" extends="json-default">
+		<action name="ajaxLogin" class="org.music.action.AjaxAction" method="Ts">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">loginDuplicate</param>
+			</result>
+		</action>
+	</package>
 </struts>    

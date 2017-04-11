@@ -1,6 +1,7 @@
 package org.music.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Transaction;
 import org.music.dbc.HibernateSessionFactory;
@@ -67,6 +68,19 @@ public  class UserServiceImpl implements IUserService {
 			HibernateSessionFactory.closeSession();
 		}
 		return flag;
+	}
+
+	@Override
+	public List<String> getUserName() {
+		List<String> userNameList=null;
+		try {
+			userNameList=DAOFactory.getIUserDAOInstance().getUserName();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		return userNameList;
 	}
 
 }

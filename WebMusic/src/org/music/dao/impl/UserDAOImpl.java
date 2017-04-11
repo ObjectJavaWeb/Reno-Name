@@ -72,6 +72,15 @@ public class UserDAOImpl implements IUserDAO {
 		return false;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<String> getUserName() {
+		String hql="SELECT u.userName FROM User AS u";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		List<String> userNames=query.list();
+		return userNames;
+	}
+
 }
 
 

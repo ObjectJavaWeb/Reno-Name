@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xml-body>
-<text name="loginDuplicate" value="登录名重复"/>
+	<text name="loginDuplicate" value="登录名重复" />
+	<text name="preRegister" value="准备注册" />
 </xml-body>
