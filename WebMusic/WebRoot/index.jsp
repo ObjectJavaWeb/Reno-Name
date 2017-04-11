@@ -27,8 +27,10 @@
 
 <body>
 	<jsp:include page="ui/jsp/Header.jsp"></jsp:include>
-	<div style="height: 500px;"></div>
-	<jsp:include page="ui/jsp/foot.jsp"></jsp:include>
-
+	<div style="height: 500px;">
+		<jsp:include page="ui/jsp/MusicList.jsp"></jsp:include>
+	</div>
+<%-- 	<jsp:include page="ui/jsp/foot.jsp"></jsp:include>
+ --%>
 </body>
-</html>
+
