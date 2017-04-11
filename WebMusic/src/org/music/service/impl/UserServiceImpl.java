@@ -8,7 +8,7 @@ import org.music.factory.DAOFactory;
 import org.music.pojo.User;
 import org.music.service.IUserService;
 
-public abstract class UserServiceImpl implements IUserService {
+public  class UserServiceImpl implements IUserService {
 
 	@Override
 	public void insert(User user) throws Exception {
@@ -50,7 +50,21 @@ public abstract class UserServiceImpl implements IUserService {
 			e.printStackTrace();
 			throw e;
 		} finally {
-				//HibernateSessionFactory.closeSession();
+				HibernateSessionFactory.closeSession();
+		}
+		return flag;
+	}
+
+	@Override
+	public boolean loginDuplicate(String userName) {
+		boolean flag=false;
+		try {
+			flag=DAOFactory.getIUserDAOInstance().loginDuplicate(userName);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return flag;
+		}finally{
+			HibernateSessionFactory.closeSession();
 		}
 		return flag;
 	}

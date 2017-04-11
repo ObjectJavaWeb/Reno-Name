@@ -5,7 +5,6 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -22,14 +21,15 @@
 	media="screen">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>表头</title>
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
 <script src="ui/js/Header.js"></script>
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
+<title>表头</title>
+
 </head>
 
-<body class="container">
+<body>
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
@@ -42,8 +42,8 @@
 				<!-- 发现音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#"> 发现音乐 <b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li value="发现音乐"><a href="" target="_blank" class="reg">推荐</a></li>
+					<ul class="dropdown-menu" role="menu">
+						<li value="推荐"><a href="" target="_blank" class="reg">推荐</a></li>
 						<li value="排行榜"><a href="" target="_blank" class="reg">排行榜</a></li>
 						<li value="歌单"><a href="" target="_blank" class="reg">歌单</a></li>
 						<li value="歌手"><a href="" target="_blank" class="reg">歌手</a></li>
@@ -59,7 +59,8 @@
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#"> 个人 <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li value="个人 主页"><a href="ui/html/Personal.html" target="_blank" class="reg">个人主页</a></li>
+						<li value="个人 主页"><a href="ui/html/Personal.html "
+							target="_blank" class="reg">个人主页</a></li>
 						<li value="个人设置"><a href="" target="_blank" class="reg">个人设置
 						</a></li>
 						<li value="退出登录"><a href="" target="_blank" class="reg">退出登录
@@ -72,8 +73,8 @@
 			<form>
 				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
 			</form>
-			<a href="ui/jsp/Login.jsp"  target="_blank" class="reg"
-				style=" font-size: 20;">登  录</a>
+			<a href="ui/jsp/Login.jsp" target="_blank" class="reg"
+				style=" font-size: 20;">登 录</a>
 		</div>
 	</div>
 </body>

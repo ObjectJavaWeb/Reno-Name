@@ -1,0 +1,157 @@
+@CHARSET "UTF-8";
+.div1{
+	width: 650px;
+	border: 1px solid gray;
+}
+.div2{
+	width: 600px;
+	height: 600px;
+	border: 1px solid gray;
+	margin:10px 10px 10px 10px;
+}
+
+a{
+	text-decoration: none;
+	font-size: 14px;
+	color: black;
+}
+li{
+	list-style-type: none;
+}
+
+.list1{
+	float: left;
+	padding-left: 20px;
+	padding-top: 5px;
+}
+.list3{
+	float: left;
+}
+.span1{
+	border-right: 3px solid #F5F5F5;
+	padding-right: 10px;
+}
+.list2{
+	float: right;
+	padding-right: 30px;
+	padding-top: 5px;
+}
+.span2{
+	font-size: 24px;
+	color: gray;
+	font-weight: bold;
+}
+.list1 a:hover{
+	text-decoration: underline;
+}
+.list2 a:hover{
+	text-decoration: underline;
+}
+hr{
+	width: 540px;
+	height: 2px;
+	border:none;
+	border-top:2px solid #CC3333;
+}
+
+.div3{
+	width: 600px;
+	height: 500px;
+	border: 1px solid red;
+	margin-top: 15px;
+	}
+.div3 ul{
+	margin:0px;
+	padding:0px;
+
+}
+.list4{
+	padding-left: 27px;
+	width: 118px;
+	float: left;
+	line-height: 20px;
+	
+}
+.list4 a:hover{
+	text-decoration: underline;
+}
+.list4 img{
+	width: 110px;
+}
+.list5 img{
+	width: 600px;
+}
+
+.div4{
+	width: 540px;
+	height: 500px;
+	border: 1px solid red;
+	margin-top: 15px;
+	margin-left: 27px;
+
+}
+.div5{
+	width: 178px;
+	height: 500px;
+	border: 1px solid gray;
+	float: left;
+	background-color: #F5F5F5;
+}
+.div5 ul{
+	margin: 0;
+	padding: 0;
+}
+.span3{
+	float: left;
+	font-weight: bold;
+}
+.list6{
+	margin-left: 12px;
+	margin-top: 20px;
+}
+ .img1{
+	width: 60px;
+	height: 70px;
+}
+.margin1{
+	margin-left: 3px;
+}
+.span3 a:hover{
+	text-decoration: underline;
+}
+.span3 a{
+	color: #708090;
+}
+.div6{
+	margin-top: 20px;
+}
+.div6 ul li{
+	line-height: 32px;
+	font-weight: lighter;
+	width: 178px;
+	
+}
+.margin2{ 
+}
+	
+.span4{
+	background-color: #D3D3D3;
+	font-size: 4px;
+}
+.span4 a:hover{
+	text-decoration: underline;
+}
+.font1{
+	color: red;
+	font-size: 20px;
+}
+.span5{
+	background-color: #DCDCDC;
+}
+.span5 a:hover{
+	text-decoration: underline;
+}
+.span6{
+	padding-left: 100px;
+}
+

@@ -46,6 +46,15 @@ public class UserAction extends ActionSupport {
 
 	private String message;
 	private String url;
+	private boolean loginDuplicate;
+
+	public boolean isLoginDuplicate() {
+		return loginDuplicate;
+	}
+
+	public void setLoginDuplicate(boolean loginDuplicate) {
+		this.loginDuplicate = loginDuplicate;
+	}
 
 	public String login() throws Exception {
 
@@ -91,5 +100,8 @@ public class UserAction extends ActionSupport {
 		}
 		return SUCCESS;
 	}
-
+	public String loginDuplicate() {
+			loginDuplicate=ServiceFactory.getIUserServiceInstance().loginDuplicate(user.getUserName());
+		return "userInfoList";
+	}
 }
