@@ -2544,8 +2544,8 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 }
 
 .dropdown .caret {
-	margin-top: 8px;
-	margin-left: 2px
+	margin-top: 80px;
+	margin-left: 20px
 }
 
 .dropdown-menu {
@@ -2556,8 +2556,8 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 	display: none;
 	float: left;
 	min-width: 160px;
-	padding: 5px 0;
-	margin: 2px 0 0;
+	padding: 20px 0;
+	margin: 80px 0 0;
 	list-style: none;
 	background-color: #fff;
 	border: 1px solid #ccc;
@@ -2701,7 +2701,7 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 .dropup .dropdown-submenu>.dropdown-menu {
 	top: auto;
 	bottom: 0;
-	margin-top: 0;
+	margin-top: 20px;
 	margin-bottom: -2px;
 	-webkit-border-radius: 5px 5px 5px 0;
 	-moz-border-radius: 5px 5px 5px 0;
@@ -2740,7 +2740,7 @@ table td[class*="span"],table th[class*="span"],.row-fluid table td[class*="span
 
 .dropdown .dropdown-menu .nav-header {
 	padding-right: 20px;
-	padding-left: 20px
+	padding-left: 60px;
 }
 
 .typeahead {

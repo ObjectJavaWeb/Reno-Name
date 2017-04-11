@@ -5,6 +5,7 @@
 		<action name="userlogin" class="org.music.action.UserAction">
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<result name="input">/ui/jsp/Login.jsp</result>
+			
 		</action>
 		<action name="userregister" class="org.music.action.UserAction">
 			<result name="forward">/ui/jsp/forward.jsp</result>

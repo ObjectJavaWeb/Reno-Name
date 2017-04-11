@@ -61,6 +61,17 @@ public class UserDAOImpl implements IUserDAO {
 		return false;
 	}
 
+	@Override
+	public boolean loginDuplicate(String userName) {
+		String hql="FROM User AS u where u.userName=?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, userName);
+		if (query.list().size()>0) {
+			return true;
+		}
+		return false;
+	}
+
 }
 
 

@@ -5,8 +5,7 @@ import org.music.service.impl.UserServiceImpl;
 
 public class ServiceFactory {
 	public static IUserService getIUserServiceInstance() {
-		return new UserServiceImpl() {
-		};
+		return new UserServiceImpl();
 
 	}
 

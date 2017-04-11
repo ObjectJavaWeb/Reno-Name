@@ -35,7 +35,7 @@
 			<tr>
 				<th>用户名：</th>
 				<td>
-					<input type="text" name="user.userName">
+					<input type="text" name="user.userName" id="userName">
 					<small><samp style="color: red;">*</samp>为必填项</small>
 				</td>
 			</tr>
