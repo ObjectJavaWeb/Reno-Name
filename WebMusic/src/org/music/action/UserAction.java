@@ -1,20 +1,18 @@
 package org.music.action;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
+import javax.jms.Session;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.User;
-import org.music.util.VerificatCode;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
@@ -74,6 +72,12 @@ public class UserAction extends ActionSupport {
 		return "input";// 默认input,当然自己可随便起名。
 	}
 
+	/**
+	 * 注册
+	 * 
+	 * @return 注册后跳转页面
+	 * @throws Exception
+	 */
 	public String Register() throws Exception {
 		user.setRegistDate(new Date());
 		ServiceFactory.getIUserServiceInstance().insert(user);
@@ -82,26 +86,17 @@ public class UserAction extends ActionSupport {
 		return "forward";
 	}
 
-	private InputStream inputStream;
-
-	public InputStream getInputStream() {
-		return inputStream;
-	}
-
-	public void setInputStream(InputStream inputStream) {
-		this.inputStream = inputStream;
-	}
-
-	public String processImage() {
-		try {
-			inputStream = new FileInputStream(new File("D:\\学习\\数字图像处理\\index.jpg"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return SUCCESS;
-	}
-	public String loginDuplicate() {
-			loginDuplicate=ServiceFactory.getIUserServiceInstance().loginDuplicate(user.getUserName());
-		return "userInfoList";
+	public String preRegister() throws Exception {
+		ActionContext aContext = ActionContext.getContext();
+		final Map<String, Object> session = aContext.getSession();
+		Thread thread=new Thread(){@Override
+		public void run() {
+			
+			List<String> userNameList=ServiceFactory.getIUserServiceInstance()
+					.getUserName();
+			session.put("userNames",userNameList);
+		}};
+		thread.start();
+		return "register";
 	}
 }

@@ -1,5 +1,7 @@
 package org.music.service;
 
+import java.util.List;
+
 import org.music.pojo.User;
 
 public interface IUserService {
@@ -20,4 +22,9 @@ public interface IUserService {
 	 * @return 是否重复
 	 */
 	public boolean loginDuplicate(String userName);
+	/**
+	 * 获取用户名列表
+	 * @return 用户名列表
+	 */
+	public List<String> getUserName();
 }

@@ -4,10 +4,12 @@ function verificatCodeClick() {
 }
 $(function () {
 	$("#userName").bind("change input",function(){
+		var userName=$("#userName").val();
+		
 		$.ajax({
-			url:"user!loginDuplicate.action",
+			url:"ajaxLogin.action?",
 			type:"post",
-			data:"user.userName"+$("userName").val(),
+			data:{'userName':userName},
 			dataType:"json",
 			success:function(data){
 				console.log(data);

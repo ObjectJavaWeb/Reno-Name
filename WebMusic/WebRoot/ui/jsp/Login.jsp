@@ -32,7 +32,7 @@
 		<form form action="userlogin!login.action" method="post">
 			用户名：
 			<input type="text" name="user.userName">
-			<a href="ui/jsp/Register.jsp">没有注册？</a> <font color="red">${message}</font><br>
+			<a href="userlogin!preRegister.action">没有注册？</a> <font color="red">${message}</font><br>
 			密码：
 			<input type="password" name="user.password">
 			<br>
