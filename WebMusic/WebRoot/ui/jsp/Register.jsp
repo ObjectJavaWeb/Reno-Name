@@ -1,3 +1,4 @@
+<%@page import="com.opensymphony.xwork2.ActionContext"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -5,7 +6,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
+<%@taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -30,7 +31,8 @@
 
 <body>
 	<h2 class="h2" style="text-align: center;">新用户注册</h2>
-	<form method="post" action="userregister!Register.action" class="form-inline">
+	<s:form method="post" action="userregister!Register.action"
+		namespace="/" onsubmit="return validateForm();  ">
 		<table class="table">
 			<tr>
 				<th>用户名：</th>
@@ -42,28 +44,28 @@
 			<tr>
 				<th>设置密码：</th>
 				<td>
-					<input type="password" name="user.password">
+					<input type="password" name="user.password" id="passwordO">
 					<small><samp style="color: red;">*</samp>为必填项</small>
 				</td>
 			</tr>
 			<tr>
 				<th>确认密码：</th>
 				<td>
-					<input type="password" name="password2">
+					<input type="password" name="password2" id="passwordO">
 					<small><samp style="color: red;">*</samp>为必填项</small>
 				</td>
 			</tr>
 			<tr>
 				<th>邮箱：</th>
 				<td>
-					<input type="text" name="user.email">
+					<input type="text" name="user.email" id="email">
 				</td>
 			</tr>
 			<tr>
 				<th>性别：</th>
 				<td>
 					男：
-					<input type="radio" name="user.gender" value="男">
+					<input type="radio" name="user.gender" value="男" checked="checked">
 					女：
 					<input type="radio" name="user.gender" value="女">
 				</td>
@@ -71,12 +73,13 @@
 			<tr>
 				<th>昵称：</th>
 				<td>
-					<input type="text" name="user.nickname">
+					<input type="text" name="user.nickname" id="nickname">
 				</td>
 			</tr>
 			<tr>
 				<th>验证码：</th>
 				<td>
+					<input type="hidden" value="" id="randomCode">
 					<input type="text" name="verification_code">
 					<img alt="" src="readImgAction" onclick="verificatCodeClick()">
 				</td>
@@ -89,6 +92,6 @@
 				</td>
 			</tr>
 		</table>
-	</form>
+	</s:form>
 </body>
 </html>

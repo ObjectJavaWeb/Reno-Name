@@ -4,12 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.music.util.VerificatCode;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ImgAction extends ActionSupport {
@@ -30,7 +32,10 @@ public class ImgAction extends ActionSupport {
 
 		response.setDateHeader("Expires", 0);
 		VerificatCode vCode=new VerificatCode(5, 20);
-
+		String randomCode=vCode.getRand();
+		ActionContext aContext = ActionContext.getContext();
+		final Map<String, Object> session = aContext.getSession();
+		session.put("randomCode", randomCode);
 		inputStream =vCode.getImage();
 
 		return SUCCESS;
