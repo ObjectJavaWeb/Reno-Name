@@ -4,9 +4,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import javax.jws.soap.SOAPBinding.Use;
-
-import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.music.dao.IMymusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -26,9 +23,9 @@ public class MyMusicDAOImpl implements IMymusicDAO {
 		while (iterator.hasNext()) {
 			User user = iterator.next();
 			System.out.println(user.getMymusics());
-			if (user.getId().equals(userId)){
+			if (user.getId().equals(userId)) {
 				mymusicset = user.getMymusics();
-		}
+			}
 		}
 		System.out.println(query.list());
 		return mymusicset;
@@ -38,48 +35,52 @@ public class MyMusicDAOImpl implements IMymusicDAO {
 	public Set<Music> getMymusicList(int myMusicId) throws Exception {
 		Set<Mymusic> mSet = null;
 		String hql = "FROM Mymusic";
-		Query query =HibernateSessionFactory.getSession().createQuery(hql);
-		List<Mymusic> mList =query.list();
-	    Iterator<Mymusic> iterator = mList.iterator();
-	    while (iterator.hasNext()) {	
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		List<Mymusic> mList = query.list();
+		Iterator<Mymusic> iterator = mList.iterator();
+		while (iterator.hasNext()) {
 			Mymusic mymusic = iterator.next();
-			System.out.println(mymusic.getMusicMymusics());
-			if(mymusic.getId().equals(myMusicId)){
-				mSet = mymusic.getMusicMymusics();
-			}
 			
+			if (mymusic.getId().equals(myMusicId)) {
+				mSet = mymusic.getMymusicMusics();
+			}
+
 		}
-	    System.out.println(query.list());
+		System.out.println(query.list());
 		return null;
 	}
 
 	@Override
 	public void doCreate(Mymusic vo) throws Exception {
-		// TODO Auto-generated method stub
+		HibernateSessionFactory.getSession().save(vo);
 
 	}
 
 	@Override
 	public void doUpdate(Mymusic vo) throws Exception {
-		// TODO Auto-generated method stub
+		HibernateSessionFactory.getSession().update(vo);
 
 	}
 
 	@Override
 	public void doRemove(Integer id) throws Exception {
-		// TODO Auto-generated method stub
+		HibernateSessionFactory.getSession().delete(findById(id));
 
 	}
 
 	@Override
-	public List<Mymusic> findAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List findAll(String column) throws Exception {
+		String hql = "FROM Mymusic AS m WHERE m.name LIKE ? ";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, '%'+column+'%');
+		return query.list();
 	}
 
 	@Override
 	public Mymusic findById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return (Mymusic) HibernateSessionFactory.getSession().get(Mymusic.class, id);
+		
 	}
+	
+
 }

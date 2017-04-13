@@ -27,13 +27,7 @@ public class UserDAOImpl implements IUserDAO {
 
 	}
 
-	@Override
-	public List<User> findAll() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
 	public User findById(Integer id) throws Exception {
 		// 根据主键完成查询功能,需要传入类型,以及主键值
 		return  (User)HibernateSessionFactory.getSession().get(User.class, id);
@@ -81,6 +75,7 @@ public class UserDAOImpl implements IUserDAO {
 		return userNames;
 	}
 
+	
 }
 
 

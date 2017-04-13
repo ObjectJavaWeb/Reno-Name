@@ -1,6 +1,9 @@
 package org.music.dao;
 
 import java.util.List;
+import java.util.Set;
+
+import org.music.pojo.Mymusic;
 
 /**
  * 公共接口
@@ -18,7 +21,7 @@ public interface IDAO<K, V> {
 
 	public void doRemove(K id) throws Exception;
 
-	public List<V> findAll() throws Exception;
+	
 
 	public V findById(K id) throws Exception;
 
