@@ -1,15 +1,32 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>个人</title>
-<link href="../css/Personal.css" rel="stylesheet" type="text/css">
+<base href="<%=basePath%>">
+
+<title>My JSP 'Personal.jsp' starting page</title>
+<link href="ui/css/Personal.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="keyword1,keyword2,keyword3">
 <meta name="description" content="this is my page">
 <meta name="content-type" content="text/html; charset=UTF-8">
-<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet"
+<link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
-<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 
 </head>
 
@@ -35,38 +52,40 @@
 			<div class="mid">
 				<!-- 中间 -->
 				<table>
-				<tr>
+					<tr>
 						<th class="location">用户名</th>
 						<td>
-							<input type="text" class="name" name="user.userName">
+						 ${user.userName}
+						 getAttribute("userName");
+							
 						</td>
 					</tr>
 					<tr>
 						<th class="location">昵称</th>
 						<td>
-							<input type="text" class="name" name="user.nickname">
+						${user.nickname}
 						</td>
 					</tr>
 
 					<tr>
 						<th>性别</th>
 						<td>
-							<input type="text" class="name" name="user.gender">
+							${user.gender}
 						</td>
 					</tr>
 
 					<tr>
 						<th class="birthday">出生年月</th>
 						<td>
-							<input type="text" class="name" name="user.birthday">
+							${user.birthday}
 						</td>
 
-					</tr>
+					</tr> 
 
 					<tr>
 						<th>邮箱</th>
 						<td>
-							<input type="text" name="email" class="name">
+							 ${user.email} 
 						</td>
 					</tr>
 
@@ -74,7 +93,7 @@
 						<th></th>
 						<td>
 							<a href="ui/jsp/Personal_update.jsp"><button
-									class="save btn btn-danger" value="修改信息"></button></a>
+									class="save btn btn-danger" value="修改信息">修改信息</button></a>
 						</td>
 					</tr>
 

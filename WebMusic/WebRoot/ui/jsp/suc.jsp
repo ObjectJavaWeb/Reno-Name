@@ -19,12 +19,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+<script type="text/javascript">
+			var time = 2;
+		
+			function countDown() {
+				document.getElementById("time_span").innerHTML = time;
+				time--;
+				if (time >= 0) {
+					// 设置定时调用
+					window.setTimeout("countDown();",1000);
+				}
+			}
+		</script>
   </head>
   
-  <body>
+  <body onload="countDown();">
    <center>
 			用户登陆成功,当前用户为: ${user.userName}
+			<%
+				// 设置定时跳转
+				response.setHeader("refresh","2;" + basePath + request.getAttribute("indexurl"));
+			%>
+			${message}，<span id="time_span">2</span> 秒后自动跳转到登录页！<br/>
+			如果没有跳转，请点<a href="index.jsp">这里</a>！ 
 		</center>
 
   </body>

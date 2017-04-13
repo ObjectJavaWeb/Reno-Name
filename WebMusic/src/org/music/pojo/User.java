@@ -19,6 +19,14 @@ public class User implements java.io.Serializable {
 	private String gender;
 	private String email;
 	private Date registDate;
+	/*private Date birthday;
+	public Date getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}*/
 	private Set mymusics = new HashSet(0);
 	private Set questions = new HashSet(0);
 	private Set comments = new HashSet(0);

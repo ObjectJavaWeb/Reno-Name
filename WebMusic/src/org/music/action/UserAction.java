@@ -44,6 +44,15 @@ public class UserAction extends ActionSupport {
 
 	private String message;
 	private String url;
+	private String indexurl ="index.jsp";
+	public String getIndexurl() {
+		return indexurl;
+	}
+
+	public void setIndexurl(String indexurl) {
+		this.indexurl = indexurl;
+	}
+
 	private boolean loginDuplicate;
 
 	public boolean isLoginDuplicate() {
@@ -60,10 +69,13 @@ public class UserAction extends ActionSupport {
 		if (flag) {
 			// 根据登陆结果，决定跳转的位置
 			// 登陆成功时,用户信息需要保存到Session属性范围
-			ServletActionContext.getRequest().getSession()
-					.setAttribute("user", user);
+			/*ServletActionContext.getRequest().getSession()
+					.setAttribute("user", user);*/
+			
+			System.out.println(user.getUserName());
 			// 登陆成功时，放入session时。
 			return "suc";
+			
 		}
 
 		// 保存错误信息,页面上可以使用标签显示，提供好的一个方法，添加错我信息。

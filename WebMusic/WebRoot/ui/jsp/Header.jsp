@@ -59,9 +59,9 @@
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#"> 个人 <b class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li value="个人 主页"><a href="ui/html/Personal.html "
+						<li value="个人 主页"><a href="ui/jsp/Personal.jsp"
 							target="_blank" class="reg">个人主页</a></li>
-						<li value="个人设置"><a href="" target="_blank" class="reg">个人设置
+						<li value="个人设置"><a href="ui/jsp/Personal_update.jsp " target="_blank" class="reg">个人设置
 						</a></li>
 						<li value="退出登录"><a href="" target="_blank" class="reg">退出登录
 						</a></li>
