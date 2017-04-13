@@ -20,13 +20,16 @@
             <column name="nickname" length="50" />
         </property>
         <property name="gender" type="java.lang.String">
-            <column name="gender" />
+            <column name="gender" length="10" />
         </property>
         <property name="email" type="java.lang.String">
             <column name="email" length="50" />
         </property>
         <property name="registDate" type="java.util.Date">
             <column name="regist_date" length="10" />
+        </property>
+        <property name="birthday" type="java.util.Date">
+            <column name="birthday" length="10" />
         </property>
         <set name="questions" inverse="true">
             <key>

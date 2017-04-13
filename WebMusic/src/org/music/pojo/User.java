@@ -19,6 +19,7 @@ public class User implements java.io.Serializable {
 	private String gender;
 	private String email;
 	private Date registDate;
+	private Date birthday;
 	private Set questions = new HashSet(0);
 	private Set mymusics = new HashSet(0);
 	private Set comments = new HashSet(0);
@@ -31,14 +32,15 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String userName, String password, String nickname,
-			String gender, String email, Date registDate, Set questions,
-			Set mymusics, Set comments) {
+			String gender, String email, Date registDate, Date birthday,
+			Set questions, Set mymusics, Set comments) {
 		this.userName = userName;
 		this.password = password;
 		this.nickname = nickname;
 		this.gender = gender;
 		this.email = email;
 		this.registDate = registDate;
+		this.birthday = birthday;
 		this.questions = questions;
 		this.mymusics = mymusics;
 		this.comments = comments;
@@ -100,6 +102,14 @@ public class User implements java.io.Serializable {
 
 	public void setRegistDate(Date registDate) {
 		this.registDate = registDate;
+	}
+
+	public Date getBirthday() {
+		return this.birthday;
+	}
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public Set getQuestions() {
