@@ -55,8 +55,9 @@ public class UserDAOImpl implements IUserDAO {
 
 			// 将结果设置到user中,根据按引用传递,外面的对象也自动设置好了属性.
 			user.setRegistDate(result.getRegistDate());
+			
 			ServletActionContext.getRequest().getSession()
-			.setAttribute("user", user);
+			.setAttribute("user", result);
 	
 			return true;
 		}

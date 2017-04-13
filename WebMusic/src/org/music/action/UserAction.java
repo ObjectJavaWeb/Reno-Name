@@ -69,10 +69,9 @@ public class UserAction extends ActionSupport {
 		if (flag) {
 			// 根据登陆结果，决定跳转的位置
 			// 登陆成功时,用户信息需要保存到Session属性范围
-			/*ServletActionContext.getRequest().getSession()
+		/*ServletActionContext.getRequest().getSession()
 					.setAttribute("user", user);*/
 			
-			System.out.println(user.getUserName());
 			// 登陆成功时，放入session时。
 			return "suc";
 			

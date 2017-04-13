@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="org.music.pojo.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -54,39 +56,33 @@
 				<table>
 					<tr>
 						<th class="location">用户名</th>
-						<td>
-						 ${user.userName}
-						 getAttribute("userName");
-							
-						</td>
+						<td>${user.userName}</td>
 					</tr>
 					<tr>
 						<th class="location">昵称</th>
-						<td>
-						${user.nickname}
-						</td>
+						<td>${user.nickname}</td>
 					</tr>
 
 					<tr>
 						<th>性别</th>
-						<td>
-							${user.gender}
-						</td>
+						<td>${user.gender}</td>
 					</tr>
 
+					<%
+						User user = (User) request.getSession().getAttribute("user");
+						SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+					%>
 					<tr>
 						<th class="birthday">出生年月</th>
 						<td>
-							${user.birthday}
+							<%=format.format(user.getBirthday())%>
 						</td>
 
-					</tr> 
+					</tr>
 
 					<tr>
 						<th>邮箱</th>
-						<td>
-							 ${user.email} 
-						</td>
+						<td>${user.email}</td>
 					</tr>
 
 					<tr>

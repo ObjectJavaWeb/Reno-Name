@@ -26,9 +26,9 @@
 		<property name="registDate" type="java.util.Date">
 			<column name="regist_date" length="10" />
 		</property>
-		<!-- <property name="birthday" type="java.util.Date">
+		<property name="birthday" type="java.util.Date">
 			<column name="birthday" length="10" />
-		</property> -->
+		</property> 
 		<set name="mymusics" inverse="true">
 			<key>
 				<column name="Use_id" />
