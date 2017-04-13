@@ -13,7 +13,7 @@ public class Reply implements java.io.Serializable {
 	private Integer id;
 	private Comment comment;
 	private String content;
-	private Timestamp replylDate;
+	private Timestamp replyDate;
 
 	// Constructors
 
@@ -21,16 +21,11 @@ public class Reply implements java.io.Serializable {
 	public Reply() {
 	}
 
-	/** minimal constructor */
-	public Reply(Comment comment) {
-		this.comment = comment;
-	}
-
 	/** full constructor */
-	public Reply(Comment comment, String content, Timestamp replylDate) {
+	public Reply(Comment comment, String content, Timestamp replyDate) {
 		this.comment = comment;
 		this.content = content;
-		this.replylDate = replylDate;
+		this.replyDate = replyDate;
 	}
 
 	// Property accessors
@@ -59,12 +54,12 @@ public class Reply implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Timestamp getReplylDate() {
-		return this.replylDate;
+	public Timestamp getReplyDate() {
+		return this.replyDate;
 	}
 
-	public void setReplylDate(Timestamp replylDate) {
-		this.replylDate = replylDate;
+	public void setReplyDate(Timestamp replyDate) {
+		this.replyDate = replyDate;
 	}
 
 }

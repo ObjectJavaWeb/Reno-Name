@@ -14,7 +14,7 @@ public class Mymusic implements java.io.Serializable {
 	private Integer id;
 	private User user;
 	private String name;
-	private Set musicMymusics = new HashSet(0);
+	private Set mymusicMusics = new HashSet(0);
 
 	// Constructors
 
@@ -23,10 +23,10 @@ public class Mymusic implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Mymusic(User user, String name, Set musicMymusics) {
+	public Mymusic(User user, String name, Set mymusicMusics) {
 		this.user = user;
 		this.name = name;
-		this.musicMymusics = musicMymusics;
+		this.mymusicMusics = mymusicMusics;
 	}
 
 	// Property accessors
@@ -55,12 +55,12 @@ public class Mymusic implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Set getMusicMymusics() {
-		return this.musicMymusics;
+	public Set getMymusicMusics() {
+		return this.mymusicMusics;
 	}
 
-	public void setMusicMymusics(Set musicMymusics) {
-		this.musicMymusics = musicMymusics;
+	public void setMymusicMusics(Set mymusicMusics) {
+		this.mymusicMusics = mymusicMusics;
 	}
 
 }

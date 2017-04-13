@@ -28,6 +28,7 @@
 		<mapping resource="org/music/pojo/Question.hbm.xml" />
 		<mapping resource="org/music/pojo/Reply.hbm.xml" />
 		<mapping resource="org/music/pojo/MusicMymusic.hbm.xml" />
+		<mapping resource="org/music/pojo/MymusicMusic.hbm.xml" />
 
 	</session-factory>
 
