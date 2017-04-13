@@ -16,11 +16,11 @@ public class User implements java.io.Serializable {
 	private String userName;
 	private String password;
 	private String nickname;
-	private String gender;
+	private Boolean gender;
 	private String email;
 	private Date registDate;
-	private Set mymusics = new HashSet(0);
 	private Set questions = new HashSet(0);
+	private Set mymusics = new HashSet(0);
 	private Set comments = new HashSet(0);
 
 	// Constructors
@@ -31,16 +31,16 @@ public class User implements java.io.Serializable {
 
 	/** full constructor */
 	public User(String userName, String password, String nickname,
-			String gender, String email, Date registDate, Set mymusics,
-			Set questions, Set comments) {
+			Boolean gender, String email, Date registDate, Set questions,
+			Set mymusics, Set comments) {
 		this.userName = userName;
 		this.password = password;
 		this.nickname = nickname;
 		this.gender = gender;
 		this.email = email;
 		this.registDate = registDate;
-		this.mymusics = mymusics;
 		this.questions = questions;
+		this.mymusics = mymusics;
 		this.comments = comments;
 	}
 
@@ -78,11 +78,11 @@ public class User implements java.io.Serializable {
 		this.nickname = nickname;
 	}
 
-	public String getGender() {
+	public Boolean getGender() {
 		return this.gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(Boolean gender) {
 		this.gender = gender;
 	}
 
@@ -102,20 +102,20 @@ public class User implements java.io.Serializable {
 		this.registDate = registDate;
 	}
 
-	public Set getMymusics() {
-		return this.mymusics;
-	}
-
-	public void setMymusics(Set mymusics) {
-		this.mymusics = mymusics;
-	}
-
 	public Set getQuestions() {
 		return this.questions;
 	}
 
 	public void setQuestions(Set questions) {
 		this.questions = questions;
+	}
+
+	public Set getMymusics() {
+		return this.mymusics;
+	}
+
+	public void setMymusics(Set mymusics) {
+		this.mymusics = mymusics;
 	}
 
 	public Set getComments() {

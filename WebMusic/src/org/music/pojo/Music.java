@@ -12,13 +12,13 @@ public class Music implements java.io.Serializable {
 	// Fields
 
 	private Integer id;
-	private Type type;
+	private String type;
 	private String name;
 	private String songer;
 	private String abum;
 	private String image;
 	private Integer hit;
-	private Set musicMymusics = new HashSet(0);
+	private Set mymusicMusics = new HashSet(0);
 	private Set comments = new HashSet(0);
 
 	// Constructors
@@ -28,15 +28,15 @@ public class Music implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Music(Type type, String name, String songer, String abum,
-			String image, Integer hit, Set musicMymusics, Set comments) {
+	public Music(String type, String name, String songer, String abum,
+			String image, Integer hit, Set mymusicMusics, Set comments) {
 		this.type = type;
 		this.name = name;
 		this.songer = songer;
 		this.abum = abum;
 		this.image = image;
 		this.hit = hit;
-		this.musicMymusics = musicMymusics;
+		this.mymusicMusics = mymusicMusics;
 		this.comments = comments;
 	}
 
@@ -50,11 +50,11 @@ public class Music implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return this.type;
 	}
 
-	public void setType(Type type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
@@ -98,12 +98,12 @@ public class Music implements java.io.Serializable {
 		this.hit = hit;
 	}
 
-	public Set getMusicMymusics() {
-		return this.musicMymusics;
+	public Set getMymusicMusics() {
+		return this.mymusicMusics;
 	}
 
-	public void setMusicMymusics(Set musicMymusics) {
-		this.musicMymusics = musicMymusics;
+	public void setMymusicMusics(Set mymusicMusics) {
+		this.mymusicMusics = mymusicMusics;
 	}
 
 	public Set getComments() {

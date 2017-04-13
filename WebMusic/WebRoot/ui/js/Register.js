@@ -12,8 +12,21 @@ $(function () {
 			data:{'userName':userName},
 			dataType:"json",
 			success:function(data){
-				console.log(data);
+				$("#v").remove();
+				if (data) {
+					$("#userName").after("<span id='v'>用户名已存在</span>");
+				}
 			}
 		});
 	});
 });
+/**
+ * 表单验证
+ */
+function validateForm() {
+	var userName=$("#userName").val();
+	var randomCode=$("#randomCode").val();
+	alert(randomCode);
+	return false;
+	
+}

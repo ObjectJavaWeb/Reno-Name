@@ -8,16 +8,16 @@
     <class name="org.music.pojo.Reply" table="reply" catalog="webmusic">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="increment"></generator>
+            <generator class="increment" />
         </id>
-        <many-to-one name="comment" class="org.music.pojo.Comment" update="false" insert="false" fetch="select">
-            <column name="id" not-null="true" unique="true" />
+        <many-to-one name="comment" class="org.music.pojo.Comment" fetch="select">
+            <column name="comment_id" />
         </many-to-one>
         <property name="content" type="java.lang.String">
             <column name="content" length="500" />
         </property>
-        <property name="replylDate" type="java.sql.Timestamp">
-            <column name="replyl_date" length="19" />
+        <property name="replyDate" type="java.sql.Timestamp">
+            <column name="reply_Date" length="19" />
         </property>
     </class>
 </hibernate-mapping>

@@ -8,10 +8,8 @@ public class Question implements java.io.Serializable {
 
 	// Fields
 
-	private Integer id;
+	private QuestionId id;
 	private User user;
-	private String question;
-	private String answer;
 
 	// Constructors
 
@@ -20,24 +18,23 @@ public class Question implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Question(User user) {
-		this.user = user;
+	public Question(QuestionId id) {
+		this.id = id;
 	}
 
 	/** full constructor */
-	public Question(User user, String question, String answer) {
+	public Question(QuestionId id, User user) {
+		this.id = id;
 		this.user = user;
-		this.question = question;
-		this.answer = answer;
 	}
 
 	// Property accessors
 
-	public Integer getId() {
+	public QuestionId getId() {
 		return this.id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(QuestionId id) {
 		this.id = id;
 	}
 
@@ -47,22 +44,6 @@ public class Question implements java.io.Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
-	}
-
-	public String getQuestion() {
-		return this.question;
-	}
-
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-
-	public String getAnswer() {
-		return this.answer;
-	}
-
-	public void setAnswer(String answer) {
-		this.answer = answer;
 	}
 
 }
