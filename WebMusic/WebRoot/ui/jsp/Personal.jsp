@@ -62,7 +62,7 @@
 						<th>性别</th>
 						<td>${user.gender}</td>
 					</tr>
-					<%-- <tr>
+					 <tr>
 						<%
 							User user = (User) request.getSession().getAttribute("user");
 							SimpleDateFormat sformat = new SimpleDateFormat("yyyy-MM-dd");
@@ -81,7 +81,7 @@
 							<%=srformat.format(user.getRegistDate())%>
 						</td>
 
-					</tr> --%>
+					</tr> 
 					<tr>
 						<th>邮箱</th>
 						<td>${user.email}</td>

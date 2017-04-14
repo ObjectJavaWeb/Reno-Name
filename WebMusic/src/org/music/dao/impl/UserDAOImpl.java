@@ -32,6 +32,7 @@ public class UserDAOImpl implements IUserDAO {
 		query.setString(3, user.getEmail());
 		query.setString(4, user.getUserName());
 		query.executeUpdate();
+		
 	}
 
 	@Override

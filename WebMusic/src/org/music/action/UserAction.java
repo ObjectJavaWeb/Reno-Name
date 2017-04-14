@@ -75,14 +75,15 @@ public class UserAction extends ActionSupport {
 	public String personalUpdate() throws Exception {
 		// 获取session
 		Map<String, Object> session = Tools.getSession();
-		User user = (User) session.get("user");
-		if (user == null) {
+		User usertest = (User) session.get("user");
+		if (usertest == null) {
 			super.addActionError("请先登录！");
 			return "input";
 		}
 		ServiceFactory.getIUserServiceInstance().update(user);
 		// 修改完成后，更新信息
 		ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		session.put("user", user);
 		return "personal_Update_suc";
 	}
 

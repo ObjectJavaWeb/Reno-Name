@@ -56,10 +56,12 @@
 			<div class="mid">
 				<!-- 中间 -->
 				<%
+				/* 获得对象*/
 					User user = (User) request.getSession().getAttribute("user");
 				%>
 				
 				<form action="userlogin!personalUpdate.action" method="post">
+				<!-- 隐藏域  获得用户名和ID 传回 personalUpdate 通过用户名修改信息-->
 					<input type="hidden" name="user.userName" value="<%=user.getUserName() %>">
 					<input type="hidden" name="user.id" value="<%=user.getId() %>">
 					<table>
@@ -93,7 +95,7 @@
 						<tr>
 							<th></th>
 							<td>
-								<input type="submit" class="save btn btn-danger" value="保存">
+								<input type="submit" class="save btn btn-danger" value="确认修改">
 							</td>
 						</tr>
 					</table>
