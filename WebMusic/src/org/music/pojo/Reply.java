@@ -28,7 +28,7 @@ public class Reply implements java.io.Serializable {
 		this.replyDate = replyDate;
 	}
 
-	// Property accessors
+	// Property accessory
 
 	public Integer getId() {
 		return this.id;

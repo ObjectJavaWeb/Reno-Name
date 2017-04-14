@@ -21,8 +21,6 @@ public interface IDAO<K, V> {
 
 	public void doRemove(K id) throws Exception;
 
-	
-
 	public V findById(K id) throws Exception;
 
 }
