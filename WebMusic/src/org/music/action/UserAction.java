@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.jms.Session;
+import javax.persistence.Id;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -44,6 +45,52 @@ public class UserAction extends ActionSupport {
 
 	private String message;
 	private String url;
+	private String indexurl = "index.jsp";
+
+	public String getIndexurl() {
+		return indexurl;
+	}
+
+	public void setIndexurl(String indexurl) {
+		this.indexurl = indexurl;
+	}
+
+	private boolean loginDuplicate;
+
+	public boolean isLoginDuplicate() {
+		return loginDuplicate;
+	}
+
+	public void setLoginDuplicate(boolean loginDuplicate) {
+		this.loginDuplicate = loginDuplicate;
+	}
+
+	/**
+	 * 修改个人信息
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String personalUpdate() throws Exception {
+
+		ServiceFactory.getIUserServiceInstance().update(user);
+		// 修改完成后，更新信息
+		ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		return "personal_Update_suc";
+	}
+/**
+ * 查询个人信息
+ * 
+ * @throws Exception
+ */
+	public void queryPersonal() throws Exception {
+		ActionContext aContext=ActionContext.getContext();
+		Map<String, Object> session=aContext.getSession();
+		user.setId((Integer)((User)session.get("user")).getId());
+		System.out.println(user.getId()+"44444");
+		ServiceFactory.getIUserServiceInstance().findById(user.getId());
+
+	}
 
 	public String login() throws Exception {
 
@@ -51,10 +98,14 @@ public class UserAction extends ActionSupport {
 		if (flag) {
 			// 根据登陆结果，决定跳转的位置
 			// 登陆成功时,用户信息需要保存到Session属性范围
-			ServletActionContext.getRequest().getSession()
-					.setAttribute("user", user);
+			/*
+			 * ServletActionContext.getRequest().getSession()
+			 * .setAttribute("user", user);
+			 */
+
 			// 登陆成功时，放入session时。
 			return "suc";
+
 		}
 
 		// 保存错误信息,页面上可以使用标签显示，提供好的一个方法，添加错我信息。
@@ -80,13 +131,15 @@ public class UserAction extends ActionSupport {
 	public String preRegister() throws Exception {
 		ActionContext aContext = ActionContext.getContext();
 		final Map<String, Object> session = aContext.getSession();
-		Thread thread=new Thread(){@Override
-		public void run() {
-			
-			List<String> userNameList=ServiceFactory.getIUserServiceInstance()
-					.getUserName();
-			session.put("userNames",userNameList);
-		}};
+		Thread thread = new Thread() {
+			@Override
+			public void run() {
+
+				List<String> userNameList = ServiceFactory
+						.getIUserServiceInstance().getUserName();
+				session.put("userNames", userNameList);
+			}
+		};
 		thread.start();
 		return "register";
 	}

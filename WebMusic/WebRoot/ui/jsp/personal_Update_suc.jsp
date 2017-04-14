@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>登录页</title>
+    <title>修改信息成功</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -35,12 +35,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body onload="countDown();">
    <center>
-			用户登陆成功,当前用户为: ${user.userName}
+			信息修改成功
 			<%
 				// 设置定时跳转
 				response.setHeader("refresh","2;" + basePath + request.getAttribute("indexurl"));
 			%>
-			${message}，<span id="time_span">2</span> 秒后自动跳转到登录页！<br/>
+			${message}，<span id="time_span">2</span> 秒后自动跳转到主页！<br/>
 			如果没有跳转，请点<a href="index.jsp">这里</a>！ 
 		</center>
 

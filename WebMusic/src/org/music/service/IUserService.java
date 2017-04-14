@@ -9,6 +9,7 @@ public interface IUserService {
 	public void insert(User user) throws Exception;
 
 	public void delete(int id) throws Exception;
+	public void update(User user) throws Exception;
 
 	public User findById(int id) throws Exception;
 
