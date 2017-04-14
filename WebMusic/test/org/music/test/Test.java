@@ -15,5 +15,6 @@ public class Test {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(ServiceFactory.getIUserServiceInstance().loginDuplicate("吴文鑫"));
 	}
 }

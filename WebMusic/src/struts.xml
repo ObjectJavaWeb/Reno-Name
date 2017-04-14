@@ -6,10 +6,15 @@
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<result name="input">/ui/jsp/Login.jsp</result>
 			<result name="register">/ui/jsp/Register.jsp</result>
+			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
 		</action>
+		<action name="queryPersonal" class="org.music.action.UserAction"></action>
 		<action name="userregister" class="org.music.action.UserAction">
 			<result name="forward">/ui/jsp/forward.jsp</result>
 		</action>
+		<!-- <action name="Personal_update" class="org.music.action.UserAction"> 
+			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result> 
+			</action> -->
 		<action name="readImgAction" class="org.music.action.ImgAction"
 			method="readImg">
 			<result type="stream">
@@ -21,7 +26,8 @@
 		</action>
 	</package>
 	<package name="ajax" extends="json-default">
-		<action name="ajaxLogin" class="org.music.action.AjaxAction" method="loginDuplicate">
+		<action name="ajaxLogin" class="org.music.action.AjaxAction"
+			method="Ts">
 			<!-- 返回类型为json 在sjon-default中定义 -->
 			<result type="json">
 				<!-- root的值对应要返回的值的属性 -->

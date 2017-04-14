@@ -77,6 +77,13 @@
 				</td>
 			</tr>
 			<tr>
+							<th class="birthday">出生年月</th>
+							<td>
+								<input type="date" class="name" name="user.birthday">
+							</td>
+
+						</tr>
+			<tr>
 				<th>验证码：</th>
 				<td>
 					<input type="hidden" value="" id="randomCode">

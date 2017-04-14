@@ -15,9 +15,19 @@ public interface IUserDAO extends IDAO<Integer, User> {
 	 * @return 是否重复
 	 */
 	public boolean loginDuplicate(String userName);
+
 	/**
 	 * 获取用户名列表
+	 * 
 	 * @return 用户名列表
 	 */
+
 	public List<String> getUserName();
+
+	public void doCreate(User user) throws Exception;
+
+	public void doUpdate(User user) throws Exception;
+
+	public void doRemove(User user) throws Exception;
+
 }

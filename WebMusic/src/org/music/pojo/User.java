@@ -20,8 +20,8 @@ public class User implements java.io.Serializable {
 	private String email;
 	private Date registDate;
 	private Date birthday;
-	private Set questions = new HashSet(0);
 	private Set mymusics = new HashSet(0);
+	private Set questions = new HashSet(0);
 	private Set comments = new HashSet(0);
 
 	// Constructors
