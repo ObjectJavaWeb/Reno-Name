@@ -21,7 +21,7 @@
 		</action>
 	</package>
 	<package name="ajax" extends="json-default">
-		<action name="ajaxLogin" class="org.music.action.AjaxAction" method="Ts">
+		<action name="ajaxLogin" class="org.music.action.AjaxAction" method="loginDuplicate">
 			<!-- 返回类型为json 在sjon-default中定义 -->
 			<result type="json">
 				<!-- root的值对应要返回的值的属性 -->
