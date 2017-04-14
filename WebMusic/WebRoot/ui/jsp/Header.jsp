@@ -63,7 +63,7 @@
 					data-toggle="dropdown" href="#" style="color: white;"> 个人 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
-			
+
 						<li value="个人 主页"><a
 							href="queryPersonal!queryPersonal.action" target="_blank"
 							class="reg">个人主页</a></li>
@@ -79,8 +79,16 @@
 			<form>
 				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
 			</form>
-			<a href="ui/jsp/Personal.jsp">${user.nickname }</a> <a
-				href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登 录</a>
+
+			<%
+				User user = (User) request.getSession().getAttribute("user");
+				if (user.equals(null)) {
+			%><a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
+				录</a>
+			<%
+				} else
+			%><a href="ui/jsp/Personal.jsp">${user.nickname }</a>
+
 
 		</div>
 	</div>
