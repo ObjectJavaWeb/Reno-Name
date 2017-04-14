@@ -17,9 +17,21 @@ public class UserDAOImpl implements IUserDAO {
 	}
 
 	@Override
-	public void doUpdate(User vo) throws Exception {
-		// TODO Auto-generated method stub
+	/**
+	 * 修改信息
+	 */
+	public void doUpdate(User user) throws Exception {
 
+		String hql = "UPDATE User AS u SET u.nickname=? "
+				+ ", u.gender=?  , u.birthday=? , u.email=?"
+				+ " WHERE u.userName=?";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, user.getNickname());
+		query.setString(1, user.getGender());
+		query.setDate(2, user.getBirthday());
+		query.setString(3, user.getEmail());
+		query.setString(4, user.getUserName());
+		query.executeUpdate();
 	}
 
 	@Override
@@ -37,9 +49,10 @@ public class UserDAOImpl implements IUserDAO {
 	@Override
 	public User findById(Integer id) throws Exception {
 		// 根据主键完成查询功能,需要传入类型,以及主键值
-		return  (User)HibernateSessionFactory.getSession().get(User.class, id);
+		return (User) HibernateSessionFactory.getSession().get(User.class, id);
 
 	}
+
 	@Override
 	public boolean isLogin(User user) throws Exception {
 		String hql = "FROM User AS u WHERE u.userName = ? AND u.password = ?";
@@ -55,22 +68,20 @@ public class UserDAOImpl implements IUserDAO {
 
 			// 将结果设置到user中,根据按引用传递,外面的对象也自动设置好了属性.
 			user.setRegistDate(result.getRegistDate());
-			
+
 			ServletActionContext.getRequest().getSession()
-			.setAttribute("user", result);
-	
+					.setAttribute("user", result);
 			return true;
 		}
-
 		return false;
 	}
 
 	@Override
 	public boolean loginDuplicate(String userName) {
-		String hql="FROM User AS u where u.userName=?";
-		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		String hql = "FROM User AS u where u.userName=?";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, userName);
-		if (query.list().size()>0) {
+		if (query.list().size() > 0) {
 			return true;
 		}
 		return false;
@@ -79,12 +90,16 @@ public class UserDAOImpl implements IUserDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<String> getUserName() {
-		String hql="SELECT u.userName FROM User AS u";
-		Query query=HibernateSessionFactory.getSession().createQuery(hql);
-		List<String> userNames=query.list();
+		String hql = "SELECT u.userName FROM User AS u";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		List<String> userNames = query.list();
 		return userNames;
 	}
 
+	@Override
+	public void doRemove(User user) throws Exception {
+		// TODO Auto-generated method stub
+
+	}
+
 }
-
-

@@ -24,7 +24,7 @@ public  class UserServiceImpl implements IUserService {
 					tx.rollback();
 					throw e;
 				} finally {
-					HibernateSessionFactory.closeSession();
+					//HibernateSessionFactory.closeSession();
 				}
 
 	}
@@ -37,7 +37,7 @@ public  class UserServiceImpl implements IUserService {
 
 	@Override
 	public User findById(int id) throws Exception {
-		// TODO Auto-generated method stub
+		DAOFactory.getIUserDAOInstance().findById(id);
 		return null;
 	}
 
@@ -51,12 +51,15 @@ public  class UserServiceImpl implements IUserService {
 			e.printStackTrace();
 			throw e;
 		} finally {
-				HibernateSessionFactory.closeSession();
+				//HibernateSessionFactory.closeSession();
 		}
 		return flag;
 	}
 
 	@Override
+	/**7
+	 * 注册是检验用户名是否存在
+	 */
 	public boolean loginDuplicate(String userName) {
 		boolean flag=false;
 		try {
@@ -81,6 +84,28 @@ public  class UserServiceImpl implements IUserService {
 			HibernateSessionFactory.closeSession();
 		}
 		return userNameList;
+	}
+
+	@Override
+	/**
+	 * 修改个人信息
+	 * 
+	 */
+	public void update(User user) throws Exception {
+		// 加入事务处理功能
+		Transaction tx = HibernateSessionFactory.getSession()
+				.beginTransaction();
+		try {
+			DAOFactory.getIUserDAOInstance().doUpdate(user);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			tx.rollback();
+			// TODO: handle exception
+		}finally{
+			//HibernateSessionFactory.closeSession();
+		}
+		
 	}
 
 }

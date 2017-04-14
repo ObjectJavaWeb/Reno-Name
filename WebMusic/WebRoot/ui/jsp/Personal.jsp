@@ -33,24 +33,19 @@
 </head>
 
 <body class="all">
-
 	<div>
-
 		<div class="topbar">
 			<!-- 整体外边框 -->
-
 			<div class="topbar_1">
 				<!-- 导航栏 -->
 				<div>
 					<ul class="ul_1">
+						<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
 						<li class="ul_1_1">基本信息</li>
 					</ul>
 				</div>
 			</div>
-
 			<div style="clear:both"></div>
-
-
 			<div class="mid">
 				<!-- 中间 -->
 				<table>
@@ -67,19 +62,26 @@
 						<th>性别</th>
 						<td>${user.gender}</td>
 					</tr>
-
-					<%
-						User user = (User) request.getSession().getAttribute("user");
-						SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-					%>
-					<tr>
+					<%-- <tr>
+						<%
+							User user = (User) request.getSession().getAttribute("user");
+							SimpleDateFormat sformat = new SimpleDateFormat("yyyy-MM-dd");
+						%>
 						<th class="birthday">出生年月</th>
 						<td>
-							<%=format.format(user.getBirthday())%>
+							<%=sformat.format(user.getBirthday())%>
+						</td>
+					</tr>
+					<tr>
+						<%
+							SimpleDateFormat srformat = new SimpleDateFormat("yyyy-MM-dd");
+						%>
+						<th class="RegistDate">注册日期</th>
+						<td>
+							<%=srformat.format(user.getRegistDate())%>
 						</td>
 
-					</tr>
-
+					</tr> --%>
 					<tr>
 						<th>邮箱</th>
 						<td>${user.email}</td>
@@ -92,12 +94,8 @@
 									class="save btn btn-danger" value="修改信息">修改信息</button></a>
 						</td>
 					</tr>
-
-
 				</table>
 			</div>
-
-
 		</div>
 	</div>
 </body>

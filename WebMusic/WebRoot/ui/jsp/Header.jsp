@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@page import="org.music.pojo.User"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -41,8 +42,9 @@
 			<ul class="nav nav-tabs">
 				<!-- 发现音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> 发现音乐 <b class="caret"></b></a>
-					<ul class="dropdown-menu" role="menu">
+					data-toggle="dropdown" href="#" style="color: white;"> 发现音乐 <b
+						class="caret"></b></a>
+					<ul class="dropdown-menu" role="menu" style="color: white;">
 						<li value="推荐"><a href="" target="_blank" class="reg">推荐</a></li>
 						<li value="排行榜"><a href="" target="_blank" class="reg">排行榜</a></li>
 						<li value="歌单"><a href="" target="_blank" class="reg">歌单</a></li>
@@ -50,31 +52,36 @@
 					</ul></li>
 				<!-- 我的音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> 我的音乐 <b class="caret"></b></a>
+					data-toggle="dropdown" href="#" style="color: white;"> 我的音乐 <b
+						class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li value="喜爱"><a href="" target="_blank" class="reg">喜爱</a></li>
 						<li value="最爱"><a href="" target="_blank" class="reg">最爱</a></li>
 					</ul></li>
 				<!-- 个人 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> 个人 <b class="caret"></b></a>
+					data-toggle="dropdown" href="#" style="color: white;"> 个人 <b
+						class="caret"></b></a>
 					<ul class="dropdown-menu">
-						<li value="个人 主页"><a href="ui/jsp/Personal.jsp"
-							target="_blank" class="reg">个人主页</a></li>
-						<li value="个人设置"><a href="ui/jsp/Personal_update.jsp " target="_blank" class="reg">个人设置
-						</a></li>
-						<li value="退出登录"><a href="" target="_blank" class="reg">退出登录
-						</a></li>
+			
+						<li value="个人 主页"><a
+							href="queryPersonal!queryPersonal.action" target="_blank"
+							class="reg">个人主页</a></li>
+						<li value="个人设置"><a href="ui/jsp/Personal_update.jsp "
+							target="_blank" class="reg">个人设置 </a></li>
+						<li value="退出登录"><a href="" class="reg">退出登录 </a></li>
 					</ul></li>
 			</ul>
+
 			</ul>
 		</div>
 		<div class="topbar_1_3">
 			<form>
 				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
 			</form>
-			<a href="ui/jsp/Login.jsp" target="_blank" class="reg"
-				style=" font-size: 20;">登 录</a>
+			<a href="ui/jsp/Personal.jsp">${user.nickname }</a> <a
+				href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登 录</a>
+
 		</div>
 	</div>
 </body>

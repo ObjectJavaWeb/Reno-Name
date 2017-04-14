@@ -1,3 +1,4 @@
+<%@page import="org.music.pojo.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -11,7 +12,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>My JSP 'Personal.jsp' starting page</title>
+<title>个人信息修改</title>
 <link href="ui/css/Personal.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="keyword1,keyword2,keyword3">
@@ -41,6 +42,7 @@
 				<!-- 导航栏 -->
 				<div>
 					<ul class="ul_1">
+					<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
 						<li class="ul_1_1">基本设置</li>
 						<li></li>
 						<li><a href="">修改密码</a></li>
@@ -53,8 +55,13 @@
 
 			<div class="mid">
 				<!-- 中间 -->
-
-				<form action="">
+				<%
+					User user = (User) request.getSession().getAttribute("user");
+				%>
+				
+				<form action="userlogin!personalUpdate.action" method="post">
+					<input type="hidden" name="user.userName" value="<%=user.getUserName() %>">
+					<input type="hidden" name="user.id" value="<%=user.getId() %>">
 					<table>
 						<tr>
 							<th class="location">昵称</th>
@@ -62,47 +69,36 @@
 								<input type="text" class="name" name="user.nickname">
 							</td>
 						</tr>
-
 						<tr>
 							<th>性别</th>
 							<td>
 								男：
-								<input type="radio" name="user.gender">
+								<input type="radio" name="user.gender" value="男">
 								女：
-								<input type="radio" name="user.gender">
-								未知：
-								<input type="radio" name="user.gender">
+								<input type="radio" name="user.gender" value="女">
 							</td>
 						</tr>
-
 						<tr>
 							<th class="birthday">出生年月</th>
 							<td>
 								<input type="date" class="name" name="user.birthday">
 							</td>
-
 						</tr>
-
 						<tr>
 							<th>邮箱</th>
 							<td>
-								<input type="text" name="email" class="name">
+								<input type="text" name="user.email" class="name">
 							</td>
 						</tr>
-
 						<tr>
 							<th></th>
 							<td>
-								<button class="save btn btn-danger">保存</button>
+								<input type="submit" class="save btn btn-danger" value="保存">
 							</td>
 						</tr>
-
-
 					</table>
 				</form>
 			</div>
-
-
 		</div>
 	</div>
 </body>
