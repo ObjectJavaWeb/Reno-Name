@@ -1,5 +1,6 @@
 <%@page import="org.music.pojo.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -42,7 +43,7 @@
 				<!-- 导航栏 -->
 				<div>
 					<ul class="ul_1">
-					<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
+						<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
 						<li class="ul_1_1">基本设置</li>
 						<li></li>
 						<li><a href="">修改密码</a></li>
@@ -56,40 +57,47 @@
 			<div class="mid">
 				<!-- 中间 -->
 				<%
-				/* 获得对象*/
+					/* 获得对象*/
 					User user = (User) request.getSession().getAttribute("user");
 				%>
-				
+
 				<form action="userlogin!personalUpdate.action" method="post">
-				<!-- 隐藏域  获得用户名和ID 传回 personalUpdate 通过用户名修改信息-->
-					<input type="hidden" name="user.userName" value="<%=user.getUserName() %>">
-					<input type="hidden" name="user.id" value="<%=user.getId() %>">
+					<!-- 隐藏域  获得用户名和ID 传回 personalUpdate 通过用户名修改信息-->
+					<input type="hidden" name="user.userName"
+						value="<%=user.getUserName()%>">
+					<input type="hidden" name="user.id" value="<%=user.getId()%>">
 					<table>
 						<tr>
 							<th class="location">昵称</th>
 							<td>
-								<input type="text" class="name" name="user.nickname">
+								<input type="text" class="name" name="user.nickname"
+									value="<%=user.getNickname()%>">
 							</td>
 						</tr>
 						<tr>
 							<th>性别</th>
 							<td>
 								男：
-								<input type="radio" name="user.gender" value="男">
+								<input type="radio" name="user.gender" value="男"
+									<c:if test="${user.gender =='男'}">checked="checked"</c:if>>
 								女：
-								<input type="radio" name="user.gender" value="女">
+								<input type="radio" name="user.gender" value="女"
+									<c:if test="${user.gender =='女'}">checked="checked"</c:if>>
 							</td>
 						</tr>
 						<tr>
 							<th class="birthday">出生年月</th>
 							<td>
-								<input type="date" class="name" name="user.birthday">
+								<input type="date" class="name" name="user.birthday"
+								 placeholder="请选择日期"
+									defaultValue="${user.gender}">
 							</td>
 						</tr>
 						<tr>
 							<th>邮箱</th>
 							<td>
-								<input type="text" name="user.email" class="name">
+								<input type="text" name="user.email" class="name"
+									value="<%=user.getEmail()%>">
 							</td>
 						</tr>
 						<tr>

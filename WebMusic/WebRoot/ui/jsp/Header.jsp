@@ -66,8 +66,6 @@
 
 						<li value="个人 主页"><a href="userlogin!queryPersonal.action"
 							target="_blank" class="reg">个人主页</a></li>
-						<li value="个人设置"><a href="userlogin!personalUpdate.action "
-							target="_blank" class="reg">个人设置 </a></li>
 						<li value="退出登录"><a href="userlogin!personalExit.action " class="reg">退出登录 </a></li>
 					</ul></li>
 			</ul>
