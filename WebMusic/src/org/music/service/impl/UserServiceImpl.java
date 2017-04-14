@@ -37,8 +37,8 @@ public  class UserServiceImpl implements IUserService {
 
 	@Override
 	public User findById(int id) throws Exception {
-		DAOFactory.getIUserDAOInstance().findById(id);
-		return null;
+		
+		return DAOFactory.getIUserDAOInstance().findById(id);
 	}
 
 	public boolean login(User user) throws Exception {

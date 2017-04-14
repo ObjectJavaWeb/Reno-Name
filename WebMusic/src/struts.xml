@@ -7,6 +7,7 @@
 			<result name="input">/ui/jsp/Login.jsp</result>
 			<result name="register">/ui/jsp/Register.jsp</result>
 			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
+			<result name="personal">/ui/jsp/Personal.jsp</result>
 		</action>
 		<action name="queryPersonal" class="org.music.action.UserAction"></action>
 		<action name="userregister" class="org.music.action.UserAction">

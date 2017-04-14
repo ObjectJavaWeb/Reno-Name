@@ -64,10 +64,9 @@
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
 
-						<li value="个人 主页"><a
-							href="queryPersonal!queryPersonal.action" target="_blank"
-							class="reg">个人主页</a></li>
-						<li value="个人设置"><a href="ui/jsp/Personal_update.jsp "
+						<li value="个人 主页"><a href="userlogin!queryPersonal.action"
+							target="_blank" class="reg">个人主页</a></li>
+						<li value="个人设置"><a href="userlogin!personalUpdate.action "
 							target="_blank" class="reg">个人设置 </a></li>
 						<li value="退出登录"><a href="" class="reg">退出登录 </a></li>
 					</ul></li>
@@ -81,13 +80,26 @@
 			</form>
 
 			<%
-				User user = (User) request.getSession().getAttribute("user");
-				if (user.equals(null)) {
-			%><a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
+				if (request != null) {
+					User user = (User) request.getSession().getAttribute("user");
+					if (user != null) {
+			%>
+			<a href="ui/jsp/Personal.jsp">${user.nickname }</a>
+			<%
+				} else {
+			%>
+			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
+				录</a>
+
+			<%
+				}
+				} else {
+			%>
+			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
 				录</a>
 			<%
-				} else
-			%><a href="ui/jsp/Personal.jsp">${user.nickname }</a>
+				}
+			%>
 
 
 		</div>

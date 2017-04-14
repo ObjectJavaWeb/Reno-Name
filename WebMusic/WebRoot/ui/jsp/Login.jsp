@@ -121,8 +121,6 @@ html,body {
 </head>
 
 <body>
-<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>
  
 
 	 <center style="background:url('ui/image/bg_1.jpg');">

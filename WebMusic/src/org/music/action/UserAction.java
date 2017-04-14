@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.User;
+import org.music.util.Tools;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -72,24 +73,36 @@ public class UserAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String personalUpdate() throws Exception {
-
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		if (user == null) {
+			super.addActionError("请先登录！");
+			return "input";
+		}
 		ServiceFactory.getIUserServiceInstance().update(user);
 		// 修改完成后，更新信息
 		ServiceFactory.getIUserServiceInstance().findById(user.getId());
 		return "personal_Update_suc";
 	}
-/**
- * 查询个人信息
- * 
- * @throws Exception
- */
-	public void queryPersonal() throws Exception {
-		ActionContext aContext=ActionContext.getContext();
-		Map<String, Object> session=aContext.getSession();
-		user.setId((Integer)((User)session.get("user")).getId());
-		System.out.println(user.getId()+"44444");
-		ServiceFactory.getIUserServiceInstance().findById(user.getId());
 
+	/**
+	 * 查询个人信息
+	 * 
+	 * @throws Exception
+	 */
+	public String queryPersonal() throws Exception {
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		if (user == null) {
+			super.addActionError("请先登录！");
+			return "input";
+		}
+		System.out.println(user.getId());
+		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		session.put("user", user);
+		return "personal";
 	}
 
 	public String login() throws Exception {
