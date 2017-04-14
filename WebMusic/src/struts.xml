@@ -2,12 +2,20 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="root" namespace="/" extends="struts-default">
+	
 		<action name="userlogin" class="org.music.action.UserAction">
+		<!-- 返回用户登录成功页-->
 			<result name="suc">/ui/jsp/suc.jsp</result>
+			<!--  返回登录页-->
 			<result name="input">/ui/jsp/Login.jsp</result>
+			<!--返回注册页  -->
 			<result name="register">/ui/jsp/Register.jsp</result>
+			<!-- 返回个人信息修改成功页 -->
 			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
+			<!-- 返回个人信息显示页 -->
 			<result name="personal">/ui/jsp/Personal.jsp</result>
+			<!-- 退出登录 返回主页 -->
+			<result name="exit">index.jsp</result>
 		</action>
 		<action name="queryPersonal" class="org.music.action.UserAction"></action>
 		<action name="userregister" class="org.music.action.UserAction">

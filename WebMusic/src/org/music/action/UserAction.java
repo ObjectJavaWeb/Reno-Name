@@ -141,6 +141,19 @@ public class UserAction extends ActionSupport {
 		return "forward";
 	}
 
+	/**
+	 * 退出登录 返回主页
+	 * 
+	 * @return 登录页
+	 * @throws Exception
+	 */
+	public String personalExit() throws Exception {
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		session.clear();
+		return "exit";
+	}
+
 	public String preRegister() throws Exception {
 		ActionContext aContext = ActionContext.getContext();
 		final Map<String, Object> session = aContext.getSession();
