@@ -37,14 +37,10 @@
 		<table class="table">
 
 			<tr>
-				<th>问题：</th>
+				<th>设置问题：</th>
 				<td>
-					<input type="text" class="qustion" name="question.question">
-					<!-- <select>
-						<option class="qustion" name="qustion.qustion">你的班主任名字叫什么？</option>
-						<option class="qustion" name="qustion.qustion">你最好的小伙伴叫什么？</option>
-						<option class="qustion" name="qustion.qustion">你的手机号码是多少？</option>
-					</select>  -->
+					<input type="text"  style="width: 202.2px" class="qustion" name="question.question">
+					
 				</td>
 			</tr>
 
@@ -55,25 +51,7 @@
 						name="question.answer">
 				</td>
 			</tr>
-			<!-- <tr>
-				<th class="question">问题：</th>
-				<td>
-					<select>
-						<option>你的班主任名字叫什么？</option>
-						<option>你最好的小伙伴叫什么？</option>
-						<option>你的手机号码是多少？</option>
-					</select> <small><samp style="color: red;">
-				</td>
-			</tr>
- 
-			<tr>
-				<th>设置答案</th>
-				<td>
-					<input type="text" style="width: 202.2px;class=" " name="">
-				</td>
-
-			</tr> -->
-
+			
 
 			<tr>
 				<th></th>
