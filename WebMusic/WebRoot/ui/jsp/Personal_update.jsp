@@ -88,9 +88,11 @@
 						<tr>
 							<th class="birthday">出生年月</th>
 							<td>
-								<input type="date" class="name" name="user.birthday"
-								 placeholder="请选择日期"
-									defaultValue="${user.gender}">
+								<input type="text" class="name" name="user.birthday"
+								 placeholder="请输入形如2012-12-12的日期格式"
+									Value="${user.birthday}">
+									<br>
+							<samp style="font-size: 10 ;text-align: center;">请输入形如<<2012-12-12>>的日期格式</samp>
 							</td>
 						</tr>
 						<tr>

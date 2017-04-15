@@ -65,20 +65,21 @@
 						<td><%=user.getGender()%></td>
 					</tr>
 				 	 <tr>
-						<%-- <%
+						 <%
 							
 							SimpleDateFormat sformat = new SimpleDateFormat("yyyy-MM-dd");
-						%> --%>
+						%> 
 						<th class="birthday">出生年月</th>
 						<td>
-							<%=user.getBirthday()%>
+							<%=sformat.format(user.getBirthday())%>
 						</td>
 					</tr>
 					<tr>
 						
 						<th class="RegistDate">注册日期</th>
 						<td>
-							<%=user.getRegistDate()%>
+						<%=sformat.format(user.getRegistDate())%>
+							<%-- <%=user.getRegistDate()%> --%>
 						</td>
 
 					</tr>   
