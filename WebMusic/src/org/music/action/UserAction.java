@@ -157,7 +157,7 @@ public class UserAction extends ActionSupport {
 		Map<String, Object> session = Tools.getSession();
 		session.put("user", user);
 		message = "恭喜您已注册成功！";
-		url = "/ui/jsp/Login.jsp";
+		url = "index.jsp";
 		return "Set_answer";
 	}
 
@@ -174,7 +174,7 @@ public class UserAction extends ActionSupport {
 		question.setUser(user);
 		ServiceFactory.getIQuestionServiceInstance().insert(question);
 		message = "恭喜您注册成功！";
-		url = "/ui/jsp/Login.jsp";
+		url = "index.jsp";
 		return "forward";
 	}
 

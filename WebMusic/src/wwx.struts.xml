@@ -7,7 +7,7 @@
 			<!-- 返回用户登录成功页 -->
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<!-- 返回登录页 -->
-			<result name="input">/ui/jsp/Login.jsp</result>
+			<result name="input">index.jsp</result>
 			<!--返回注册页 -->
 			<result name="register">/ui/jsp/Register.jsp</result>
 			<!-- 返回个人信息修改成功页 -->

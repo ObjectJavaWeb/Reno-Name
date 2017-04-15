@@ -26,11 +26,18 @@
 <script src="ui/jquery/jquery-2.0.0.js"></script>
 <script src="ui/js/Header.js"></script>
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
-<title>表头</title>
-
+<title>顶部导航</title>
+<script type="text/javascript">
+	function open_Login_windows() {
+		document.getElementById('open_Login').style.display = 'block';
+	}
+	function closeme() {
+		document.getElementById('open_Login').style.display = 'none';
+	}
+</script>
 </head>
 
-<body background:url('ui/image/bg_1.jpg')>
+<body>
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
@@ -64,9 +71,11 @@
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
 
-						<li value="个人 信息"><a href="userlogin!queryPersonal.action?user.id=${user.id }"
+						<li value="个人 信息"><a
+							href="userlogin!queryPersonal.action?user.id=${user.id }"
 							target="_blank" class="reg">个人信息</a></li>
-						<li value="退出登录"><a href="userlogin!personalExit.action " class="reg">退出登录 </a></li>
+						<li value="退出登录"><a href="userlogin!personalExit.action "
+							class="reg">退出登录 </a></li>
 					</ul></li>
 			</ul>
 
@@ -75,32 +84,60 @@
 		<div class="topbar_1_3">
 			<form>
 				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
-			</form>
 
+			</form>
 			<%
 				if (request != null) {
-						User user = (User) request.getSession()
-								.getAttribute("user");
-						if (user != null) {
+					User user = (User) request.getSession().getAttribute("user");
+					if (user != null) {
 			%>
-			<a href="userlogin!queryPersonal.action?user.id=${user.id }" style=" font-size: 15;color: black;">${user.nickname }</a>
+			<a href="userlogin!queryPersonal.action?user.id=${user.id }"
+				style=" font-size: 15;color: black;">${user.nickname }</a>
 			<%
 				} else {
 			%>
-			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;color: black;" >登
-				录</a>
-
+			<input type="button" onclick="open_Login_windows()" value="登录">
 			<%
 				}
-					} else {
-			%>
-			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;color: black;">登
-				录</a>
-			<%
 				}
 			%>
-
-
+		</div>
+		<div id="open_Login">
+			<form action="userlogin!login.action" method="post">
+				<table width="30%" border="0" cellpadding="3" cellspacing="1"
+					style="background: url('ui/image/bg_login.jpg');	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
+					align="center">
+					<tr>
+						<th></th>
+						<td>
+							<font size="20">欢迎登录</font>
+						</td>
+					</tr>
+					<tr>
+						<th align="center">用户名</th>
+						<td>
+							<input type="text" name="user.userName" placeholder="用户名">
+							<a href="userlogin!preRegister.action">没有注册？</a> <br>
+						</td>
+					</tr>
+					<tr>
+						<th align="center">密码</th>
+						<td>
+							<input type="password" name="user.password" placeholder="密码">
+							<a href="#">找回密码</a>
+						</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td>
+						&nbsp;&nbsp;&nbsp;
+							<input type="submit" value="登录" >
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="reset" value="退出" onClick="closeme()" >
+						</td>
+					</tr>
+				</table>
+			</form>
 		</div>
 	</div>
 </body>
