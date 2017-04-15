@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
 	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
+
 	public Question getQuestion() {
 		return question;
 	}
@@ -21,6 +22,7 @@ public class UserAction extends ActionSupport {
 	public void setQuestion(Question question) {
 		this.question = question;
 	}
+
 	private User user;// 要接受的参数叫user，要生成他的set和get方法。
 
 	public User getUser() {
@@ -68,6 +70,7 @@ public class UserAction extends ActionSupport {
 	public void setLoginDuplicate(boolean loginDuplicate) {
 		this.loginDuplicate = loginDuplicate;
 	}
+
 	/**
 	 * 修改个人信息先查询
 	 * 
@@ -75,7 +78,7 @@ public class UserAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String updatePre() throws Exception {
-		
+
 		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
 		return "personal_Update";
 	}
@@ -150,17 +153,25 @@ public class UserAction extends ActionSupport {
 	public String Register() throws Exception {
 		user.setRegistDate(new Date());
 		ServiceFactory.getIUserServiceInstance().insert(user);
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		session.put("user", user);
 		message = "恭喜您已注册成功！";
 		url = "/ui/jsp/Login.jsp";
 		return "Set_answer";
 	}
+
 	/**
 	 * 设置问题
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public String setAnswer() throws Exception{
-		System.out.println("4444444444");
+	public String setAnswer() throws Exception {
+		
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		question.setUser(user);
 		ServiceFactory.getIQuestionServiceInstance().insert(question);
 		message = "恭喜您注册成功！";
 		url = "/ui/jsp/Login.jsp";

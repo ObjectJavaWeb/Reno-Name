@@ -1,3 +1,4 @@
+<%@page import="org.music.pojo.User"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -38,7 +39,6 @@
 			<tr>
 				<th>问题：</th>
 				<td>
-
 					<input type="text" class="qustion" name="question.question">
 					<!-- <select>
 						<option class="qustion" name="qustion.qustion">你的班主任名字叫什么？</option>
