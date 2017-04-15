@@ -26,11 +26,13 @@
 </head>
 
 <body>
+	<div id="gototop">
+		<a href="#top">回到<br>顶部
+		</a>
+	</div>
 	<jsp:include page="ui/jsp/Header.jsp"></jsp:include>
 	<div style="height: 500px;">
+		<include file="ui/html/Music.html"></include>
 		<jsp:include page="ui/jsp/MusicList.jsp"></jsp:include>
 	</div>
-<%-- 	<jsp:include page="ui/jsp/foot.jsp"></jsp:include>
- --%>
 </body>
-

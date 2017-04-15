@@ -103,7 +103,8 @@
 						<tr>
 							<th></th>
 							<td>
-								<input type="submit" class="save btn btn-danger" value="确认修改">
+								<input type="submit" class="save btn btn-danger" value="确认修改" 
+								onclick="return window.confirm('确定要修改这些信息吗？')">
 							</td>
 						</tr>
 					</table>

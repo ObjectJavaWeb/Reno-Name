@@ -65,6 +65,17 @@ public class UserAction extends ActionSupport {
 	public void setLoginDuplicate(boolean loginDuplicate) {
 		this.loginDuplicate = loginDuplicate;
 	}
+	/**
+	 * 修改个人信息先查询
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String updatePre() throws Exception {
+		
+		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		return "personal_Update";
+	}
 
 	/**
 	 * 修改个人信息
@@ -100,7 +111,6 @@ public class UserAction extends ActionSupport {
 			super.addActionError("请先登录！");
 			return "input";
 		}
-		System.out.println(user.getId());
 		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
 		session.put("user", user);
 		return "personal";

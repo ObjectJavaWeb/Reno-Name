@@ -30,21 +30,21 @@
 
 </head>
 
-<body>
+<body background:url('ui/image/bg_1.jpg')>
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
 		<div class="topbar_1_1">
-			<img alt="" src="ui/image/mxcptimg.jpg"
-				style="height: 70px;padding-left: 150px">
+			<!-- <img alt="" src="ui/image/mxcptimg.jpg"
+				style="height: 70px;padding-left: 150px"> -->
 		</div>
 		<div class="topbar_1_2">
 			<ul class="nav nav-tabs">
 				<!-- 发现音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: white;"> 发现音乐 <b
+					data-toggle="dropdown" href="#" style="color: black;"> 发现音乐 <b
 						class="caret"></b></a>
-					<ul class="dropdown-menu" role="menu" style="color: white;">
+					<ul class="dropdown-menu" role="menu" style="color: black;">
 						<li value="推荐"><a href="" target="_blank" class="reg">推荐</a></li>
 						<li value="排行榜"><a href="" target="_blank" class="reg">排行榜</a></li>
 						<li value="歌单"><a href="" target="_blank" class="reg">歌单</a></li>
@@ -52,7 +52,7 @@
 					</ul></li>
 				<!-- 我的音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: white;"> 我的音乐 <b
+					data-toggle="dropdown" href="#" style="color: black;"> 我的音乐 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li value="喜爱"><a href="" target="_blank" class="reg">喜爱</a></li>
@@ -60,12 +60,12 @@
 					</ul></li>
 				<!-- 个人 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: white;"> 个人 <b
+					data-toggle="dropdown" href="#" style="color: black;"> 个人 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu">
 
-						<li value="个人 主页"><a href="userlogin!queryPersonal.action"
-							target="_blank" class="reg">个人主页</a></li>
+						<li value="个人 信息"><a href="userlogin!queryPersonal.action?user.id=${user.id }"
+							target="_blank" class="reg">个人信息</a></li>
 						<li value="退出登录"><a href="userlogin!personalExit.action " class="reg">退出登录 </a></li>
 					</ul></li>
 			</ul>
@@ -79,21 +79,22 @@
 
 			<%
 				if (request != null) {
-					User user = (User) request.getSession().getAttribute("user");
-					if (user != null) {
+						User user = (User) request.getSession()
+								.getAttribute("user");
+						if (user != null) {
 			%>
-			<a href="ui/jsp/Personal.jsp">${user.nickname }</a>
+			<a href="userlogin!queryPersonal.action?user.id=${user.id }" style=" font-size: 15;color: black;">${user.nickname }</a>
 			<%
 				} else {
 			%>
-			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
+			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;color: black;" >登
 				录</a>
 
 			<%
 				}
-				} else {
+					} else {
 			%>
-			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;">登
+			<a href="ui/jsp/Login.jsp" class="reg" style=" font-size: 20;color: black;">登
 				录</a>
 			<%
 				}
