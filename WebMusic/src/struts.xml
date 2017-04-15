@@ -6,6 +6,6 @@
     <include file="lcy.struts.xml"></include>   
     <include file="yxb.struts.xml"></include>   
     <include file="tc.struts.xml"></include>   
-    <include file="xrk.struts.xml"></include>    
+    <include file="zrk.struts.xml"></include>    
     <package name="struts" extends="struts-default"></package>    
 </struts>  

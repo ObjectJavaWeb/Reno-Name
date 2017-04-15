@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<package name="root" namespace="/" extends="struts-default">
+	<package name="wwx" namespace="/" extends="struts-default">
 
 		<action name="userlogin" class="org.music.action.UserAction">
 			<!-- 返回用户登录成功页 -->
@@ -22,6 +22,7 @@
 		<action name="queryPersonal" class="org.music.action.UserAction"></action>
 		<action name="userregister" class="org.music.action.UserAction">
 			<result name="forward">/ui/jsp/forward.jsp</result>
+			<result name="Set_answer">/ui/jsp/Set_answer.jsp</result>
 		</action>
 		<!-- <action name="Personal_update" class="org.music.action.UserAction"> 
 			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result> 

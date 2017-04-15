@@ -1,16 +1,11 @@
 package org.music.action;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.jms.Session;
-import javax.persistence.Id;
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
+import org.music.pojo.Question;
 import org.music.pojo.User;
 import org.music.util.Tools;
 
@@ -18,6 +13,14 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
+	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 	private User user;// 要接受的参数叫user，要生成他的set和get方法。
 
 	public User getUser() {
@@ -148,6 +151,18 @@ public class UserAction extends ActionSupport {
 		user.setRegistDate(new Date());
 		ServiceFactory.getIUserServiceInstance().insert(user);
 		message = "恭喜您已注册成功！";
+		url = "/ui/jsp/Login.jsp";
+		return "Set_answer";
+	}
+	/**
+	 * 设置问题
+	 * @return
+	 * @throws Exception
+	 */
+	public String setAnswer() throws Exception{
+		System.out.println("4444444444");
+		ServiceFactory.getIQuestionServiceInstance().insert(question);
+		message = "恭喜您注册成功！";
 		url = "/ui/jsp/Login.jsp";
 		return "forward";
 	}
