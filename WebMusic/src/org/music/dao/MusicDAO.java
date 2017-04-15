@@ -1,5 +1,11 @@
 package org.music.dao;
 
-public interface MusicDAO extends IDAO<Integer ,MusicDAO> {
+import java.util.List;
+
+import org.music.pojo.Music;
+
+
+public interface MusicDAO extends IDAO<Integer ,Music> {
+	public List findAll(String coulmn) throws Exception;
 	
 }

@@ -1,20 +1,19 @@
 package org.music.test;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.music.factory.MusicFactory;
+import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
+import org.music.pojo.Music;
 import org.music.pojo.Mymusic;
+import org.music.service.MusicService;
 
 public class Test {
-	public static void main(String[] args) {
-		try {
-			
-	Mymusic m=	ServiceFactory.getIMymusicServiceInstance().findById(3);
-	System.out.println(m.getName());
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(ServiceFactory.getIUserServiceInstance().loginDuplicate("吴文鑫"));
+	public static void main(String[] args) throws Exception {
+		List list=new ArrayList();
+		list=MusicServiceFactory.getMusicServiceInstace().findAll("年级");
+		
 	}
 }
