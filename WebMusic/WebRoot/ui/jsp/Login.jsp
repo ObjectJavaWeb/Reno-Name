@@ -121,14 +121,12 @@ html,body {
 </head>
 
 <body>
-<!-- Button to trigger modal -->
-<a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>
  
 
 	 <center style="background:url('ui/image/bg_1.jpg');">
 		<font color="red"> <s:actionerror />
 		</font> <span>用户登录</span>
-		<form form action="userlogin!login.action" method="post">
+		<form  action="userlogin!login.action" method="post">
 			<table>
 				<tr>
 					<td>

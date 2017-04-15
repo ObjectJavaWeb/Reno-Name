@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
-<struts>
-	<package name="root" namespace="/" extends="struts-default">
-		<action name="userlogin" class="org.music.action.UserAction">
-			<result name="suc">/ui/jsp/suc.jsp</result>
-			<result name="input">/ui/jsp/Login.jsp</result>
-			<result name="register">/ui/jsp/Register.jsp</result>
-			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
-		</action>
-		<action name="queryPersonal" class="org.music.action.UserAction"></action>
-		<action name="userregister" class="org.music.action.UserAction">
-			<result name="forward">/ui/jsp/forward.jsp</result>
-		</action>
-		<!-- <action name="Personal_update" class="org.music.action.UserAction"> 
-			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result> 
-			</action> -->
-		<action name="readImgAction" class="org.music.action.ImgAction"
-			method="readImg">
-			<result type="stream">
-				<param name="contentType">application/octet-stream</param>
-				<param name="inputName">inputStream</param>
-				<param name="contentDisposition">attachment;filename=${fileName}</param>
-				<param name="bufferSize">4096</param>
-			</result>
-		</action>
-	</package>
-	<package name="ajax" extends="json-default">
-		<action name="ajaxLogin" class="org.music.action.AjaxAction"
-			method="Ts">
-			<!-- 返回类型为json 在sjon-default中定义 -->
-			<result type="json">
-				<!-- root的值对应要返回的值的属性 -->
-				<!-- 这里的result值即是 对应action中的 result -->
-				<param name="root">loginDuplicate</param>
-			</result>
-		</action>
-	</package>
-</struts>    
+<struts>    
+    <include file="wwx.struts.xml"></include>   
+    <include file="hy.struts.xml"></include>   
+    <include file="lcy.struts.xml"></include>   
+    <include file="yxb.struts.xml"></include>   
+    <include file="tc.struts.xml"></include>   
+    <include file="zrk.struts.xml"></include>    
+    <package name="struts" extends="struts-default"></package>    
+</struts>  

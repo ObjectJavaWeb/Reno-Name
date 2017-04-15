@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>个人页面</title>
+<title>修改密码</title>
 <link href="../css/Personal.css" rel="stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="keywords" content="keyword1,keyword2,keyword3">
@@ -24,63 +24,56 @@
 				<!-- 导航栏 -->
 				<div>
 					<ul class="ul_1">
-						<li class="ul_1_1">基本信息</li>
+						<li class="ul_1_1">修改密码</li>
 					</ul>
 				</div>
 			</div>
 
 			<div style="clear:both"></div>
 
+  <form>
 
 			<div class="mid">
 				<!-- 中间 -->
 				<table>
 				<tr>
-						<th class="location">用户名</th>
+						<th class="location" >原密码</th>
 						<td>
-							<input type="text" class="name" name="user.userName">
+							<input type="password" class="name" name="user.userName">
 						</td>
 					</tr>
 					<tr>
-						<th class="location">昵称</th>
+						<th class="location">新密码</th>
 						<td>
-							<input type="text" class="name" name="user.nickname">
+							<input type="password" class="name" name="user.nickname">
 						</td>
 					</tr>
-
+					
 					<tr>
-						<th>性别</th>
+						<th class="location">再次输入新密码</th>
 						<td>
-							<input type="text" class="name" name="user.gender">
+							<input type="password" class="name" name="user.nickname">
 						</td>
 					</tr>
-
+					
+					<tr> </tr>
+					
 					<tr>
-						<th class="birthday">出生年月</th>
-						<td>
-							<input type="text" class="name" name="user.birthday">
-						</td>
-
-					</tr>
-
-					<tr>
-						<th>邮箱</th>
-						<td>
-							<input type="text" name="email" class="name">
-						</td>
-					</tr>
-
-					<tr>
-						<th></th>
-						<td>
-							<a href="ui/jsp/Personal_update.jsp"><button
-									class="save btn btn-danger" value="修改信息"></button></a>
-						</td>
-					</tr>
-
-
+					<td>
+					
+					
+					 <p>
+        <input type="submit" name="button" value="提交">
+        <input type="reset" name="button2" value="重置">
+    			  </p>
+					
+				
+				</td>
+				</tr>
 				</table>
-			</div>
+				
+				</form>			
+				</div>
 
 
 		</div>

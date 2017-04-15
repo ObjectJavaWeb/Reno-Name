@@ -1,22 +1,28 @@
 package org.music.action;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import javax.jms.Session;
-import javax.persistence.Id;
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
+import org.music.pojo.Question;
 import org.music.pojo.User;
+import org.music.util.Tools;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
+	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
 	private User user;// 要接受的参数叫user，要生成他的set和get方法。
 
 	public User getUser() {
@@ -66,30 +72,54 @@ public class UserAction extends ActionSupport {
 	}
 
 	/**
+	 * 修改个人信息先查询
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String updatePre() throws Exception {
+
+		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		return "personal_Update";
+	}
+
+	/**
 	 * 修改个人信息
 	 * 
 	 * @return
 	 * @throws Exception
 	 */
 	public String personalUpdate() throws Exception {
-
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		User usertest = (User) session.get("user");
+		if (usertest == null) {
+			super.addActionError("请先登录！");
+			return "input";
+		}
 		ServiceFactory.getIUserServiceInstance().update(user);
 		// 修改完成后，更新信息
 		ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		session.put("user", user);
 		return "personal_Update_suc";
 	}
-/**
- * 查询个人信息
- * 
- * @throws Exception
- */
-	public void queryPersonal() throws Exception {
-		ActionContext aContext=ActionContext.getContext();
-		Map<String, Object> session=aContext.getSession();
-		user.setId((Integer)((User)session.get("user")).getId());
-		System.out.println(user.getId()+"44444");
-		ServiceFactory.getIUserServiceInstance().findById(user.getId());
 
+	/**
+	 * 查询个人信息
+	 * 
+	 * @throws Exception
+	 */
+	public String queryPersonal() throws Exception {
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		if (user == null) {
+			super.addActionError("请先登录！");
+			return "input";
+		}
+		user = ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		session.put("user", user);
+		return "personal";
 	}
 
 	public String login() throws Exception {
@@ -123,9 +153,42 @@ public class UserAction extends ActionSupport {
 	public String Register() throws Exception {
 		user.setRegistDate(new Date());
 		ServiceFactory.getIUserServiceInstance().insert(user);
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		session.put("user", user);
 		message = "恭喜您已注册成功！";
-		url = "/ui/jsp/Login.jsp";
+		url = "index.jsp";
+		return "Set_answer";
+	}
+
+	/**
+	 * 设置问题
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String setAnswer() throws Exception {
+		
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		question.setUser(user);
+		ServiceFactory.getIQuestionServiceInstance().insert(question);
+		message = "恭喜您注册成功！";
+		url = "index.jsp";
 		return "forward";
+	}
+
+	/**
+	 * 退出登录 返回主页
+	 * 
+	 * @return 登录页
+	 * @throws Exception
+	 */
+	public String personalExit() throws Exception {
+		// 获取session
+		Map<String, Object> session = Tools.getSession();
+		session.clear();
+		return "exit";
 	}
 
 	public String preRegister() throws Exception {

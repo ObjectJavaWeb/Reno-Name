@@ -49,49 +49,50 @@
 			<div class="mid">
 				<!-- 中间 -->
 				<table>
+				<%User user = (User) request.getSession().getAttribute("user"); %>
 					<tr>
 						<th class="location">用户名</th>
-						<td>${user.userName}</td>
+						<td><%=user.getUserName() %>
+						</td>
 					</tr>
 					<tr>
 						<th class="location">昵称</th>
-						<td>${user.nickname}</td>
+						<td><%=user.getNickname() %></td>
 					</tr>
 
 					<tr>
 						<th>性别</th>
-						<td>${user.gender}</td>
+						<td><%=user.getGender()%></td>
 					</tr>
-					<%-- <tr>
-						<%
-							User user = (User) request.getSession().getAttribute("user");
+				 	 <tr>
+						 <%
+							
 							SimpleDateFormat sformat = new SimpleDateFormat("yyyy-MM-dd");
-						%>
+						%> 
 						<th class="birthday">出生年月</th>
 						<td>
 							<%=sformat.format(user.getBirthday())%>
 						</td>
 					</tr>
 					<tr>
-						<%
-							SimpleDateFormat srformat = new SimpleDateFormat("yyyy-MM-dd");
-						%>
+						
 						<th class="RegistDate">注册日期</th>
 						<td>
-							<%=srformat.format(user.getRegistDate())%>
+						<%=sformat.format(user.getRegistDate())%>
+							<%-- <%=user.getRegistDate()%> --%>
 						</td>
 
-					</tr> --%>
+					</tr>   
 					<tr>
 						<th>邮箱</th>
-						<td>${user.email}</td>
+						<td><%=user.getEmail() %></td>
 					</tr>
 
 					<tr>
 						<th></th>
 						<td>
-							<a href="ui/jsp/Personal_update.jsp"><button
-									class="save btn btn-danger" value="修改信息">修改信息</button></a>
+							<a href="userlogin!updatePre.action?user.id=${user.id }"><button
+									class="save btn btn-danger" value="修改信息" >修改信息</button></a>
 						</td>
 					</tr>
 				</table>

@@ -9,6 +9,8 @@ import org.music.factory.DAOFactory;
 import org.music.pojo.User;
 import org.music.service.IUserService;
 
+import com.opensymphony.xwork2.Result;
+
 public  class UserServiceImpl implements IUserService {
 
 	@Override
@@ -37,8 +39,8 @@ public  class UserServiceImpl implements IUserService {
 
 	@Override
 	public User findById(int id) throws Exception {
-		DAOFactory.getIUserDAOInstance().findById(id);
-		return null;
+		
+		return DAOFactory.getIUserDAOInstance().findById(id);
 	}
 
 	public boolean login(User user) throws Exception {
@@ -103,7 +105,7 @@ public  class UserServiceImpl implements IUserService {
 			tx.rollback();
 			// TODO: handle exception
 		}finally{
-			//HibernateSessionFactory.closeSession();
+			HibernateSessionFactory.closeSession();
 		}
 		
 	}
