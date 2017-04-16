@@ -151,7 +151,10 @@
 	margin-right: 50px;
 	font-size: 18px;
 }
-
+.div_login{
+	text-align:center;
+	line-height:100px;
+}
 .div_login a{
 	text-align:center;
 	line-height:100px;

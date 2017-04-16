@@ -12,8 +12,10 @@ import org.music.service.MusicService;
 
 public class Test {
 	public static void main(String[] args) throws Exception {
-		List list=new ArrayList();
-		list=MusicServiceFactory.getMusicServiceInstace().findAll("年级");
+		List<Music> list=(List<Music>) ServiceFactory.getIMymusicServiceInstance().findById(1);
+		for (Music music : list) {
+			System.out.println(music.getName());
+		}
 		
 	}
 }

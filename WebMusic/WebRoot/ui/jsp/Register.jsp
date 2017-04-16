@@ -23,6 +23,7 @@
 	-->
 <link rel="stylesheet" type="text/css"
 	href="ui/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="ui/css/register.css">
 <script type="text/javascript" src="ui/jquery/jquery-2.0.0.js"></script>
 <script type="text/javascript" src="ui/js/Register.js"></script>
 
@@ -30,33 +31,35 @@
 
 <body style="background:url('ui/image/bg_1.jpg');">
 	<h2 class="h2" style="text-align: center;">新用户注册</h2>
-	<form method="post" action="userregister!Register.action" class="form-inline">
-		<table class="table">
+	<form method="post" action="userregister!Register.action"
+		class="form-inline" onsubmit="return validateForm()">
+		<table class="table" id="table">
 			<tr>
 				<th>用户名：</th>
 				<td>
-					<input type="text" name="user.userName" id="userName">
-					<small><samp style="color: red;">*</samp>为必填项</small>
+					<input type="text" name="user.userName" id="userName" >
+					<span class="userName"></span>
 				</td>
 			</tr>
 			<tr>
 				<th>设置密码：</th>
 				<td>
-					<input type="password" name="user.password">
-					<small><samp style="color: red;">*</samp>为必填项</small>
+					<input type="password" name="user.password" id="passwordO">
+					<span class="passwordO"></span>
 				</td>
 			</tr>
 			<tr>
 				<th>确认密码：</th>
 				<td>
-					<input type="password" name="password2">
-					<small><samp style="color: red;">*</samp>为必填项</small>
+					<input type="password" name="password2" id="passwordC">
+					<span class="passwordC"></span>
 				</td>
 			</tr>
 			<tr>
 				<th>邮箱：</th>
 				<td>
-					<input type="text" name="user.email">
+					<input type="text" name="user.email" id="email">
+					<span class="email"></span>
 				</td>
 			</tr>
 			<tr>
@@ -75,12 +78,12 @@
 				</td>
 			</tr>
 			<tr>
-							<th class="birthday">出生年月</th>
-							<td>
-								<input type="date" class="name" name="user.birthday">
-							</td>
+				<th class="birthday">出生年月</th>
+				<td>
+					<input type="date" class="name" name="user.birthday">
+				</td>
 
-						</tr>
+			</tr>
 			<tr>
 				<th>验证码：</th>
 				<td>

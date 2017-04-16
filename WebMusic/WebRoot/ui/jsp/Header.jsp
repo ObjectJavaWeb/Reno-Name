@@ -92,7 +92,7 @@
 						User user = (User) request.getSession().getAttribute("user");
 						if (user != null) {
 				%>
-				欢迎您：<a href="userlogin!queryPersonal.action?user.id=${user.id }"
+				<span>欢迎您：</span><a href="userlogin!queryPersonal.action?user.id=${user.id }"
 					style=" font-size: 15;color: black;">${user.nickname }</a>
 				<%
 					} else {
