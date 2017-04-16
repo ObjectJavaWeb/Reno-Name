@@ -56,12 +56,9 @@
 					</ul></li>
 				<!-- 我的音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: black;"> 我的音乐 <b
+					data-toggle="dropdown" href="#" style="color: black;"><a href="Mymusic!getMymusicList"> 我的音乐 </a><b
 						class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li value="喜爱"><a href="" target="_blank" class="reg">喜爱</a></li>
-						<li value="最爱"><a href="" target="_blank" class="reg">最爱</a></li>
-					</ul></li>
+					
 				<!-- 个人 -->
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#" style="color: black;"> 个人 <b
