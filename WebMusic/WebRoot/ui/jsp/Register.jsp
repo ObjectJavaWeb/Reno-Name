@@ -80,15 +80,16 @@
 			<tr>
 				<th class="birthday">出生年月</th>
 				<td>
-					<input type="date" class="name" name="user.birthday">
+					<input type="date" class="name" name="user.birthday" value="${ user.birthday}">
 				</td>
 
 			</tr>
 			<tr>
 				<th>验证码：</th>
 				<td>
-					<input type="text" name="verification_code">
+					<input type="text" name="randCode" >
 					<img alt="" src="readImgAction" onclick="verificatCodeClick()">
+					<span class="randCode">${randCode }</span>
 				</td>
 			</tr>
 			<tr>

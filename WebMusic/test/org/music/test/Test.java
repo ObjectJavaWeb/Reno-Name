@@ -12,10 +12,9 @@ import org.music.service.MusicService;
 
 public class Test {
 	public static void main(String[] args) throws Exception {
-		List<Music> list=(List<Music>) ServiceFactory.getIMymusicServiceInstance().findById(1);
-		for (Music music : list) {
-			System.out.println(music.getName());
-		}
-		
+		Music music=new Music();
+		music.setName("12324");
+		music.setHit(12);
+		MusicServiceFactory.getMusicServiceInstace().insert(music);
 	}
 }

@@ -16,6 +16,16 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ImgAction extends ActionSupport {
 	private InputStream inputStream;
+	private String code;
+	
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
 
 	/**
 	 * 读取图片
@@ -37,7 +47,7 @@ public class ImgAction extends ActionSupport {
 		ActionContext aContext = ActionContext.getContext();
 		final Map<String, Object> session = aContext.getSession();
 		session.put("randomCode", randomCode);
-		
+		code=randomCode;
 
 		return SUCCESS;
 	}
@@ -49,5 +59,8 @@ public class ImgAction extends ActionSupport {
 	public void setInputStream(InputStream inputStream) {
 		this.inputStream = inputStream;
 	}
-
+	public String validateCode() throws Exception{
+		
+		return "register";
+	}
 }
