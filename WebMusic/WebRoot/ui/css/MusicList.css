@@ -1,12 +1,14 @@
-@CHARSET "UTF-8";
+
+
+
 .div1{
 	width: 650px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 }
 .div2{
 	width: 600px;
 	height: 600px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	margin:10px 10px 10px 10px;
 }
 
@@ -57,7 +59,7 @@ hr{
 .div3{
 	width: 600px;
 	height: 500px;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	margin-top: 15px;
 	}
 .div3 ul{
@@ -85,7 +87,7 @@ hr{
 .div4{
 	width: 540px;
 	height: 500px;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	margin-top: 15px;
 	margin-left: 27px;
 
@@ -93,9 +95,9 @@ hr{
 .div5{
 	width: 178px;
 	height: 500px;
-	border: 1px solid gray;
+	/*border: 1px solid gray;*/
 	float: left;
-	background-color: #F5F5F5;
+	background-color: #DCDCDC;
 }
 .div5 ul{
 	margin: 0;

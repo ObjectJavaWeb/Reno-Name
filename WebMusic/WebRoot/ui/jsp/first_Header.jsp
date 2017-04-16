@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="topbar_1_3">
 				<form>
-					<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
+					<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">Search
 				</form>
 				<a href="ui/jsp/Login.jsp" target="_blank" class="reg">登录</a>
 			</div>

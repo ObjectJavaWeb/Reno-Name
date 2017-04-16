@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="wwx" namespace="/" extends="struts-default">
+
+		<action name="userlogin" class="org.music.action.UserAction">
+			<!-- 返回用户登录成功页 -->
+			<result name="suc">/ui/jsp/suc.jsp</result>
+			<!-- 返回登录页 -->
+			<result name="input">index.jsp</result>
+			<!--返回注册页 -->
+			<result name="register">/ui/jsp/Register.jsp</result>
+			<!-- 返回个人信息修改成功页 -->
+			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
+			<!-- 返回个人信息显示页 -->
+			<result name="personal">/ui/jsp/Personal.jsp</result>
+			<!-- 退出登录 返回主页 -->
+			<result name="exit">index.jsp</result>
+			<!-- 查询信息 返回信息修改页 -->
+			<result name="personal_Update">/ui/jsp/Personal_update.jsp</result>
+		</action>
+		<action name="queryPersonal" class="org.music.action.UserAction"></action>
+		<action name="userregister" class="org.music.action.UserAction">
+			<result name="forward">/ui/jsp/forward.jsp</result>
+			<result name="Set_answer">/ui/jsp/Set_answer.jsp</result>
+		</action>
+		<!-- <action name="Personal_update" class="org.music.action.UserAction"> 
+			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result> 
+			</action> -->
+		<action name="readImgAction" class="org.music.action.ImgAction"
+			method="readImg">
+			<result type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename=${fileName}</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+	<package name="ajax" extends="json-default">
+		<action name="ajaxLogin" class="org.music.action.AjaxAction"
+			method="Ts">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">loginDuplicate</param>
+			</result>
+		</action>
+	</package>
+</struts>    

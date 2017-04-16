@@ -126,7 +126,7 @@ html,body {
 	 <center style="background:url('ui/image/bg_1.jpg');">
 		<font color="red"> <s:actionerror />
 		</font> <span>用户登录</span>
-		<form form action="userlogin!login.action" method="post">
+		<form  action="userlogin!login.action" method="post">
 			<table>
 				<tr>
 					<td>
