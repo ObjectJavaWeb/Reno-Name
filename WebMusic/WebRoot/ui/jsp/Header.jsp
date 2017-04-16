@@ -41,10 +41,7 @@
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
-		<div class="topbar_1_1">
-			<!-- <img alt="" src="ui/image/mxcptimg.jpg"
-				style="height: 70px;padding-left: 150px"> -->
-		</div>
+		<div class="topbar_1_1"></div>
 		<div class="topbar_1_2">
 			<ul class="nav nav-tabs">
 				<!-- 发现音乐 -->
@@ -52,10 +49,10 @@
 					data-toggle="dropdown" href="#" style="color: black;"> 发现音乐 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu" role="menu" style="color: black;">
-						<li value="推荐"><a href="" target="_blank" class="reg">推荐</a></li>
-						<li value="排行榜"><a href="" target="_blank" class="reg">排行榜</a></li>
-						<li value="歌单"><a href="" target="_blank" class="reg">歌单</a></li>
-						<li value="歌手"><a href="" target="_blank" class="reg">歌手</a></li>
+						<li value="推荐"><a href=""  class="reg">推荐</a></li>
+						<li value="排行榜"><a href=""  class="reg">排行榜</a></li>
+						<li value="歌单"><a href=""  class="reg">歌单</a></li>
+						<li value="歌手"><a href=""  class="reg">歌手</a></li>
 					</ul></li>
 				<!-- 我的音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
@@ -78,29 +75,34 @@
 							class="reg">退出登录 </a></li>
 					</ul></li>
 			</ul>
-
-			</ul>
 		</div>
 		<div class="topbar_1_3">
-			<form>
-				<input class="search" type="text" placeholder="请输入您想收索的歌曲名/歌手">
-
+		<div class="div_search">
+			<form class="form-search">
+				<p class="input-append">
+					<input type="text" class="span2 search" id="appendedInputButton search"
+						placeholder="请输入您想收索的歌曲名/歌手">
+					<input type="submit" value="搜索" class="btn search" style="height: 40px">
+				</p>
 			</form>
-			<%
-				if (request != null) {
-					User user = (User) request.getSession().getAttribute("user");
-					if (user != null) {
-			%>
-			<a href="userlogin!queryPersonal.action?user.id=${user.id }"
-				style=" font-size: 15;color: black;">${user.nickname }</a>
-			<%
-				} else {
-			%>
-			<input type="button" onclick="open_Login_windows()" value="登录">
-			<%
-				}
-				}
-			%>
+			</div>
+			<div class="div_login">
+				<%
+					if (request != null) {
+						User user = (User) request.getSession().getAttribute("user");
+						if (user != null) {
+				%>
+				<span>欢迎您：</span><a href="userlogin!queryPersonal.action?user.id=${user.id }"
+					style=" font-size: 15;color: black;">${user.nickname }</a>
+				<%
+					} else {
+				%>
+				<a href="javaScript:open_Login_windows()"> 登录</a>|<a href="userlogin!preRegister.action">注册</a>
+				<%
+					}
+					}
+				%>
+			</div>
 		</div>
 		<div id="open_Login">
 			<form action="userlogin!login.action" method="post">
@@ -121,7 +123,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th align="center">密码</th>
+						<th align="center" style="padding-left: 7">密    	       码</th>
 						<td>
 							<input type="password" name="user.password" placeholder="密码">
 							<a href="#">找回密码</a>
@@ -130,10 +132,10 @@
 					<tr>
 						<th></th>
 						<td>
-						&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="登录" >
+							&nbsp;&nbsp;&nbsp;
+							<input type="submit" value="登录">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="reset" value="退出" onClick="closeme()" >
+							<input type="reset" value="退出" onClick="closeme()">
 						</td>
 					</tr>
 				</table>

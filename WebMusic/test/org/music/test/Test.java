@@ -17,5 +17,6 @@ public class Test {
 	private static int musicId;
 
 	public static void main(String[] args) {
+
 	}
 }
