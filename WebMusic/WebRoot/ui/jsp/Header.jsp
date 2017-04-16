@@ -49,10 +49,10 @@
 					data-toggle="dropdown" href="#" style="color: black;"> 发现音乐 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu" role="menu" style="color: black;">
-						<li value="推荐"><a href="" target="_blank" class="reg">推荐</a></li>
-						<li value="排行榜"><a href="" target="_blank" class="reg">排行榜</a></li>
-						<li value="歌单"><a href="" target="_blank" class="reg">歌单</a></li>
-						<li value="歌手"><a href="" target="_blank" class="reg">歌手</a></li>
+						<li value="推荐"><a href=""  class="reg">推荐</a></li>
+						<li value="排行榜"><a href=""  class="reg">排行榜</a></li>
+						<li value="歌单"><a href=""  class="reg">歌单</a></li>
+						<li value="歌手"><a href=""  class="reg">歌手</a></li>
 					</ul></li>
 				<!-- 我的音乐 -->
 				<li class="dropdown"><a class="dropdown-toggle"
@@ -123,7 +123,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th align="center">密码</th>
+						<th align="center" style="padding-left: 7">密    	       码</th>
 						<td>
 							<input type="password" name="user.password" placeholder="密码">
 							<a href="#">找回密码</a>
