@@ -1,7 +1,9 @@
 package org.music.factory;
 
+import org.music.service.ICommentService;
 import org.music.service.IMymusicService;
 import org.music.service.IUserService;
+import org.music.service.impl.CommentServiceImpl;
 import org.music.service.impl.MymusicServiceImpl;
 import org.music.service.impl.UserServiceImpl;
 
@@ -14,4 +16,8 @@ public class ServiceFactory {
 		return new MymusicServiceImpl();
 	}
 
+	public static ICommentService getICommentDAOInstance() {
+		return new CommentServiceImpl();
+		
+	}
 }
