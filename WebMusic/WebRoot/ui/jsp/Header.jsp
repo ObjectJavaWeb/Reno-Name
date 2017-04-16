@@ -82,7 +82,7 @@
 				<p class="input-append">
 					<input type="text" class="span2 search" id="appendedInputButton search"
 						placeholder="请输入您想收索的歌曲名/歌手">
-					<input type="submit" value="搜索" class="btn search" style="height: 40px">
+					<input type="submit" value="搜索" class="btn search" >
 				</p>
 			</form>
 			</div>
