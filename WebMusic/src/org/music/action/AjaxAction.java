@@ -24,6 +24,16 @@ public class AjaxAction extends ActionSupport {
 		this.loginDuplicate = loginDuplicate;
 	}
 
+	private String userName;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	/**
 	 * 验证用户名是否重复
 	 * 
@@ -34,9 +44,10 @@ public class AjaxAction extends ActionSupport {
 	public String loginDuplicate() throws Exception {
 		ActionContext aContext = ActionContext.getContext();
 		Map<String, Object> session = aContext.getSession();
-		Map<String, Object> request = (Map<String, Object>) aContext
-				.get("request");
-		String userName = (String) request.get("userName");
+		// Map<String, Object> request = (Map<String, Object>) aContext
+		// .get("request");
+		// String userName = (String) request.get("userName");
+		System.out.println(userName);
 		List<String> userNameList = (List<String>) session.get("userNames");
 		loginDuplicate = userNameList.contains(userName.trim());
 		return SUCCESS;
