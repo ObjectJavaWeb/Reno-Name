@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-.body {
+.body_Mymusic {
 	position: relative;
 	top: 0;
 	width: 70%;
@@ -41,7 +41,7 @@
 	font-size: 1em;
 	color: black;
 	margin-left: -20px;
-	margin-top: 45px;
+	margin-top: 90px;
 }
 
 .left_1_2 {
@@ -52,12 +52,16 @@
 }
 
 .left_1_2_btn {
+	width:40px;
+	height:25px;
 	text-decoration: none;
 	display: block;
 	font-size: 0.2em;
 	color: black;
-	margin-left: 10px;
-	margin-top: 45px;
+	margin-left: 40px;
+	margin-top: 90px;
+	padding-top:4px;
+	padding-left:3px;
 }
 
 .left_2 {
@@ -111,7 +115,7 @@
 .right_1_2 img {
 	width: 30px;
 	height: 30px;
-	margin-left: -440px;
+	margin-left: -520px;
 	margin-top: 50px;
 }
 
@@ -120,7 +124,7 @@
 	display: block;
 	font-size: 1em;
 	color: black;
-	margin-left: -180px;
+	margin-left: -300px;
 	margin-top: -25px;
 	color: green;
 }

@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+#table{
+	margin-top: 30px;
+}
+table th {
+	float: right;
+}
+#table td{
+	border: 0;
+}
+#table th{
+	border: 0;
+}
+#table input[type="text"]{
+	float: left;
+	margin-right: 12px;
+}
+#table input[type="password"]{
+	float: left;
+	margin-right: 12px;
+}
+#table span {
+	display: block;
+	width: 200px;
+	float: left;
+	color: red;
+}
