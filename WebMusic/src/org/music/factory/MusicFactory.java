@@ -1,10 +1,10 @@
 package org.music.factory;
 
-import org.music.dao.MusicDAO;
+import org.music.dao.IMusicDAO;
 import org.music.dao.impl.MusicDAOImpl;
 
 public class MusicFactory {
-	public static MusicDAO getMusicDAO(){
+	public static IMusicDAO getMusicDAO(){
 		return new MusicDAOImpl();
 	}
 }

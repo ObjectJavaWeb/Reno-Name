@@ -5,7 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -38,7 +38,7 @@
 		</div>
 		<div class="div1-2">
 			<ul>
-				<%
+				<%-- <%
 					for (int i = 0; i < 12; i++) {
 				%>
 				<li><span> <a href="#"> <img
@@ -48,7 +48,14 @@
 				</span></li>
 				<%
 					}
-				%>
+				%> --%>
+				<c:forEach var="m" items="${musics }">
+					<li><span> <a href="#"> <img
+							src="ui/image/musical.jpg">
+							<p>${m.name }</p>
+					</a>
+				</span></li>
+				</c:forEach>
 			</ul>
 		</div>
 		<div style="clear: both;"></div>

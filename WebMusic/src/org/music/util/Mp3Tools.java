@@ -20,13 +20,16 @@ public class Mp3Tools {
 	 * @return
 	 */
 	public static Mp3Info getMP3Info(File mp3File) {
-		Mp3Info mp3Info = new Mp3Info();
+		Mp3Info mp3Info = null;
 		try {
 			MP3File file = new MP3File(mp3File);
-			mp3Info.setAublm(toGB2312(file.getID3v1Tag().getFirstAlbum()));
-			mp3Info.setSinger(toGB2312(file.getID3v1Tag().getFirstArtist()));
-			mp3Info.setSongName(toGB2312(file.getID3v1Tag().getFirstTitle()));
-			
+			if (file.getID3v1Tag()!=null) {
+				mp3Info=new Mp3Info();
+				String code=file.getID3v1Tag().getEncoding();
+				mp3Info.setAublm(toCharCode(file.getID3v1Tag().getFirstAlbum(), code, "GB2312"));
+				mp3Info.setSinger(toCharCode(file.getID3v1Tag().getFirstArtist(), code, "GB2312"));
+				mp3Info.setSongName(toCharCode(file.getID3v1Tag().getFirstTitle(), code, "GB2312"));
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (TagException e) {
@@ -121,9 +124,9 @@ public class Mp3Tools {
 		return fileName;
 	}
 
-	private static String toGB2312(String s) {
+	private static String toCharCode(String s,String OldcharCode,String newCharCode) {
 		try {
-			return new String(s.getBytes("ISO-8859-1"), "gb2312");
+			return new String(s.getBytes(OldcharCode), newCharCode);
 		} catch (Exception e) {
 			return s;
 		}

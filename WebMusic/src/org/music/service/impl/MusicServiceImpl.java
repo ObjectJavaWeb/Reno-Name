@@ -4,18 +4,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.jms.Session;
-
 import org.hibernate.Transaction;
-import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
 import org.music.factory.MusicFactory;
-import org.music.factory.MusicServiceFactory;
 import org.music.pojo.Music;
-import org.music.pojo.User;
-import org.music.service.MusicService;
+import org.music.service.IMusicService;
 
-public class MusicServiceImpl implements MusicService{
+public class MusicServiceImpl implements IMusicService{
 
 	@Override
 	public void insert(Music music) throws Exception {
