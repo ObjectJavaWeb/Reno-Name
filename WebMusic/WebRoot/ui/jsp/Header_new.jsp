@@ -79,7 +79,7 @@
 				<p class="input-append">
 					<input type="text" class="span2 search" id="appendedInputButton search"
 						placeholder="请输入您想收索的歌曲名/歌手">
-					<input type="submit" value="搜索" class="btn search" >
+					<input type="submit" value="搜索" class="btn search1" >
 				</p>
 			</form>
 			</div>
@@ -91,6 +91,20 @@
 				%>
 				<span>欢迎您：</span><a href="userlogin!queryPersonal.action?user.id=${user.id }"
 					style=" font-size: 15;color: black;">${user.nickname }</a>
+					
+				 <div class="dropdown dro">
+					<span>欢迎您：</span><a class="dropdown-toggle" data-toggle="dropdown"
+						href="userlogin!queryPersonal.action?user.id=${user.id }"
+						style=" font-size: 15;color: black;">${user.nickname } <b
+						class="caret"></b></a>
+					<ul class="dropdown-menu login" role="menu" style="color: black;">
+						<li value="个人 信息"><a
+							href="userlogin!queryPersonal.action?user.id=${user.id }"
+							target="_blank" class="reg">个人信息</a></li>
+						<li value="退出登录"><a href="userlogin!personalExit.action "
+							class="reg">退出登录 </a></li>
+					</ul>
+				</div> 
 				<%
 					} else {
 				%>

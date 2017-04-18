@@ -30,7 +30,7 @@
 		<a href="#top">回到<br>顶部
 		</a>
 	</div>
-	<jsp:include page="ui/jsp/Header.jsp"></jsp:include>
+	<jsp:include page="ui/jsp/MyJsp.jsp"></jsp:include>
 	<div style="height: 500px;">
 		<include file="ui/html/Music.html"></include>
 		<jsp:include page="ui/jsp/MusicList.jsp"></jsp:include>
