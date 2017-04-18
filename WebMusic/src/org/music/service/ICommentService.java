@@ -8,13 +8,17 @@ import org.music.pojo.Reply;
 
 public interface ICommentService {
 
+	//添加评论
 	public void insert(Comment comment) throws Exception;
 
+	//删除评论
 	public void delete(int commentId) throws Exception;
 
-	public Comment findById(int commentId) throws Exception;
+	//public Reply findById(int commentId) throws Exception;
 
-	public List findAll(String column) throws Exception;
+	//public List findAll(String column) throws Exception;
 	
 	public Set<Comment> getComments(int musicId) throws Exception;
+	
+	public Set<Reply> getReplies(int musicId) throws Exception;
 }

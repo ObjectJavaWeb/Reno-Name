@@ -11,6 +11,7 @@ import org.music.factory.DAOFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
 import org.music.pojo.Mymusic;
+import org.music.pojo.Reply;
 import org.music.pojo.User;
 import org.music.service.ICommentService;
 
@@ -50,30 +51,30 @@ public class CommentServiceImpl implements ICommentService {
 
 	}
 
-	public Comment findById(int commentId) throws Exception {
-		Comment comment = null;
-		try {
-			comment = DAOFactory.getICommentDAOInstance().findById(commentId);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}
-		return comment;
+//	public Reply findById(int commentId) throws Exception {
+//		Reply reply = null;
+//		try {
+//			reply = DAOFactory.getICommentDAOInstance().findById(commentId);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw e;
+//		}
+//  	return reply;
+//
+//	}
 
-	}
+//	public List findAll(String column) throws Exception {
+//		List cSet = null;
+//		try {
+//			cSet = DAOFactory.getICommentDAOInstance().findAll(column);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			throw e;
+//		}
+//		return cSet;
+//	}
 
-	public List findAll(String column) throws Exception {
-		List cSet = null;
-		try {
-			cSet = DAOFactory.getICommentDAOInstance().findAll(column);
-		} catch (Exception e) {
-			e.printStackTrace();
-			throw e;
-		}
-		return cSet;
-	}
-
-	@Override
+	
 	public Set<Comment> getComments(int musicId) throws Exception {
 		Set<Comment> commentSet = null;
 		try {
@@ -81,9 +82,25 @@ public class CommentServiceImpl implements ICommentService {
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
+		}finally{
+			HibernateSessionFactory.closeSession();
 		}
 		return commentSet;
 
+	}
+
+	
+	public Set<Reply> getReplies(int commentId) throws Exception {
+		Set<Reply> replySet = null;
+		try {
+			replySet = DAOFactory.getICommentDAOInstance().getReplies(commentId);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		return replySet;
 	}
 
 }

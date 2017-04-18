@@ -5,5 +5,15 @@
 		<action name="Mymusic" class="org.music.action.MymusicAction">
 			<result name="hy">/ui/jsp/Mymusic.jsp</result>
 		</action>
+		<action name="Comment" class="org.music.action.CommentAction">
+		<result name="comment">
+		/ui/jsp/Mymusic.jsp
+		</result>
+		<result name="reply">
+		/ui/jsp/Mymusic.jsp
+		</result>
+		</action>
 	</package>
+
+<!-- >>>>>>> branch 'master' of https://github.com/ObjectJavaWeb/Reno-Name.git -->
 </struts>  

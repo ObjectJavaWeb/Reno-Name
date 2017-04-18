@@ -64,15 +64,15 @@ public class CommentDAOImpl implements ICommentDAO {
 		
 	}
 
-	public Comment findById(int commentId) throws Exception {
-		return (Comment) HibernateSessionFactory.getSession().get(Comment.class, commentId);
-	}
+//	public Reply findById(int commentId) throws Exception {
+//		return (Reply) HibernateSessionFactory.getSession().get(Comment.class, commentId);
+//	}
 
-	public List findAll(String column) throws Exception {
-		String hql = "FROM Comment AS n WHERE n.music LIKE ?  ";
-		Query query = HibernateSessionFactory.getSession().createQuery(hql);
-		query.setString(0, "%" +column + "%");
-		return query.list();
-	}
+//	public List findAll(String column) throws Exception {
+//		String hql = "FROM Comment AS n WHERE n.music LIKE ?  ";
+//		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+//		query.setString(0, "%" +column + "%");
+//		return query.list();
+//	}
 
 }

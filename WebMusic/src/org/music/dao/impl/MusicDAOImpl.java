@@ -5,6 +5,12 @@ import java.util.List;
 
 
 
+
+
+
+
+
+
 import org.hibernate.Query;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -36,12 +42,31 @@ public class MusicDAOImpl implements MusicDAO {
 }
 
 	@Override
-	//根据字段查询所有的信息
-	public List findAll(String coulmn) throws Exception {
-		String hql="FROM music AS m WHERE m.name LIKE ? ";
+	public List<Music> findAll(int pageNo, int pageSize, String keyword,
+			String column) throws Exception {
+		String hql="FROM music AS n WHERE n."+column+"LIKE ?";
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
-		query.setString(0, "%"+coulmn+"%");
+		query.setString(0, "%"+keyword+"%");
+		//分页处理
+		query.setFirstResult((pageNo-1)*pageSize);
+		query.setMaxResults(pageSize);
 		return query.list();
 	}
+
+	@Override
+	public List<Music> findAll() throws Exception {
+		String hql="FROM music";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		return query.list();
+	}
+
+	@Override
+	public int getAllcount(String keyword, String column) throws Exception {
+		String hql="SELECT COUNT(n) FROM music AS n WHERE n."+column+"LIKE ?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, "%"+keyword+"%");
+		return ((Long)query.uniqueResult()).intValue();
+	}
+
 
 }
