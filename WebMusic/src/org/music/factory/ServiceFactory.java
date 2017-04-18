@@ -24,6 +24,7 @@ public class ServiceFactory {
 		return new CommentServiceImpl();
 	}
 	public static IQuestionService getIQuestionServiceInstance(){
+
 		return new QuestionServiceImpl();
 	}
 	public static IReplyService getIReplyServiceInstance(){

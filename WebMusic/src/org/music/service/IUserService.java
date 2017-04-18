@@ -14,6 +14,7 @@ public interface IUserService {
 	public User findById(int id) throws Exception;
 
 	public boolean login(User user) throws Exception;
+	public Integer userInput(User user) throws Exception;
 
 	/**
 	 * 验证用户名是否重复

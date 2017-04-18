@@ -125,7 +125,7 @@
 						<td>
 							<span class="glyphicon glyphicon-lock"></span>
 							<input type="password" name="user.password" placeholder="密码">
-							<a href="#">找回密码</a>
+							<a href="ui/jsp/Userinput.jsp">找回密码</a>
 						</td>
 					</tr>
 					<tr>
