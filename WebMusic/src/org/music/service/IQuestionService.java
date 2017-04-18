@@ -1,5 +1,7 @@
 package org.music.service;
 
+import java.util.List;
+
 import org.music.pojo.Question;
 
 public interface IQuestionService {
@@ -7,7 +9,7 @@ public interface IQuestionService {
 	
 	public void delete (int id) throws Exception;
 	
-	public Question findById(int id) throws Exception;
+	public List<Question> findByUserId(Integer id) throws Exception;
 	
 	public void updete(Question question) throws Exception;
 	

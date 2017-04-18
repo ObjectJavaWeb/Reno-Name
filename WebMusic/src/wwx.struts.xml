@@ -4,6 +4,10 @@
 	<package name="wwx" namespace="/" extends="struts-default">
 
 		<action name="userlogin" class="org.music.action.UserAction">
+			<!--查询成功返回输入答案界面  -->
+			<result name="Retrieve_Password">/ui/jsp/Retrieve_Password.jsp</result>
+			<!--查询失败  返回用户输入页面  -->
+			<result name="Userinput">/ui/jsp/Userinput.jsp</result>	
 			<!-- 返回用户登录成功页 -->
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<!-- 返回登录页 -->

@@ -1,8 +1,12 @@
 package org.music.dao.impl;
 
+import java.util.List;
+
+import org.hibernate.Query;
 import org.music.dao.IQuestion;
 import org.music.dbc.HibernateSessionFactory;
 import org.music.pojo.Question;
+import org.music.pojo.User;
 
 public class QuestionDAOImpl implements IQuestion {
 
@@ -18,24 +22,16 @@ public class QuestionDAOImpl implements IQuestion {
 		HibernateSessionFactory.getSession().update(vo);
 
 	}
-
 	@Override
-	public void doRemove(Integer id) throws Exception {
+	public List<Question> findByUserId(Integer id) throws Exception {
 		// TODO Auto-generated method stub
-		HibernateSessionFactory.getSession().delete(findById(id));
-	}
+		String hql = "FROM Question AS q WHERE q.user.id = ? ";
+		System.out.println(id);
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		query.setInteger(0, id);
+		List<Question> allQuestions = query.list();
+		return allQuestions;
 
-	@Override
-	public Question findById(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		//根据主键查询类型
-		return (Question) HibernateSessionFactory.getSession().get(Question.class, id);
-	}
-
-	@Override
-	public void doRemove(Question question) throws Exception {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
