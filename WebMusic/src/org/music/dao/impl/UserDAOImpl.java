@@ -71,6 +71,14 @@ public class UserDAOImpl implements IUserDAO {
 		return false;
 	}
 
+	//找回密码中，对用户名的查询
+		public Integer isInput(User user) throws Exception {
+			String hql = "SELECT u.id FROM User AS u WHERE u.userName = ? ";
+			Query query = HibernateSessionFactory.getSession().createQuery(hql);
+
+			query.setString(0, user.getUserName());
+			return (Integer)query.list().get(0);
+		}
 	@Override
 	public boolean loginDuplicate(String userName) {
 		String hql = "FROM User AS u where u.userName=?";

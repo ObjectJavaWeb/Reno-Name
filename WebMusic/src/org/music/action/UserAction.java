@@ -14,6 +14,15 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
 	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
+	private List<Question> allQuestions;
+
+	public List<Question> getAllQuestions() {
+		return allQuestions;
+	}
+
+	public void setAllQuestions(List<Question> allQuestions) {
+		this.allQuestions = allQuestions;
+	}
 
 	public Question getQuestion() {
 		return question;
@@ -168,7 +177,7 @@ public class UserAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String setAnswer() throws Exception {
-		
+
 		Map<String, Object> session = Tools.getSession();
 		User user = (User) session.get("user");
 		question.setUser(user);
@@ -176,6 +185,28 @@ public class UserAction extends ActionSupport {
 		message = "恭喜您注册成功！";
 		url = "index.jsp";
 		return "forward";
+	}
+
+	/**
+	 * 验证用户名
+	 * 
+	 * @return 验证成功后跳转页面
+	 * @throws Exception
+	 */
+
+	public String userinput() throws Exception {
+
+		Integer id = ServiceFactory.getIUserServiceInstance().userInput(user);
+
+		if (id != null) {
+
+			allQuestions = ServiceFactory.getIQuestionServiceInstance()
+					.findByUserId(id);
+
+			return "Retrieve_Password";
+		}
+		return "Userinput";
+
 	}
 
 	/**

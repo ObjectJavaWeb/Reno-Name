@@ -1,6 +1,10 @@
 package org.music.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.jms.Session;
 
 import org.hibernate.Transaction;
 import org.music.dao.MusicDAO;
@@ -8,6 +12,7 @@ import org.music.dbc.HibernateSessionFactory;
 import org.music.factory.MusicFactory;
 import org.music.factory.MusicServiceFactory;
 import org.music.pojo.Music;
+import org.music.pojo.User;
 import org.music.service.MusicService;
 
 public class MusicServiceImpl implements MusicService{
@@ -31,12 +36,16 @@ public class MusicServiceImpl implements MusicService{
 
 	@Override
 	public void delete(int id) throws Exception {
+		//加入事物处理功能
 		Transaction tx=HibernateSessionFactory.getSession().beginTransaction();
 		try {
 			MusicFactory.getMusicDAO().doRemove(id);
+			//当执行完没错的时候提交
 			tx.commit();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+			//当执行异常时回滚
 			tx.rollback();
 			throw e;
 		}finally{
@@ -76,18 +85,27 @@ public class MusicServiceImpl implements MusicService{
 		
 	}
 
+
 	@Override
-	public List<Music> findAll(String coulmn) throws Exception {
-		List mList=null;
+	public Map<String, Object> list(int pageNo, int pageSize, String keyword,
+			String column) throws Exception {
+		Map<String, Object> map=new HashMap<String, Object>();
 		try {
-			mList=MusicServiceFactory.getMusicServiceInstace().findAll(coulmn);
+			//allNews当前页的查询数据
+			map.put("allMusic", MusicFactory.getMusicDAO().findAll(pageNo,
+					pageSize, keyword, column));
+			//allCount当前的分页数
+			map.put("allCount", MusicFactory.getMusicDAO().getAllcount(keyword, column));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
+		}finally{
+			HibernateSessionFactory.closeSession();
 		}
 		
-		return mList;
+		return map;
+	
 	}
 
 
