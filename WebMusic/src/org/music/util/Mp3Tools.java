@@ -3,6 +3,9 @@ package org.music.util;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
 import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
@@ -11,6 +14,8 @@ import org.jaudiotagger.tag.TagException;
 import org.jaudiotagger.tag.id3.AbstractID3v2Frame;
 import org.jaudiotagger.tag.id3.AbstractID3v2Tag;
 import org.jaudiotagger.tag.id3.framebody.FrameBodyAPIC;
+import org.music.factory.MusicServiceFactory;
+import org.music.pojo.Music;
 
 public class Mp3Tools {
 	/**
@@ -23,12 +28,15 @@ public class Mp3Tools {
 		Mp3Info mp3Info = null;
 		try {
 			MP3File file = new MP3File(mp3File);
-			if (file.getID3v1Tag()!=null) {
-				mp3Info=new Mp3Info();
-				String code=file.getID3v1Tag().getEncoding();
-				mp3Info.setAublm(toCharCode(file.getID3v1Tag().getFirstAlbum(), code, "GB2312"));
-				mp3Info.setSinger(toCharCode(file.getID3v1Tag().getFirstArtist(), code, "GB2312"));
-				mp3Info.setSongName(toCharCode(file.getID3v1Tag().getFirstTitle(), code, "GB2312"));
+			if (file.getID3v1Tag() != null) {
+				mp3Info = new Mp3Info();
+				String code = file.getID3v1Tag().getEncoding();
+				mp3Info.setAublm(toCharCode(file.getID3v1Tag().getFirstAlbum(),
+						code, "GB2312"));
+				mp3Info.setSinger(toCharCode(file.getID3v1Tag()
+						.getFirstArtist(), code, "GB2312"));
+				mp3Info.setSongName(toCharCode(file.getID3v1Tag()
+						.getFirstTitle(), code, "GB2312"));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -40,6 +48,32 @@ public class Mp3Tools {
 			e.printStackTrace();
 		}
 		return mp3Info;
+	}
+	/**
+	 * 将本地音乐的详细信息读取到数据库
+	 * @throws Exception
+	 */
+	public static void addMusic() throws Exception {
+		String[] type = { "华语", "流行", "摇滚", "民谣", "电子" };
+		String filePath = "D:\\娱乐\\音乐\\音乐";
+		List<Mp3Info> mMp3Infos = new ArrayList<Mp3Info>();
+		String file[] = Tools.main(filePath);
+		for (String string : file) {
+			Mp3Info mp3Info = Mp3Tools.getMP3Info(new File(filePath + "\\"
+					+ string));
+			if (mp3Info != null && (!mp3Info.getSongName().trim().equals(""))) {
+				mMp3Infos.add(mp3Info);
+			}
+
+		}
+		Random random = new Random();
+		for (Mp3Info item : mMp3Infos) {
+
+			Music music = new Music(type[random.nextInt(5)],
+					item.getSongName(), item.getSinger(), item.getAublm(), "",
+					0, null, null);
+			MusicServiceFactory.getMusicServiceInstace().insert(music);
+		}
 	}
 
 	/**
@@ -124,7 +158,8 @@ public class Mp3Tools {
 		return fileName;
 	}
 
-	private static String toCharCode(String s,String OldcharCode,String newCharCode) {
+	private static String toCharCode(String s, String OldcharCode,
+			String newCharCode) {
 		try {
 			return new String(s.getBytes(OldcharCode), newCharCode);
 		} catch (Exception e) {

@@ -2,6 +2,8 @@ package org.music.dao.impl;
 
 import java.util.List;
 
+import javax.persistence.criteria.From;
+
 import org.hibernate.Query;
 import org.music.dao.IMusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -50,6 +52,23 @@ public void doCreate(Music vo) throws Exception {
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, "%"+keyword+"%");
 		return ((Long)query.uniqueResult()).intValue();
+	}
+
+	@Override
+	public void addHit(Integer musicId) throws Exception {
+		String hql="UPDATE Music AS m SET m.hit=m.hit+1 WHERE m.id=?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setInteger(0,musicId);
+		query.executeUpdate();
+	}
+
+	@Override
+	public List<Music> parade() throws Exception {
+		String hql="FROM Music AS m ORDER BY m.hit DESC";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setFirstResult(0);
+		query.setMaxResults(15);
+		return query.list();
 	}
 
 

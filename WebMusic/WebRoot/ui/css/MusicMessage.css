@@ -3,10 +3,9 @@ body{
 	margin: 0 auto;
 	height: 200px;
 }
-.div1{
-	width: 30%;
-	height: 100%;
+.div1 img{
 	float: left;
+	margin-left: 150px;
 }
 .div2{
 	width: 49%;

@@ -4,6 +4,7 @@
 	<package name="lcy" namespace="/" extends="struts-default">
 		<action name="music" class="org.music.action.MusicAction">
 			<result name="musicList">pro.jsp</result>
+			<result name="music_message">/ui/jsp/MusicMessage.jsp</result>
 		</action>
 	</package>
 </struts>  

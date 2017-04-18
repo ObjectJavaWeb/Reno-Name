@@ -31,10 +31,15 @@ hr{
 	border-bottom: 3px solid #CC3333;
 }
 .div1-2 ul li{
-	width: 150px;
+	width: 200px;
 	float: left;
-	margin-left: 20px;
+	margin-left: 25px;
+}
+.music{
+	display:block;
+	height: 40px;
 }
 table {
 	border-top: 3px solid #CC3333;
 }
+
