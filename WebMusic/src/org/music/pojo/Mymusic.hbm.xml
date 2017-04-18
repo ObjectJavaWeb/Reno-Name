@@ -16,7 +16,7 @@
         <property name="name" type="java.lang.String">
             <column name="name" length="50" />
         </property>
-        <set name="mymusicMusics" inverse="true">
+        <set name="mymusicMusics" inverse="true" order-by="id desc">
             <key>
                 <column name="mymusic_id" />
             </key>

@@ -3,9 +3,7 @@
 <struts>
 	<package name="hy" namespace="/" extends="struts-default">
 		<action name="Mymusic" class="org.music.action.MymusicAction">
-			<result name="hy">
-				/ui/jsp/Mymusic.jsp
-			</result>
+			<result name="hy">/ui/jsp/Mymusic.jsp</result>
 		</action>
 		<action name="Comment" class="org.music.action.CommentAction">
 		<result name="comment">
@@ -17,4 +15,5 @@
 		</action>
 	</package>
 
+<!-- >>>>>>> branch 'master' of https://github.com/ObjectJavaWeb/Reno-Name.git -->
 </struts>  

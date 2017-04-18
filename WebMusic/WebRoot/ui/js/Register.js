@@ -7,12 +7,12 @@ $(function() {
 		var userName = $("#userName").val();
 
 		$.ajax({
-			url : "ajaxLogin.action?",
+			url : "ajaxLogin.action",
 			type : "post",
-			data : {
-				'userName' : userName
+			data:{
+				"userName":userName
 			},
-			dataType : "json",
+			type:"json",
 			success : function(data) {
 				$("#v").remove();
 				if (data) {
