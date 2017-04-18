@@ -115,6 +115,7 @@
 					<tr>
 						<th align="center">用户名</th>
 						<td>
+							<span class="glyphicon glyphicon-user"></span>
 							<input type="text" name="user.userName" placeholder="用户名">
 							<a href="userlogin!preRegister.action">没有注册？</a> <br>
 						</td>
@@ -122,6 +123,7 @@
 					<tr>
 						<th align="center" style="padding-left: 7">密 码</th>
 						<td>
+							<span class="glyphicon glyphicon-lock"></span>
 							<input type="password" name="user.password" placeholder="密码">
 							<a href="#">找回密码</a>
 						</td>

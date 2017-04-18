@@ -40,7 +40,9 @@
 				<!-- 导航栏 -->
 				<div>
 					<ul class="ul_1">
-						<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
+						<li class="ul_1_1"><a href="index.jsp"><span
+								class="glyphicon glyphicon-home" style="color: rgb(0, 0, 0);">
+									</span></a></li>
 						<li class="ul_1_1">基本信息</li>
 					</ul>
 				</div>
@@ -49,50 +51,51 @@
 			<div class="mid">
 				<!-- 中间 -->
 				<table>
-				<%User user = (User) request.getSession().getAttribute("user"); %>
+					<%
+						User user = (User) request.getSession().getAttribute("user");
+					%>
 					<tr>
 						<th class="location">用户名</th>
-						<td><%=user.getUserName() %>
+						<td><%=user.getUserName()%>
 						</td>
 					</tr>
 					<tr>
 						<th class="location">昵称</th>
-						<td><%=user.getNickname() %></td>
+						<td><%=user.getNickname()%></td>
 					</tr>
 
 					<tr>
 						<th>性别</th>
 						<td><%=user.getGender()%></td>
 					</tr>
-				 	 <tr>
-						 <%
-							
+					<tr>
+						<%
 							SimpleDateFormat sformat = new SimpleDateFormat("yyyy-MM-dd");
-						%> 
+						%>
 						<th class="birthday">出生年月</th>
 						<td>
 							<%=sformat.format(user.getBirthday())%>
 						</td>
 					</tr>
 					<tr>
-						
+
 						<th class="RegistDate">注册日期</th>
 						<td>
-						<%=sformat.format(user.getRegistDate())%>
+							<%=sformat.format(user.getRegistDate())%>
 							<%-- <%=user.getRegistDate()%> --%>
 						</td>
 
-					</tr>   
+					</tr>
 					<tr>
 						<th>邮箱</th>
-						<td><%=user.getEmail() %></td>
+						<td><%=user.getEmail()%></td>
 					</tr>
 
 					<tr>
 						<th></th>
 						<td>
 							<a href="userlogin!updatePre.action?user.id=${user.id }"><button
-									class="save btn btn-danger" value="修改信息" >修改信息</button></a>
+									class="save btn btn-danger" value="修改信息">修改信息</button></a>
 						</td>
 					</tr>
 				</table>
