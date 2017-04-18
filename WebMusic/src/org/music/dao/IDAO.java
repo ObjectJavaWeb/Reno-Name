@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.music.pojo.Mymusic;
+import org.music.pojo.Question;
 
 /**
  * 公共接口
@@ -22,6 +23,7 @@ public interface IDAO<K, V> {
 	public void doRemove(K id) throws Exception;
 
 	public V findById(K id) throws Exception;
+
 	
 
 }

@@ -41,21 +41,67 @@
 
 .topbar_1_1 {
 	width: 25%;
-	height: 100%;
+	height: 82%;
+	margin-top:-20px;
 	margin-left: 0px;
 	float: left;
 	background: url('../image/bg_1.jpg');
+	
 }
+
 
 .topbar_1_2 {
 	float: left;
-	width: 30%;
+	width: 40%;
 	height: 100%;
 }
 
+.topbar_1_2 li a{
+	height: 63px;
+	width:170px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 17px;
+	margin-left: 0px;
+	
+}
+.tab-content{
+	width:100%;
+	height:37px;
+	
+}
+.tab-pane{
+	width:100%;
+	height:37px;
+	margin-top:0px;
+	float:left;
+}
+.ul2{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	float:left;
+	
+}
+.ul2 li{
+	list-style: none;
+	float: left;
+	margin-left:80px;
+	margin-top: -5px;
+}
+a:hover{
+	text-decoration: none;
+}
+.tab-pane li a{
+	width:90px;
+	height:20px;
+	text-align: center;
+	font-size: 14px;
+	
+}
 .topbar_1_3 {
 	float: left;
-	width: 45%;
+	width: 35%;
 	height: 100%;
 }
 
@@ -94,12 +140,22 @@
 .search {
 	display:block;
 	float:left;
-	margin-top: 20px;
+	margin-top: 30px;
+	margin-left:120px;
+	width:200px;
+	border-radius:5px;
 }
 
+.search1 {
+	display:block;
+	float:left;
+	margin-top: 26px;
+	margin-left:0px;
+	background-color: #F8E6E1;
+}
 
 .reg {
-	font-size: 1em;
+	font-size: 0.5em;
 	margin-top: 30px;
 	float: left;
 }
@@ -114,6 +170,7 @@
 	line-height: 30px;
 	margin-left: 20px;
 }
+
 
 .topbar_2 {
 	position: relative;
@@ -147,18 +204,35 @@
 }
 .div_login{
 	height:100%;
-	float: right;
-	margin-right: 50px;
-	font-size: 18px;
+	float: left;
+	margin-right: 80px;
+	font-size: 5px;
 }
 .div_login{
+	margin-top:45px;
+	margin-left:10px;
 	text-align:center;
-	line-height:100px;
+	line-height:10px;
 }
 .div_login a{
+	width: 80px;
 	text-align:center;
-	line-height:100px;
+	line-height:10px;
 	color: black;
-	font-size: 18px;
-	margin: 0
+	font-size: 5px;
+	margin-left:20px;
+	margin-top:0px;
+	
+}
+
+.div_login li{
+	display: block;
+	height: 25px;
+	list-style: none;
+	float: left;
+	line-height: 25px;
+	text-align: center;
+	color: black;
+	margin-left:10px;
+}
 }

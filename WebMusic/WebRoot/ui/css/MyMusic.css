@@ -1,5 +1,4 @@
 @CHARSET "UTF-8";
-<<<<<<< HEAD
 #open_NewSongList {
 	display: none;
 	position: absolute;
@@ -20,11 +19,7 @@
 	left: 0px;
 	top: 0px;
 }
-.body {
-=======
-
 .body_Mymusic {
->>>>>>> branch 'master' of https://github.com/ObjectJavaWeb/Reno-Name.git
 	position: relative;
 	top: 0;
 	width: 70%;

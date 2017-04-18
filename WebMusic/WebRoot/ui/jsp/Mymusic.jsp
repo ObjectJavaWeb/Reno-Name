@@ -48,8 +48,9 @@
 
 	}
 </script>
+
 <body>
-<jsp:include page="Header.jsp"></jsp:include>
+<jsp:include page="MyJsp.jsp"></jsp:include>
 	<div class="body_Mymusic">
 		<div class="left">
 			<div class="left_1">

@@ -25,5 +25,18 @@
 	-->
 </head>
 <body>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+	<div id="gototop">
+		<a href="#top">回到<br>顶部
+		</a>
+	</div>
+	<jsp:include page="ui/jsp/MyJsp.jsp"></jsp:include>
+	<div style="height: 500px;">
+		<include file="ui/html/Music.html"></include>
+		<jsp:include page="ui/jsp/MusicList.jsp"></jsp:include>
+	</div>
+</body>
+>>>>>>> branch 'master' of https://github.com/ObjectJavaWeb/Reno-Name.git

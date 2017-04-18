@@ -42,22 +42,22 @@
 	<div class="body">
 		<!-- 网页图标 -->
 		<div class="topbar_1_1"></div>
+		<!--  <div class="midum">-->
 		<div class="topbar_1_2">
-			<ul class="nav nav-tabs">
-				<!-- 发现音乐 -->
+			<!-- <ul class="nav nav-tabs"> -->
+			<!-- 发现音乐 -->
+			<div class="tabbable">
+				<ul class="nav nav-tabs ul-nav">
+					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
+					<li><a href="#tab2" data-toggle="tab">我的音乐</a></li>
+					<li><a href="#tab3" data-toggle="tab">个人设置</a></li>
+				</ul>
+				<!-- 我的音乐 
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: black;"> 发现音乐 <b
-						class="caret"></b></a>
-					<ul class="dropdown-menu" role="menu" style="color: black;">
-						<li value="推荐"><a href="" class="reg">推荐</a></li>
-						<li value="排行榜"><a href="" class="reg">排行榜</a></li>
-						<li value="歌单"><a href="" class="reg">歌单</a></li>
-						<li value="歌手"><a href="" class="reg">歌手</a></li>
-					</ul></li>
-				<!-- 我的音乐 -->
-				<li><a href="#" style="color: black;"><a
-						href="Mymusic!getMymusicList.action"> 我的音乐 </a></li>
-				<!-- 个人 -->
+					data-toggle="dropdown" href="#" style="color: black;"><a href="Mymusic!getMymusicList"> 我的音乐 </a><b
+						class="caret"></b></a>-->
+
+				<!-- 个人 
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#" style="color: black;"> 个人 <b
 						class="caret"></b></a>
@@ -65,19 +65,38 @@
 
 						<li value="个人 信息"><a
 							href="userlogin!queryPersonal.action?user.id=${user.id }"
-							target="_blank" class="reg">个人信息</a></li>
-						<li value="退出登录"><a href="userlogin!personalExit.action "
-							class="reg">退出登录 </a></li>
-					</ul></li>
-			</ul>
+							target="_blank" class="reg">个人信息</a></li>-->
+				<!--  <li value="退出登录"><a href="userlogin!personalExit.action "
+							class="reg">退出登录 </a></li>-->
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab1">
+						<ul class="ul2">
+							<li><a href="=#">推荐</a></li>
+							<li><a href="=#">排行榜</a></li>
+							<li><a href="=#">歌单</a></li>
+							<li><a href="=#">歌手</a></li>
+						</ul>
+					</div>
+					<div class="tab-pane" id="tab2">
+						<ul class="ul2"></ul>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<ul class="ul2">
+
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
 				<form class="form-search">
-					<p class="input-append">
+					<p class="input-append" style="margin-left: -100px;">
 						<input type="text" class="span2 search"
-							id="appendedInputButton search" placeholder="请输入您想收索的歌曲名/歌手">
-						<input type="submit" value="搜索" class="btn search">
+							id="appendedInputButton search" value="请输入您想收索的歌曲名/歌手"
+							onfocus="this.value=''"
+							onblur="if(this.value==''){this.value='请输入您想收索的歌曲名/歌手'}" />
+						<input type="submit" value="搜索" class="btn search1">
 					</p>
 				</form>
 			</div>
@@ -87,9 +106,21 @@
 						User user = (User) request.getSession().getAttribute("user");
 						if (user != null) {
 				%>
-				<span>欢迎您：</span><a
-					href="userlogin!queryPersonal.action?user.id=${user.id }"
-					style=" font-size: 15;color: black;">${user.nickname }</a>
+
+				<div class="dropdown dro">
+					<span>欢迎您：</span><a class="dropdown-toggle" data-toggle="dropdown"
+						href="userlogin!queryPersonal.action?user.id=${user.id }"
+						style=" font-size: 15;color: black;">${user.nickname } <b
+						class="caret"></b></a>
+					<ul class="dropdown-menu login" role="menu" style="color: black;">
+						<li value="个人 信息"><a
+							href="userlogin!queryPersonal.action?user.id=${user.id }"
+							target="_blank" class="reg">个人信息</a></li>
+						<li value="退出登录"><a href="userlogin!personalExit.action "
+							class="reg">退出登录 </a></li>
+					</ul>
+				</div>
+
 				<%
 					} else {
 				%>
@@ -115,7 +146,6 @@
 					<tr>
 						<th align="center">用户名</th>
 						<td>
-							<span class="glyphicon glyphicon-user"></span>
 							<input type="text" name="user.userName" placeholder="用户名">
 							<a href="userlogin!preRegister.action">没有注册？</a> <br>
 						</td>
@@ -123,9 +153,8 @@
 					<tr>
 						<th align="center" style="padding-left: 7">密 码</th>
 						<td>
-							<span class="glyphicon glyphicon-lock"></span>
 							<input type="password" name="user.password" placeholder="密码">
-							<a href="ui/jsp/Userinput.jsp">找回密码</a>
+							<a href="#">找回密码</a>
 						</td>
 					</tr>
 					<tr>
@@ -140,6 +169,7 @@
 				</table>
 			</form>
 		</div>
-	</div>
+		<div style="clear: both;"></div>
 </body>
+
 </html>
