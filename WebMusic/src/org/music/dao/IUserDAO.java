@@ -6,6 +6,7 @@ import org.music.pojo.User;
 
 public interface IUserDAO extends IDAO<Integer, User> {
 	public boolean isLogin(User user) throws Exception;
+	public Integer isInput(User user) throws Exception;
 
 	/**
 	 * 验证用户名是否重复

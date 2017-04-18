@@ -138,7 +138,7 @@ html,body {
 				<tr>
 					<td>
 						<input type="password" name="user.password" placeholder="密码">
-						<a href="#">找回密码</a> <br>
+						<a href="<a href="userlogin!preRegister.action">">找回密码</a> <br>
 					</td>
 				</tr>
 				<tr align="center">
