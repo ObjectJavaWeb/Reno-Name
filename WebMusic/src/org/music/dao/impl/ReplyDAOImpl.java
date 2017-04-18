@@ -35,7 +35,7 @@ public class ReplyDAOImpl implements IReplyDAO {
 	}
 
 	@Override
-	public void DeleteReply(int ReplyId) throws Exception {
+	public void DeleteReply(int ReplyId) throws Exception { 
 		HibernateSessionFactory.getSession().delete(findById(ReplyId));
 
 	}
