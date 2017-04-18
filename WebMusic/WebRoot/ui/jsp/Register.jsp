@@ -30,89 +30,46 @@
 </head>
 
 <body style="background:url('ui/image/bg_1.jpg');">
-	<h2 class="h2" style="text-align: center;">新用户注册</h2>
-	<form method="post" action="userregister!Register.action"
-		class="form-inline" onsubmit="return validateForm()">
-		<table class="table" id="table">
-			<tr>
-				<th>用户名：</th>
-				<td>
-					<span class="glyphicon glyphicon-user"></span>
-					<input type="text" name="user.userName" id="userName">
-					<span class="userName"></span>
-				</td>
-			</tr>
-			<tr>
-				<th>设置密码：</th>
-				<td>
-					<span class="glyphicon glyphicon-lock"></span>
-					<input type="password" name="user.password" id="passwordO">
-					<span class="passwordO"></span>
-				</td>
-			</tr>
-			<tr>
-				<th>确认密码：</th>
-				<td>
-					<span class="glyphicon glyphicon-lock"></span>
-					<input type="password" name="password2" id="passwordC">
-					<span class="passwordC"></span>
-				</td>
-			</tr>
-			<tr>
-				<th>邮箱：</th>
-				<td>
-					<span class="glyphicon glyphicon-envelope"
-						style="color: rgb(0, 0, 0);"> </span>
-					<input type="text" name="user.email" id="email">
-					<span class="email"></span>
-				</td>
-			</tr>
-			<tr>
-				<th>性别：</th>
-				<td>
-					<span class="glyphicon glyphicon-euro" style="color: rgb(0, 0, 0);">
-					</span> 男：
-					<input type="radio" name="user.gender" value="男">
-					女：
-					<input type="radio" name="user.gender" value="女">
-				</td>
-			</tr>
-			<tr>
-				<th>昵称：</th>
-				<td>
-					<span class="glyphicon glyphicon-tower"
-						style="color: rgb(0, 0, 0);"></span>
-					<input type="text" name="user.nickname">
-				</td>
-			</tr>
-			<tr>
-				<th class="birthday">出生年月</th>
-				<td>
-					<span class="glyphicon glyphicon-euro" style="color: rgb(0, 0, 0);">
-					</span>
-					<input type="date" class="name" name="user.birthday"
-						value="${ user.birthday}">
-				</td>
-
-			</tr>
-			<tr>
-				<th>验证码：</th>
-				<td>
-					<span class="glyphicon glyphicon-barcode"
-						style="color: rgb(0, 0, 0);"> </span>
-					<input type="text" name="randCode">
-					<img alt="" src="readImgAction" onclick="verificatCodeClick()">
-					<span class="randCode">${randCode }</span>
-				</td>
-			</tr>
-			<tr>
-				<th></th>
-				<td>
-					<input class="btn btn-info" type="submit" value="立即注册">
-					<input class="btn btn-info" type="reset" value="全部重置">
-				</td>
-			</tr>
-		</table>
-	</form>
+	<div class="register_page">
+		<h2 class="h2" style="text-align: center;">新用户注册</h2>
+		<form method="post" action="userregister!Register.action"
+			class="form-inline" onsubmit="return validateForm()">
+			<span class="glyphicon glyphicon-user"></span>
+			<input type="text" name="user.userName" id="userName" class="a1"
+				placeholder="请输入账户名">
+			<br> <span class="userName"></span> <span
+				class="glyphicon glyphicon-lock"></span>
+			<input type="password" name="user.password" id="passwordO" class="a1"
+				placeholder="请输入密码">
+			<br> <span class="passwordO"></span> <span
+				class="glyphicon glyphicon-lock"></span>
+			<input type="password" name="password2" id="passwordC" class="a1"
+				placeholder="请再次输入密码">
+			<br> <span class="passwordC"></span> <span
+				class="glyphicon glyphicon-envelope" style="color: rgb(0, 0, 0);">
+			</span>
+			<input type="text" name="user.email" id="email" class="a1"
+				placeholder="请输入邮箱">
+			<br> 男：
+			<input type="radio" name="user.gender" value="男">
+			女：
+			<input type="radio" name="user.gender" value="女">
+			<br> <span class="glyphicon glyphicon-tower"
+				style="color: rgb(0, 0, 0);"></span>
+			<input type="text" name="user.nickname" class="a1"
+				placeholder="请输入昵称">
+			<br> <span class="glyphicon glyphicon-euro"
+				style="color: rgb(0, 0, 0);"> <input type="date"
+					name="user.birthday" value="${ user.birthday}" class="a1">
+			</span> <br> 
+			<input type="text" name="randCode" class="a1" placeholder="请输入验证码">
+			<img alt="" src="readImgAction" onclick="verificatCodeClick()" >
+			<span class="randCode">${randCode }</span><br>
+			<div class="submit_reset">
+				<input class="btn_btn-info" type="submit" value="立即注册">
+				<input class="btn_btn-info" type="reset" value="全部重置">
+			</div>
+		</form>
+	</div>
 </body>
 </html>
