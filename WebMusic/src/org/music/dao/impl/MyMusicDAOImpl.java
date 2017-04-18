@@ -57,8 +57,12 @@ public class MyMusicDAOImpl implements IMymusicDAO {
 	}
 
 	@Override
-	public void doUpdate(Mymusic vo) throws Exception {
-		HibernateSessionFactory.getSession().update(vo);
+	public void doUpdate(Mymusic mymusic) throws Exception {
+		String hql = "UPDATE Mymusic AS m SET m.name=?  WHERE m.id=?";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, mymusic.getName());
+		query.setInteger(1, mymusic.getId());
+		query.executeUpdate();
 
 	}
 

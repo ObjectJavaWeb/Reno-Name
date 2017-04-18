@@ -16,7 +16,7 @@ public interface IMymusicService {
 	
 	public Mymusic findById(int id) throws Exception; 
 	
-	public void update(Mymusic music) throws Exception;
+	public void update(Mymusic mymusic) throws Exception;
 	/**
 	 * 根据关键字搜索歌单
 	 * @param column

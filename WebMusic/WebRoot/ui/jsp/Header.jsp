@@ -49,16 +49,14 @@
 					data-toggle="dropdown" href="#" style="color: black;"> 发现音乐 <b
 						class="caret"></b></a>
 					<ul class="dropdown-menu" role="menu" style="color: black;">
-						<li value="推荐"><a href=""  class="reg">推荐</a></li>
-						<li value="排行榜"><a href=""  class="reg">排行榜</a></li>
-						<li value="歌单"><a href=""  class="reg">歌单</a></li>
-						<li value="歌手"><a href=""  class="reg">歌手</a></li>
+						<li value="推荐"><a href="" class="reg">推荐</a></li>
+						<li value="排行榜"><a href="" class="reg">排行榜</a></li>
+						<li value="歌单"><a href="" class="reg">歌单</a></li>
+						<li value="歌手"><a href="" class="reg">歌手</a></li>
 					</ul></li>
 				<!-- 我的音乐 -->
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#" style="color: black;"><a href="Mymusic!getMymusicList"> 我的音乐 </a><b
-						class="caret"></b></a>
-					
+				<li><a href="#" style="color: black;"><a
+						href="Mymusic!getMymusicList.action"> 我的音乐 </a></li>
 				<!-- 个人 -->
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#" style="color: black;"> 个人 <b
@@ -74,14 +72,14 @@
 			</ul>
 		</div>
 		<div class="topbar_1_3">
-		<div class="div_search">
-			<form class="form-search">
-				<p class="input-append">
-					<input type="text" class="span2 search" id="appendedInputButton search"
-						placeholder="请输入您想收索的歌曲名/歌手">
-					<input type="submit" value="搜索" class="btn search" >
-				</p>
-			</form>
+			<div class="div_search">
+				<form class="form-search">
+					<p class="input-append">
+						<input type="text" class="span2 search"
+							id="appendedInputButton search" placeholder="请输入您想收索的歌曲名/歌手">
+						<input type="submit" value="搜索" class="btn search">
+					</p>
+				</form>
 			</div>
 			<div class="div_login">
 				<%
@@ -89,12 +87,14 @@
 						User user = (User) request.getSession().getAttribute("user");
 						if (user != null) {
 				%>
-				<span>欢迎您：</span><a href="userlogin!queryPersonal.action?user.id=${user.id }"
+				<span>欢迎您：</span><a
+					href="userlogin!queryPersonal.action?user.id=${user.id }"
 					style=" font-size: 15;color: black;">${user.nickname }</a>
 				<%
 					} else {
 				%>
-				<a href="javaScript:open_Login_windows()"> 登录</a>|<a href="userlogin!preRegister.action">注册</a>
+				<a href="javaScript:open_Login_windows()"> 登录</a>|<a
+					href="userlogin!preRegister.action">注册</a>
 				<%
 					}
 					}
@@ -120,7 +120,7 @@
 						</td>
 					</tr>
 					<tr>
-						<th align="center" style="padding-left: 7">密    	       码</th>
+						<th align="center" style="padding-left: 7">密 码</th>
 						<td>
 							<input type="password" name="user.password" placeholder="密码">
 							<a href="#">找回密码</a>

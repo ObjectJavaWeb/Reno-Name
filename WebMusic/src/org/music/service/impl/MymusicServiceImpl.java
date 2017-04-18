@@ -57,11 +57,11 @@ public class MymusicServiceImpl implements IMymusicService {
 
 	}
 
-	public void update(Mymusic music) throws Exception {
+	public void update(Mymusic mymusic) throws Exception {
 		Transaction tx = HibernateSessionFactory.getSession()
 				.beginTransaction();
 		try {
-			DAOFactory.getIMymusicDAOInstance().doUpdate(music);
+			DAOFactory.getIMymusicDAOInstance().doUpdate(mymusic);
 			tx.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
