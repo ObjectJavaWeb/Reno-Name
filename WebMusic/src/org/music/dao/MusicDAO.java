@@ -14,6 +14,8 @@ public interface MusicDAO extends IDAO<Integer, Music> {
 
 	//通过类型查找歌曲
 	public List<Music> getType(String type) throws Exception;
+	
+	
 	/**
 	 * 设置点击量
 	 * @param musicId 音乐ID

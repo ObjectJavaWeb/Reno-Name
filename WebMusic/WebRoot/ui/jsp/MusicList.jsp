@@ -29,11 +29,11 @@
 	<div class="div1">
 		<div class="div1-1">
 			<ul>
-				<li><a href="#">华语</a></li>
-				<li><a href="#">流行</a></li>
-				<li><a href="#">摇滚</a></li>
-				<li><a href="#">民谣</a></li>
-				<li><a href="#">电子</a></li>
+				<li><a href="music!musicType?music.type=华语">华语</a></li>
+				<li><a href="music!musicType?music.type=流行">流行</a></li>
+				<li><a href="music!musicType?music.type=摇滚">摇滚</a></li>
+				<li><a href="music!musicType?music.type=民谣">民谣</a></li>
+				<li><a href="music!musicType?music.type=电子">电子</a></li>
 			</ul>
 		</div>
 		<div class="div1-2">

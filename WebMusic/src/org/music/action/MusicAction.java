@@ -3,7 +3,11 @@ package org.music.action;
 import java.util.List;
 
 import org.music.factory.MusicFactory;
+import org.music.factory.MusicServiceFactory;
 import org.music.pojo.Music;
+import org.music.service.MusicService;
+import org.music.service.impl.MusicServiceImpl;
+import org.music.util.Tools;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -36,13 +40,19 @@ public class MusicAction extends ActionSupport {
 		this.music = music;
 	}
 	public String musicList() throws Exception {
-		musics=MusicFactory.getMusicDAO().findAll(1, 12, "", "name");
-		parade=MusicFactory.getMusicDAO().parade();
+		musics=(List<Music>) MusicServiceFactory.getMusicServiceInstace().list(1, 12, "", "name").get("allMusic");
+		parade=MusicServiceFactory.getMusicServiceInstace().parade();
 		return "musicList";
 	}
 	public String getMusicMessage() throws Exception {
 		MusicFactory.getMusicDAO().addHit(music.getId());
-		music=MusicFactory.getMusicDAO().findById(music.getId());
+		music=MusicServiceFactory.getMusicServiceInstace().findById(music.getId());
 		return "musicMessagge";
+	}
+	
+	public String musicType() throws Exception{
+		
+		musics = MusicServiceFactory.getMusicServiceInstace().getType(Tools.decoder(music.getType(), "UTF-8"));
+		return "musicList";
 	}
 }
