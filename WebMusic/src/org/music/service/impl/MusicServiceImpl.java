@@ -122,5 +122,34 @@ public class MusicServiceImpl implements MusicService{
 		return musiclist;
 	}
 
+	@Override
+	public void addHit(Integer musicId) throws Exception {
+		Transaction tx=HibernateSessionFactory.getSession().beginTransaction();
+		try {
+			MusicFactory.getMusicDAO().addHit(musicId);
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+			e.printStackTrace();
+			// TODO: handle exception
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		
+	}
+
+	@Override
+	public List<Music> parade() throws Exception {
+		List<Music> list=null;
+		try {
+			list=MusicFactory.getMusicDAO().parade();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		return list;
+	}
+
 
 }

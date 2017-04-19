@@ -5,7 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -38,22 +38,17 @@
 		</div>
 		<div class="div1-2">
 			<ul>
-				<%
-					for (int i = 0; i < 12; i++) {
-				%>
-				<li><span> <a href="#"> <img
-							src="ui/image/musical.jpg">
-							<p>这些声音里藏着故事（华语女声篇）</p>
-					</a>
-				</span></li>
-				<%
-					}
-				%>
+				<c:forEach var="m" items="${musics }">
+					<li><a href="music!getMusicMessage.action?music.id=${m.id }"> <img src="ui/image/musical.jpg"> <span>${m.name }</span>
+					</a></li>
+				</c:forEach>
 			</ul>
 		</div>
 		<div style="clear: both;"></div>
 		<div class="div1-3">
-			<p><img src="ui/image/tubiao.jpg"> <span>音乐排行榜</span></p>
+			<p>
+				<img src="ui/image/tubiao.jpg"> <span>音乐排行榜</span>
+			</p>
 			<table class="table">
 				<tr>
 					<th>排名</th>
@@ -63,21 +58,17 @@
 					<th>点击量</th>
 					<th>操作</th>
 				</tr>
-				<%
-					for (int i = 1; i <= 10; i++) {
-				%>
+				<c:forEach var="p" items="${parade }" varStatus="pr">
 
 				<tr>
-					<td><%=i%></td>
-					<td>光辉岁月</td>
-					<td>黄家驹</td>
-					<td>粤语</td>
-					<td>100</td>
+					<td>${pr.index+1 }</td>
+					<td>${p.name }</td>
+					<td>${p.songer }</td>
+					<td>${p.type }</td>
+					<td>${p.hit }</td>
 					<td>添加到歌单</td>
 				</tr>
-				<%
-					}
-				%>
+				</c:forEach>
 			</table>
 		</div>
 

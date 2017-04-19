@@ -12,6 +12,7 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Query;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -45,7 +46,7 @@ public class MusicDAOImpl implements MusicDAO {
 	@Override
 	public List<Music> findAll(int pageNo, int pageSize, String keyword,
 			String column) throws Exception {
-		String hql="FROM music AS n WHERE n."+column+"LIKE ?";
+		String hql="FROM Music AS n WHERE n."+column+" LIKE ?";
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, "%"+keyword+"%");
 		//分页处理
@@ -56,14 +57,14 @@ public class MusicDAOImpl implements MusicDAO {
 
 	@Override
 	public List<Music> findAll() throws Exception {
-		String hql="FROM music";
+		String hql="FROM Music";
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		return query.list();
 	}
 
 	@Override
 	public int getAllcount(String keyword, String column) throws Exception {
-		String hql="SELECT COUNT(n) FROM music AS n WHERE n."+column+"LIKE ?";
+		String hql="SELECT COUNT(n) FROM music AS n WHERE n."+column+" LIKE ?";
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, "%"+keyword+"%");
 		return ((Long)query.uniqueResult()).intValue();
@@ -74,6 +75,23 @@ public class MusicDAOImpl implements MusicDAO {
 		String hql = "FROM　Music AS m WHERE m.type = ? ";
 		Query query = HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, type);
+		return query.list();
+	}
+
+	@Override
+	public void addHit(Integer musicID) throws Exception {
+		String hql="UPDATE Music AS m SET m.hit=m.hit+1 WhERE id=?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setInteger(0, musicID);
+		query.executeUpdate();
+	}
+
+	@Override
+	public List<Music> parade() throws Exception {
+		String hql="FROM Music AS m ORDER BY m.hit desc";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setFirstResult(0);
+		query.setMaxResults(10);
 		return query.list();
 	}
 

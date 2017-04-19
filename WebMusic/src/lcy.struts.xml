@@ -2,6 +2,9 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="lcy" namespace="/" extends="struts-default">
-	
-		</package>
+		<action name="music" class="org.music.action.MusicAction">
+			<result name="musicList">pro.jsp</result>
+			<result name="musicMessagge">/ui/jsp/MusicMessage.jsp</result>
+		</action>
+	</package>
 </struts>  

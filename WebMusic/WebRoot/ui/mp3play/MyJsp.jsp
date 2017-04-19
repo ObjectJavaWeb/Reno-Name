@@ -19,10 +19,52 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<script type="text/javascript" src="ui/jquery/jquery-2.0.0.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var audio = document.getElementById("audio");
+		$("#play").click(function() {
+			if (audio.paused) {
+				audio.play();
+				$("#play").val("暂停");
+			} else {
+				audio.pause();
+				$("#play").val("播放");
+			}
+		});
 
+	});
+	function setTimer() {
+		var maxTime = audio.duration;
+		var currentTime = audio.currentTime;
+		$("#time").html(fomatTime(currentTime) + "/" + fomatTime(maxTime));
+	}
+	setInterval("setTimer()", "1000");
+	function fomatTime(time) {
+		var m = Math.floor(Math.floor(time) / 60);
+		var s = Math.floor(Math.floor(time) % 60);
+		var str = "";
+		if (m < 10) {
+			str = str + "0";
+		}
+		str = str + m + ":";
+		if (s < 10) {
+			str = str + "0";
+		}
+		str = str + s;
+		return str;
+	}
+</script>
   </head>
   
   <body>
+  <audio id="audio">
+		<source src="ui/mp3play/music/gala.mp3" type="audio/mpeg">
+	</audio>
+	<button>上一首</button>
+	<input type="button" id="play" value="播放">
+	<button>下一首</button>
+	<span id="time"></span>
     <jsp:include page="MyHtml.html"></jsp:include>
   </body>
 </html>

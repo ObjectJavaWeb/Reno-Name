@@ -2,4 +2,5 @@
 <xml-body>
 	<text name="loginDuplicate" value="登录名重复" />
 	<text name="preRegister" value="准备注册" />
+	<text name="parade" value="排行榜"/>
 </xml-body>
