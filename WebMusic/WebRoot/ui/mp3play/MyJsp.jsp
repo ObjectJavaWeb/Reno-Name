@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'MyMusicPlay.jsp' starting page</title>
+    <title>My JSP 'MyJsp.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,8 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <div>
-    	<jsp:include page="../bofq/index.jsp"></jsp:include>
-    </div>
+    <jsp:include page="MyHtml.html"></jsp:include>
   </body>
 </html>
