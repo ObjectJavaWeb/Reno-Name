@@ -9,6 +9,7 @@ import javax.jms.Session;
 import org.hibernate.Transaction;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
+import org.music.factory.DAOFactory;
 import org.music.factory.MusicFactory;
 import org.music.factory.MusicServiceFactory;
 import org.music.pojo.Music;
@@ -106,6 +107,19 @@ public class MusicServiceImpl implements MusicService{
 		
 		return map;
 	
+	}
+
+	@Override
+	public List<Music> getType(String type) throws Exception {
+		List<Music> musiclist = null;
+		try {
+			musiclist = MusicFactory.getMusicDAO().getType(type);
+		} catch (Exception e) {
+			throw e;
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		return musiclist;
 	}
 
 

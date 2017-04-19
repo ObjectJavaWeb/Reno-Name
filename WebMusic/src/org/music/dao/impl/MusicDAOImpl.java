@@ -11,6 +11,7 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Query;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -66,6 +67,14 @@ public class MusicDAOImpl implements MusicDAO {
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, "%"+keyword+"%");
 		return ((Long)query.uniqueResult()).intValue();
+	}
+
+	@Override
+	public List<Music> getType(String type) throws Exception {
+		String hql = "FROM　Music AS m WHERE m.type = ? ";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, type);
+		return query.list();
 	}
 
 
