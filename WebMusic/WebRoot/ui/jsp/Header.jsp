@@ -17,14 +17,13 @@
 <meta http-equiv="description" content="This is my page">
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<script src="ui/js/Header.js"></script>
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<script src="ui/js/Header.js"></script>
+<!--  <script src="ui/js/Header.js"></script> -->
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
 <title>顶部导航</title>
 <script type="text/javascript">

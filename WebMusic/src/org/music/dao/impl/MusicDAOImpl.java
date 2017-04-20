@@ -46,9 +46,11 @@ public class MusicDAOImpl implements MusicDAO {
 	@Override
 	public List<Music> findAll(int pageNo, int pageSize, String keyword,
 			String column) throws Exception {
-		String hql="FROM Music AS n WHERE n."+column+" LIKE ?";
+		String hql="FROM Music AS n WHERE n.name LIKE ? OR n.songer LIKE ? OR n.abum LIKE ?";
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, "%"+keyword+"%");
+		query.setString(1, "%"+keyword+"%");
+		query.setString(2, "%"+keyword+"%");
 		//分页处理
 		query.setFirstResult((pageNo-1)*pageSize);
 		query.setMaxResults(pageSize);

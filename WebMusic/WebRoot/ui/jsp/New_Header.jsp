@@ -16,7 +16,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<script src="ui/js/Header.js"></script>
+ <!-- <script src="ui/js/Header.js"></script> -->
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
 
