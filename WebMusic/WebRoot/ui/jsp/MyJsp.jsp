@@ -49,7 +49,7 @@
 			<div class="tabbable">
 				<ul class="nav nav-tabs ul-nav">
 					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
-					<li><a href="#tab2" data-toggle="tab">我的音乐</a></li>
+					<li><a href="Mymusic!getMymusicList.action">我的音乐</a></li>
 					<li><a href="#tab3" data-toggle="tab">个人设置</a></li>
 				</ul>
 				<!-- 我的音乐 
@@ -77,7 +77,7 @@
 							<li><a href="=#">歌手</a></li>
 						</ul>
 					</div>
-					<div class="tab-pane" id="tab2">
+					<div class="tab-pane" id="Mymusic!getMymusicList.action">
 						<ul class="ul2"></ul>
 					</div>
 					<div class="tab-pane" id="tab3">

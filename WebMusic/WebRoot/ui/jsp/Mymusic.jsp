@@ -50,8 +50,11 @@
 </script>
 
 <body>
-<jsp:include page="MyJsp.jsp"></jsp:include>
-	<div class="body_Mymusic">
+	<jsp:include page="MyJsp.jsp"></jsp:include>
+	<div calss="1"
+		style="width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;top: 0; "></div>
+	<div class="Mymusic">
+
 		<div class="left">
 			<div class="left_1">
 				<div class="left_1_1">
@@ -60,7 +63,11 @@
 				<div class="left_1_2">
 					<!-- <a href="javaScript:open_NewSongList()" >+新建</a> -->
 					<button class="btn btn-mini btn-primary left_1_2_btn" type="button"
-						onclick="open_NewSongList()">+新建</button>
+						style="background-color:#FBEEEB;text-align: center; "
+						onclick="open_NewSongList()">
+						<font size="0.2em" ; color="black"
+							style="background-color: #FBEEEB;margin-left: -8px;line-height: 8px;">+新建</font>
+					</button>
 				</div>
 				<!-- 添加歌单弹窗 -->
 				<div id="open_NewSongList">
@@ -157,20 +164,20 @@
 					<img alt="" src=""><a href="">夏木</a><span
 						style="margin-left: 100px;margin-top:-20px;display: block;float: left;">&nbsp;&nbsp;&nbsp;2017年04月9日</span>
 					<button class="btn btn-mini btn-primary right_1_2_btn"
-						type="button">
-						<i class="icon-pause"></i> 播放
+						type="button" style="background-color: #FBEEEB";>
+						<i class="icon-pause"></i> <font color="black";>播放</font>
 					</button>
 					<button class="btn btn-mini btn-primary right_1_2_btn"
-						type="button">
-						<i class="icon-heart"></i> 收藏
+						type="button" style="background-color: #FBEEEB";>
+						<i class="icon-heart"></i> <font color="black";>收藏</font>
 					</button>
 					<button class="btn btn-mini btn-primary right_1_2_btn"
-						type="button">
-						<i class="icon-download-alt"></i> 下载
+						type="button" style="background-color: #FBEEEB";>
+						<i class="icon-download-alt"></i> <font color="black";>下载</font>
 					</button>
 					<button class="btn btn-mini btn-primary right_1_2_btn"
-						type="button">
-						<i class="icon-comment"></i> 评论
+						type="button" style="background-color: #FBEEEB";>
+						<i class="icon-comment"></i> <font color="black";>评论</font>
 					</button>
 				</div>
 
@@ -187,16 +194,24 @@
 			</div>
 			<div class="right_3"></div>
 			<div class="right_4">
-				<table width="100%" border="1" border-color="red">
+				<table width="100%" border="1" bordercolor="#FBE5DE">
 					<tr>
 						<th></th>
-						<th>歌曲标题</th>
-						<th>时长</th>
-						<th>歌手</th>
-						<th>专辑</th>
+						<th>
+							<font size="0.5em">歌曲标题</font>
+						</th>
+						<th>
+							<font size="0.5em">时长</font>
+						</th>
+						<th>
+							<font size="0.5em">歌手</font>
+						</th>
+						<th>
+							<font size="0.5em">专辑</font>
+						</th>
 					</tr>
 					<tr>
-						<td></td>
+						<td width="100px;"></td>
 						<td></td>
 
 						<td></td>
@@ -211,5 +226,7 @@
 
 		</div>
 	</div>
+	<div calss="2"
+		style="width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;margin-left:1126px;top:0; "></div>
 </body>
 </html>
