@@ -1,15 +1,4 @@
 /*固定定位position:fixed;一旦设置了该属性，那么该元素就会脱离文档流，进行固定定位。*/
-#open_Login {
-	display: none;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	padding-top: 10%;
-	z-index: 1001;
-	left: 0px;
-	top: 0px;
-}
-
 #gototop a {
 	display: block;
 	width: 40px;
@@ -42,13 +31,11 @@
 .topbar_1_1 {
 	width: 25%;
 	height: 82%;
-	margin-top:-20px;
+	margin-top: -20px;
 	margin-left: 0px;
 	float: left;
 	background: url('../image/bg_1.jpg');
-	
 }
-
 
 .topbar_1_2 {
 	float: left;
@@ -56,52 +43,55 @@
 	height: 100%;
 }
 
-.topbar_1_2 li a{
+.topbar_1_2 li a {
 	height: 63px;
-	width:170px;
+	width: 170px;
 	line-height: 50px;
 	text-align: center;
 	font-size: 17px;
 	margin-left: 0px;
-	
 }
-.tab-content{
-	width:100%;
-	height:37px;
-	
+
+.tab-content {
+	width: 100%;
+	height: 37px;
 }
-.tab-pane{
-	width:100%;
-	height:37px;
-	margin-top:0px;
-	float:left;
+
+.tab-pane {
+	width: 100%;
+	height: 37px;
+	margin-top: 0px;
+	float: left;
 }
-.ul2{
+
+.ul2 {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	float:left;
-	
+	float: left;
 }
-.ul2 li{
+
+.ul2 li {
 	list-style: none;
 	float: left;
-	margin-left:80px;
+	margin-left: 80px;
 	margin-top: -5px;
 }
-a:hover{
+
+a:hover {
 	text-decoration: none;
 }
-.tab-pane li a{
-	width:90px;
-	height:20px;
+
+.tab-pane li a {
+	width: 90px;
+	height: 20px;
 	text-align: center;
 	font-size: 14px;
-	
 }
+
 .topbar_1_3 {
 	float: left;
-	width: 470px;
+	width: 700px;
 	height: 100%;
 }
 
@@ -137,23 +127,6 @@ a:hover{
 	display: none;
 }
 
-.search {
-	display:block;
-	float:left;
-	margin-top: 30px;
-	margin-left:120px;
-	width:200px;
-	border-radius:5px;
-}
-
-.search1 {
-	display:block;
-	float:left;
-	margin-top: 26px;
-	margin-left:0px;
-	background-color: #F8E6E1;
-}
-
 .reg {
 	font-size: 0.5em;
 	margin-top: 30px;
@@ -164,13 +137,12 @@ a:hover{
 	text-decoration: none;
 	width: 100px;
 	height: 5px;
-	font-size: 1em;
+	/* font-size: 1em; */
 	color: white;
 	text-align: center;
 	line-height: 30px;
 	margin-left: 20px;
 }
-
 
 .topbar_2 {
 	position: relative;
@@ -198,67 +170,124 @@ a:hover{
 	text-align: center;
 	color: white;
 }
-.div_search{
-	height:100%;
+
+.div_search {
+	width: 400px;
+	height: 100px;
 	float: left;
-}
-.div_login{
-	height:100%;
-	float: left;
-	margin-right: 80px;
-	font-size: 5px;
-}
-.div_login{
-	margin-top:45px;
-	margin-left:10px;
-	text-align:center;
-	line-height:10px;
-}
-.div_login a{
-	width: 80px;
-	text-align:center;
-	line-height:10px;
-	color: black;
-	font-size: 5px;
-	margin-left:20px;
-	margin-top:0px;
-	
+	font-size: 20px;
+	align: center;
 }
 
-.div_login li{
+.search {
+	margin-top: 30px; display : block;
+	float: left;
+	margin-left: 120px;
+	width: 300px;
+	height: 40px;
+	border-radius: 40px;
 	display: block;
-	height: 25px;
+}
+
+.search1 {
+	margin-top: 30px;
+	margin-left: -120px;
+	width: 80px;
+	display: block;
+	float: right;
+	border-radius: 40px;
+	background: white;
+}
+
+.div_login {
+	padding-top: 50px;
+	line-height: 10px;
+	height: 100px;
+	width: 300px;
+	float: right;
+	font-size: 20px;
+	color: black;
+	/* border: 1px solid red; */
+	line-height: 10px;
+}
+.div_login ul li{
+	margin-top:0;
+	paddingt-top:0;
+}
+
+.div_login a {
+	line-height: 10px;
+	color: black;
+}
+
+.div_login li {
+	display: block;
+	height: 65px;
 	list-style: none;
 	float: left;
 	line-height: 25px;
 	text-align: center;
 	color: black;
-	margin-left:10px;
-}
-
-.div5{
-	width:100%;
-	height:450px;
-	background-color:white;
-	margin-top:0px;
+	margin-left: 10px;
+} */
+.div5 {
+	float: right;
+	width: 100%;
+	height: 45px;
+	background-color: white;
+	margin-top: 0px;
 	margin-left: 20px;
-}
-.div5 img{
-	display:block;
-	float:left;
-	width:100%;
-	height:450px;
-    margin-left:-40px;
-	margin-right:auto;
-	margin-top:0px;
+	width: 100%;
 }
 
-
-.right{
-	margin-right:40px;
+.div5 img {
+	display: block;
+	float: left;
+	width: 100%;
+	height: 450px;
+	margin-left: -40px;
+	margin-right: auto;
+	margin-top: 0px;
 }
-.font{
+
+.right {
+	margin-right: 40px;
+}
+
+.font {
 	display: block;
 	line-height: 400px;
 }
 
+.login_windows {
+	height: 350px;
+	width: 480px;
+}
+
+.login_user {
+	float: left;
+	height: 50px;
+}
+
+.login_user input {
+	width:290px;
+	height: 35px;
+}
+
+.login_password {
+	float: left;
+	height: 50px;
+}
+
+.login_password input {
+	width: 290px;
+	height: 35px;
+}
+
+.modal_footer {
+	padding-top: 30px;
+}
+
+.modal_footer button {
+	margin-left: 100px;
+}
