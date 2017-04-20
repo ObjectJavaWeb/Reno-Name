@@ -33,7 +33,13 @@ hr{
 .div1-2 ul li{
 	width: 150px;
 	float: left;
-	margin-left: 20px;
+	margin-left: 30px;
+}
+.div1-2 ul li span{
+	margin-top:12px;
+	display: block;
+	height: 70px;
+	font-size: 20px;
 }
 table {
 	border-top: 3px solid #CC3333;
