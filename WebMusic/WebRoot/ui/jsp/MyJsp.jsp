@@ -124,14 +124,43 @@
 				<%
 					} else {
 				%>
-				<a href="javaScript:open_Login_windows()"> 登录</a>|<a
+				<a href="" class="btn btn-primary btn-lg" data-toggle="modal"
+					data-target="#myModal"> 登录</a>|<a
 					href="userlogin!preRegister.action">注册</a>
 				<%
 					}
 					}
 				%>
+				<!-- 登录模态框开始 -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">登录</h4>
+							</div>
+							<div class="modal-body">
+								<input type="text" name="user.userName" placeholder="用户名">
+								<a href="userlogin!preRegister.action">没有注册？</a> <br>
+								<input type="password" name="user.password" placeholder="密码">
+								<a href="#">找回密码</a>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary">登录</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
+				<!--登录模态框结束  -->
 			</div>
 		</div>
+		<!-- 登录框隐藏域 -->
 		<div id="open_Login">
 			<form action="userlogin!login.action" method="post">
 				<table width="30%" border="0" cellpadding="3" cellspacing="1"

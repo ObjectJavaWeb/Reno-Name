@@ -53,15 +53,16 @@ public class ReplyServiceImpl implements IReplyService {
 			e.printStackTrace();
 		}
 		 finally{
-			 HibernateSessionFactory.closeSession();
+			// HibernateSessionFactory.closeSession();
 		 }
 		return reply;
 	}
 
 	@Override
 	public void insert(Reply reply) throws Exception {
-		Transaction tx = (Transaction) HibernateSessionFactory.getSession()
-				.beginTransaction();
+		// 加入事务处理功能
+				org.hibernate.Transaction tx = HibernateSessionFactory.getSession()
+						.beginTransaction();
 		try {
 			DAOFactory.getIReplyInstance().insert(reply);
 			tx.commit();

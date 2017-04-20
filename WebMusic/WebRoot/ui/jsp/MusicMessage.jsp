@@ -24,28 +24,36 @@
 <link rel="stylesheet" type="text/css" href="ui/css/MusicMessage.css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
 <script type="text/javascript">
-function reply(o) {
-	var d=$(".sreplys");
-	for ( var i=0;i<d.length; i++) {
-		$(".reply"+i).css("display","none");
+	function reply(o) {
+		var d = $(".sreplys");
+		for (var i = 0; i < d.length; i++) {
+			$(".reply" + i).css("display", "none");
+		}
+		$(".reply" + o).css("display", "block");
+
 	}
-	$(".reply"+o).css("display","block");
-	
-}
-$(function(){
-	
-	$("#sum").click(function(){
-		var content=$("#content").val();
-		var userId=$("#userId").val();
-		var commentId=$("#commentId").val();
-		$.ajax({
-			url:"reply!insertReply.action",
-			type:"GET",
-			datatype:"json",
-			data:{"reply.content":content,"user.id":userId,"comment.id":commentId}
+	$(function() {
+
+		$("#sum").click(function() {
+			var content = $("#content").val();
+			var userId = $("#userId").val();
+			var commentId = $("#commentId").val();
+			$.ajax({
+				url : "reply!insertReply.action",
+				type : "GET",
+				datatype : "json",
+				data : {
+					"reply.content" : content,
+					"user.id" : userId,
+					"comment.id" : commentId
+				}
+			});
 		});
 	});
-});
+	/*打开回复框  */
+	function open_reply_windows() {
+		document.getElementById('reply_windows').style.display = 'block';
+	}
 </script>
 </head>
 
@@ -100,17 +108,33 @@ $(function(){
 						<c:forEach var="comments" items="${comments }" varStatus="c">
 							<li>
 								<div style="border-bottom: 1px solid #C0C0C0;">
+
+									<c:forEach var="reply" items="${replys}">
+										<div style="border-bottom: 1px solid #C0C0C0;">
+											${reply.content}</div>
+									</c:forEach>
+
 									<div>
-									${comments.user.userName }:${ comments.content}<br> <span
-										style="float: left;">${comments.cdate }</span><span
-										style="float: right" onclick="reply(${c.index})">|回复</span>
-										</div>
-										<div class="sreplys reply${c.index }" >
+
+										${comments.user.userName }:${ comments.content}<br> <span>${comments.cdate }</span><span
+											style="float: right" onclick="reply(${c.index })">|回复</span>
+									</div>
+									<!--以下注释是回复功能的隐藏域  -->
+									<%-- <div class="sreplys reply${c.index }" >
 												<textarea rows="2" cols="20" id="content"></textarea>
 												<input type="submit" id="sum" value="回复">
 												<input type="hidden" id="userId" value="${comments.user.id }">
 												<input type="hidden" id="commentId" value="${comments.id }">
-										</div>
+										</div> --%>
+									<div class="sreplys reply${c.index }">
+										<form action="reply!insertReply.action" method="post">
+											<textarea rows="2" cols="20" name="reply.content"></textarea>
+											<input type="submit" value="回复">
+											<input type="hidden" value="${comments.id }"
+												name="comment.id">
+											<input type="hidden" value="${music.id }" name="music.id">
+										</form>
+									</div>
 								</div>
 							</li>
 						</c:forEach>

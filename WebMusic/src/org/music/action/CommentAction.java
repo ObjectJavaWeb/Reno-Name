@@ -100,9 +100,6 @@ public class CommentAction extends ActionSupport {
 		ServiceFactory.getICommentDAOInstance().insert(comment);
 		//根据歌曲ID查询所有评论
 		 comments =ServiceFactory.getICommentDAOInstance().getComments(music.getId());
-		for (Comment comment : comments) {
-			System.out.println(comment.getUser().getNickname());
-		}
 		return "musicmessage";
 	}
 
