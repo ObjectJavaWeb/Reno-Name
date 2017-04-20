@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<package name="tc" namespace="/" extends="struts-default">
+	<package name="tc" namespace="/" extends="json-default">
+	
+	<action name="reply" class="org.music.action.ReplyAction"> 
+	
+	  <result name="reply_list">/ui/jsp/MusicMessage.jsp</result>
+	  <!-- 查询所有回复跳转到歌曲信息页面 -->
+	  
+	
+	 </action>
 		</package>
 </struts>  

@@ -16,7 +16,7 @@ import org.music.pojo.User;
 
 
 public class CommentDAOImpl implements ICommentDAO {
-
+//添加评论
 	public void doCreate(Comment comment) throws Exception {
 		HibernateSessionFactory.getSession().save(comment);
 
@@ -27,22 +27,22 @@ public class CommentDAOImpl implements ICommentDAO {
 
 	}
 
-	public Set<Comment> getComments(int musicId)
+	public List<Comment> getComments(int musicId)
 			throws Exception {
-		Set<Comment> comments = null;
-		String hql = "FROM Music";
+		List<Comment> Commentlist = null;
+		String hql = "FROM Comment AS c WHERE c.music=? ORDER BY c.cdate desc";
 		Query query = HibernateSessionFactory.getSession().createQuery(hql);
-		List<Music> musiclist = query.list();
-		Iterator<Music> iterator = musiclist.iterator();
+		query.setInteger(0, musicId);
+	     Commentlist = query.list();
+		/*Iterator<Music> iterator = musiclist.iterator();
 		while (iterator.hasNext()) {
 			Music music = iterator.next();
 			System.out.println(music.getComments());
 			if (music.getId().equals(musicId)) {
 				comments = music.getComments();
 			}
-		}
-		System.out.println(query.list());
-		return comments;
+		}*/
+		return Commentlist;
 	}
 
 	public Set<Reply> getReplies(int commentId) throws Exception {

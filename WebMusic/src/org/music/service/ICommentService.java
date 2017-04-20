@@ -18,7 +18,7 @@ public interface ICommentService {
 
 	//public List findAll(String column) throws Exception;
 	
-	public Set<Comment> getComments(int musicId) throws Exception;
+	public List<Comment> getComments(int musicId) throws Exception;
 	
 	public Set<Reply> getReplies(int musicId) throws Exception;
 }

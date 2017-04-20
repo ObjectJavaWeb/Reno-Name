@@ -1,5 +1,7 @@
 package org.music.util;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -41,5 +43,14 @@ public class Tools {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	/**
+	 * 获取 当前时间戳Timestamp
+	 * @return
+	 */
+	public static Timestamp getNewDate() {
+		Date date = new Date();       
+		Timestamp cDate = new Timestamp(date.getTime());
+		return cDate;
 	}
 }

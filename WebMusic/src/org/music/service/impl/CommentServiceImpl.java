@@ -75,15 +75,15 @@ public class CommentServiceImpl implements ICommentService {
 //	}
 
 	
-	public Set<Comment> getComments(int musicId) throws Exception {
-		Set<Comment> commentSet = null;
+	public List<Comment> getComments(int musicId) throws Exception {
+		List<Comment> commentSet = null;
 		try {
 			commentSet = DAOFactory.getICommentDAOInstance().getComments(musicId);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw e;
 		}finally{
-			HibernateSessionFactory.closeSession();
+			//HibernateSessionFactory.closeSession();
 		}
 		return commentSet;
 
