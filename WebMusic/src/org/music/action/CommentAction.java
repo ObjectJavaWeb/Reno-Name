@@ -1,11 +1,16 @@
 package org.music.action;
 
+import java.sql.Timestamp;
+import java.util.Date;
+import java.util.Map;
 import java.util.Set;
 
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
 import org.music.pojo.Reply;
+import org.music.pojo.User;
+import org.music.util.Tools;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -73,8 +78,18 @@ public class CommentAction extends ActionSupport {
 	}
 	
 	//添加评论
-	public void insertComment() throws Exception{
+	public String  insertComment() throws Exception{
+		System.out.println(music.getId());
+		System.out.println("55555555");
+		Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");
+		comment.setUser(user);
+		java.util.Date utilDate=new Date();
+		java.sql.Date sqlDate=new java.sql.Date(utilDate.getTime());
+		comment.setCdate(sqlDate);
+		
 		ServiceFactory.getICommentDAOInstance().insert(comment);
+		return "musicmessage";
 	}
 	
 	//删除评论
