@@ -12,6 +12,14 @@ import java.util.Set;
 
 
 
+
+
+
+
+import org.hibernate.Query;
+import org.music.dao.impl.CommentDAOImpl;
+import org.music.dao.impl.MusicDAOImpl;
+import org.music.dbc.HibernateSessionFactory;
 import org.music.factory.MusicFactory;
 import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
@@ -27,7 +35,6 @@ public class Test {
 
 
 	public static void main(String[] args) throws Exception {
-	Mp3Info mp3Info=Mp3Tools.getMP3Info(new File("D:\\娱乐\\音乐\\音乐\\陈奕迅 - 十年.mp3"));
-	System.out.println(mp3Info.getSongName());
+	ServiceFactory.getICommentDAOInstance().getComments(3);
 	}
 }

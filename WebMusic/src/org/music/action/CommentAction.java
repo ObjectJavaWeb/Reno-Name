@@ -2,6 +2,7 @@ package org.music.action;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,6 +22,15 @@ public class CommentAction extends ActionSupport {
 	private Reply reply;
 	private Set<Reply> replySet;
 	private Music music;
+	private List<Comment> comments;
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
 
 	public Music getMusic() {
 		return music;
@@ -62,13 +72,13 @@ public class CommentAction extends ActionSupport {
 		this.replySet = replySet;
 	}
 	
-	//通过传入的音乐Id获取评论
+/*	//通过传入的音乐Id获取评论
 	public String getComments() throws Exception {
 		commentSet = ServiceFactory.getICommentDAOInstance().getComments(
 				music.getId());
 		return "comment";
 
-	}
+	}*/
 
 	//通过传入的评论Id获取相应回复
 	public String getReplys() throws Exception {
@@ -79,18 +89,24 @@ public class CommentAction extends ActionSupport {
 	
 	//添加评论
 	public String  insertComment() throws Exception{
-		System.out.println(music.getId());
-		System.out.println("55555555");
 		Map<String, Object> session = Tools.getSession();
 		User user = (User) session.get("user");
 		comment.setUser(user);
-		java.util.Date utilDate=new Date();
-		java.sql.Date sqlDate=new java.sql.Date(utilDate.getTime());
-		comment.setCdate(sqlDate);
+		comment.setMusic(music);
+		//设置评论时间 
 		
+		comment.setCdate(Tools.getNewDate());
+		//插入评论
 		ServiceFactory.getICommentDAOInstance().insert(comment);
+		//根据歌曲ID查询所有评论
+		 comments =ServiceFactory.getICommentDAOInstance().getComments(music.getId());
+		for (Comment comment : comments) {
+			System.out.println(comment.getUser().getNickname());
+		}
 		return "musicmessage";
 	}
+
+	
 	
 	//删除评论
 	public void removeComment() throws Exception{

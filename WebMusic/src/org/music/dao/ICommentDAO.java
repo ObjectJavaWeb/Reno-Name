@@ -16,7 +16,7 @@ public interface ICommentDAO {
 	public void doRemove(int commentId) throws Exception;
 	
 	//通过音乐Id获取相应的评论
-	public Set<Comment> getComments(int musicId) throws Exception;
+	public List<Comment> getComments(int musicId) throws Exception;
 	
 	//通过评论Id获取相应回复
 	public Set<Reply> getReplies(int commentId) throws Exception;

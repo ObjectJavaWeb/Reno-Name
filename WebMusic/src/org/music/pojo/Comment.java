@@ -1,5 +1,6 @@
 package org.music.pojo;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,6 +18,14 @@ public class Comment implements java.io.Serializable {
 	private Music music;
 	private String content;
 	private Timestamp cdate;
+	public Timestamp getCdate() {
+		return cdate;
+	}
+
+	public void setCdate(Timestamp cdate) {
+		this.cdate = cdate;
+	}
+
 	private Set replies = new HashSet(0);
 
 	// Constructors
@@ -69,13 +78,6 @@ public class Comment implements java.io.Serializable {
 		this.content = content;
 	}
 
-	public Timestamp getCdate() {
-		return this.cdate;
-	}
-
-	public void setCdate(Timestamp cdate) {
-		this.cdate = cdate;
-	}
 
 	public Set getReplies() {
 		return this.replies;
