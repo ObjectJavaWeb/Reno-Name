@@ -26,7 +26,9 @@
 </head>
 
 <body>
+
 	<div class="div1">
+	<jsp:include page="carousel.jsp"></jsp:include>
 		<div class="div1-1">
 			<ul>
 				<li><a href="music!musicType?music.type=华语">华语</a></li>

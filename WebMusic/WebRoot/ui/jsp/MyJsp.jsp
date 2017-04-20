@@ -17,14 +17,13 @@
 <meta http-equiv="description" content="This is my page">
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<script src="ui/js/Header.js"></script>
+<!--  <script src="ui/js/Header.js"></script>-->
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<script src="ui/js/Header.js"></script>
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
 <title>顶部导航</title>
 <script type="text/javascript">
@@ -40,6 +39,7 @@
 <body>
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
+	
 		<!-- 网页图标 -->
 		<div class="topbar_1_1"></div>
 		<!--  <div class="midum">-->
@@ -90,12 +90,12 @@
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form class="form-search">
-					<p class="input-append" style="margin-left: -100px;">
-						<input type="text" class="span2 search"
-							id="appendedInputButton search" value="请输入您想收索的歌曲名/歌手"
+				<form class="form-search" action="music!musicList.action" method="post">
+					<p class="input-append" style="margin-left: -100px;font-size: 5px;">
+						<input name="k" type="text" class="span2 search" 
+							id="appendedInputButton search" value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑"
 							onfocus="this.value=''"
-							onblur="if(this.value==''){this.value='请输入您想收索的歌曲名/歌手'}" />
+							onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
 						<input type="submit" value="搜索" class="btn search1">
 					</p>
 				</form>
