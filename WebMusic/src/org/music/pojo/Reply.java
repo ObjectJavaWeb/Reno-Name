@@ -12,6 +12,7 @@ public class Reply implements java.io.Serializable {
 
 	private Integer id;
 	private Comment comment;
+	/*private Integer userid;*/
 	private String content;
 	private Timestamp replyDate;
 

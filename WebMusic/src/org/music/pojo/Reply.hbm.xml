@@ -16,6 +16,9 @@
         <property name="content" type="java.lang.String">
             <column name="content" length="500" />
         </property>
+        <!--  <property name="userid" type="java.lang.Integer">
+            <column name="user_id" length="500" /> 
+        </property> -->
         <property name="replyDate" type="java.sql.Timestamp">
             <column name="reply_Date" length="19" />
         </property>
