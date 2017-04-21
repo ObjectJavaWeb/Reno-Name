@@ -12,6 +12,15 @@ public class Reply implements java.io.Serializable {
 
 	private Integer id;
 	private Comment comment;
+	private User user;
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	/*private Integer userid;*/
 	private String content;
 	private Timestamp replyDate;
@@ -23,9 +32,10 @@ public class Reply implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Reply(Comment comment, String content, Timestamp replyDate) {
+	public Reply(Comment comment, String content, Timestamp replyDate,User user) {
 		this.comment = comment;
 		this.content = content;
+		this.user=user;
 		this.replyDate = replyDate;
 	}
 

@@ -37,6 +37,12 @@
             </key>
             <one-to-many class="org.music.pojo.Question" />
         </set>
+        <set name="replys" inverse="true">
+            <key>
+                <column name="user_id" />
+            </key>
+            <one-to-many class="org.music.pojo.Reply" />
+        </set>
         <set name="mymusics" inverse="true">
             <key>
                 <column name="user_id" />

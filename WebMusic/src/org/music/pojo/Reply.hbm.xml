@@ -13,6 +13,9 @@
         <many-to-one name="comment" class="org.music.pojo.Comment" fetch="select">
             <column name="comment_id" />
         </many-to-one>
+        <many-to-one name="user" class="org.music.pojo.User" fetch="select">
+            <column name="user_id" />
+        </many-to-one>
         <property name="content" type="java.lang.String">
             <column name="content" length="500" />
         </property>
