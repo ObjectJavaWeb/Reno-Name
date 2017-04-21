@@ -18,10 +18,10 @@
 
 <link href="ui/css/Header.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
- <script src="ui/jquery/jquery-2.0.0.js"></script>
+<script src="ui/jquery/jquery-2.0.0.js"></script>
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
-<script src="ui/bootstrap/js/bootstrap.min.js"></script> 
+<script src="ui/bootstrap/js/bootstrap.min.js"></script>
 <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"
 	rel="stylesheet">
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
@@ -76,31 +76,31 @@
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form  action="music!musicList.action"
-					method="post">
-						<input name="k" type="text" class="search"
-							id="appendedInputButton search"
-							value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
-							onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
-						<input type="submit" value="搜索" class="search1 ">
+				<form action="music!musicList.action" method="post">
+					<input name="k" type="text" class="search"
+						id="appendedInputButton search"
+						value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
+						onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
+					<input type="submit" value="搜索" class="search1 ">
 				</form>
 			</div>
-			<div class="div_login" >
+			<div class="div_login">
 				<%
 					if (request != null) {
 						User user = (User) request.getSession().getAttribute("user");
 						if (user != null) {
 				%>
 
-				<li class="dropdown" ><span class="dropdown-toggle" data-toggle="dropdown">欢迎您：${user.nickname }<b class="caret"></b>
-					</span>
-						<ul class="dropdown-menu" >
-							<%-- <li><a
+				<li class="dropdown"><span class="dropdown-toggle"
+					data-toggle="dropdown">欢迎您：${user.nickname }<b class="caret"></b>
+				</span>
+					<ul class="dropdown-menu">
+						<%-- <li><a
 								href="userlogin!queryPersonal.action?user.id=${user.id }"
 								target="_blank" class="reg">个人信息</a></li> --%>
-							<li ><a href="userlogin!personalExit.action " class="reg">退出登录
-							</a></li>
-						</ul></li>
+						<li><a href="userlogin!personalExit.action " class="reg">退出登录
+						</a></li>
+					</ul></li>
 
 				<%
 					} else {
@@ -119,7 +119,8 @@
 						<!--控制位置背景颜色为白色和宽度 -->
 						<div class="modal-content login_windows">
 							<div class="modal-header ">
-								<h1 class="modal-title" id="myModalLabel" style="text-align: center;">登录</h1>
+								<h1 class="modal-title" id="myModalLabel"
+									style="text-align: center;">登录</h1>
 							</div>
 							<form action="userlogin!login.action" method="post">
 								<div class="modal-header ">
