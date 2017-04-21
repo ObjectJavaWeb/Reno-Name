@@ -67,15 +67,13 @@
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form class="form-search" action="music!musicList.action"
+				<form  action="music!musicList.action"
 					method="post">
-					<p class="input-append" style="margin-left: -100px;">
 						<input name="k" type="text" class="search"
 							id="appendedInputButton search"
 							value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
 							onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
 						<input type="submit" value="搜索" class="search1 ">
-					</p>
 				</form>
 			</div>
 			<div class="div_login" >
