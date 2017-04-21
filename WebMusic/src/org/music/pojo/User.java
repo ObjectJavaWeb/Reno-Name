@@ -23,6 +23,7 @@ public class User implements java.io.Serializable {
 	private Set questions = new HashSet(0);
 	private Set mymusics = new HashSet(0);
 	private Set comments = new HashSet(0);
+	private Set	replys=new HashSet(0);
 
 	// Constructors
 
@@ -33,7 +34,7 @@ public class User implements java.io.Serializable {
 	/** full constructor */
 	public User(String userName, String password, String nickname,
 			String gender, String email, Date registDate, Date birthday,
-			Set questions, Set mymusics, Set comments) {
+			Set questions, Set mymusics, Set comments,Set replys) {
 		this.userName = userName;
 		this.password = password;
 		this.nickname = nickname;
@@ -44,9 +45,18 @@ public class User implements java.io.Serializable {
 		this.questions = questions;
 		this.mymusics = mymusics;
 		this.comments = comments;
+		this.replys=replys;
 	}
 
 	// Property accessors
+
+	public Set getReplys() {
+		return replys;
+	}
+
+	public void setReplys(Set replys) {
+		this.replys = replys;
+	}
 
 	public Integer getId() {
 		return this.id;

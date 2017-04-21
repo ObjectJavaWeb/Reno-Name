@@ -66,7 +66,6 @@ public class MusicAction extends ActionSupport {
 	}
 
 	public String musicList() throws Exception {
-
 		musics=(List<Music>) MusicServiceFactory.getMusicServiceInstace().list(1, 12, k, "name").get("allMusic");
 		parade=MusicServiceFactory.getMusicServiceInstace().parade();
 
@@ -86,11 +85,10 @@ public class MusicAction extends ActionSupport {
 		return "musicMessagge";
 	}
 
-	public String musicType() throws Exception {
-
+	public void musicType() throws Exception {
+		System.out.println(music.getType());
 		musics = MusicServiceFactory.getMusicServiceInstace().getType(
 				Tools.decoder(music.getType(), "UTF-8"));
-		return "musicList";
 		
 	
 	}

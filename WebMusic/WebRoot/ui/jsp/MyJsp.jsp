@@ -69,11 +69,49 @@
 		<button type="submit" class="btn btn-primary data-toggle="
 			modal" data-target="#myModal" id="login">登录</button>
 
+
 		<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
 	</div>
 </div>
 <!-- 顶部导航条 黑色背景 -->
 <div class="body">
+
+		<!-- 网页图标 -->
+		<div class="topbar_1_1"></div>
+		<div class="topbar_1_2">
+			<!-- 发现音乐 -->
+			<div class="tabbable">
+				<ul class="nav nav-tabs ul-nav">
+					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
+
+
+					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
+
+					<li><a href="Mymusic!getMymusicList.action">我的音乐</a></li>
+
+					<li><a href="#tab3" data-toggle="tab">个人设置</a></li>
+
+					<li><a href="#tab2">我的音乐</a></li>
+
+					<li><a
+						href="userlogin!queryPersonal.action?user.id=${user.id }">个人信息</a></li>
+
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab1">
+						<ul class="ul2">
+							<li><a href="=#">推荐</a></li>
+							<li><a href="=#">排行榜</a></li>
+							<li><a href="=#">歌单</a></li>
+							<li><a href="=#">歌手</a></li>
+						</ul>
+					</div>
+					<div class="tab-pane" id="Mymusic!getMymusicList.action">
+						<ul class="ul2"></ul>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<ul class="ul2">
+
 
 	<!-- 网页图标 -->
 	<div class="topbar_1_1"></div>
