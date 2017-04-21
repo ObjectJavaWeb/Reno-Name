@@ -2,7 +2,9 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="wwx" namespace="/" extends="struts-default">
-
+<action name="addmusictomusiclist" class="org.music.action.MymusicmymusicAction">
+<result name="input">index.jsp</result>
+</action>
 		<action name="userlogin" class="org.music.action.UserAction">
 			<!--查询成功返回输入答案界面  -->
 			<result name="Retrieve_Password">/ui/jsp/Retrieve_Password.jsp</result>

@@ -3,8 +3,10 @@ package org.music.action;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.music.factory.ServiceFactory;
+import org.music.pojo.Mymusic;
 import org.music.pojo.Question;
 import org.music.pojo.User;
 import org.music.util.Tools;
@@ -13,6 +15,24 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
+	private Set<Mymusic> mymusicset;
+	public Set<Mymusic> getMymusicset() {
+		return mymusicset;
+	}
+
+	public void setMymusicset(Set<Mymusic> mymusicset) {
+		this.mymusicset = mymusicset;
+	}
+
+	private Mymusic mymusic;
+	public Mymusic getMymusic() {
+		return mymusic;
+	}
+
+	public void setMymusic(Mymusic mymusic) {
+		this.mymusic = mymusic;
+	}
+
 	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
 	private List<Question> allQuestions;
 
@@ -143,6 +163,15 @@ public class UserAction extends ActionSupport {
 			 */
 
 			// 登陆成功时，放入session时。
+			Map<String, Object> map = Tools.getSession();
+			User user = (User) map.get("user");
+			
+			mymusicset = ServiceFactory.getIMymusicServiceInstance().getMymusics(
+					user.getId());
+			// 获取session
+			Map<String, Object> session = Tools.getSession();
+			session.put("mymusic", mymusicset);
+			
 			return "suc";
 
 		}

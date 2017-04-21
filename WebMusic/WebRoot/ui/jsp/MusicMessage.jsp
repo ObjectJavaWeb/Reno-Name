@@ -115,7 +115,6 @@
 									</c:forEach>
 
 									<div>
-
 										${comments.user.userName }:${ comments.content}<br> <span>${comments.cdate }</span><span
 											style="float: right" onclick="reply(${c.index })">|回复</span>
 									</div>

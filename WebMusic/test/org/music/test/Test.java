@@ -16,6 +16,7 @@ import java.util.Set;
 
 
 
+
 import org.hibernate.Query;
 import org.music.dao.impl.CommentDAOImpl;
 import org.music.dao.impl.MusicDAOImpl;
@@ -26,15 +27,17 @@ import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
 import org.music.pojo.Mymusic;
+import org.music.pojo.MymusicMusic;
 import org.music.service.MusicService;
 import org.music.util.Mp3Info;
 import org.music.util.Mp3Tools;
 
 public class Test {
-	private static int musicId;
-
-
-	public static void main(String[] args) throws Exception {
-	ServiceFactory.getICommentDAOInstance().getComments(3);
+public static void main(String[] args) {
+	String hql="SELECT mm.music FROM MymusicMusic AS mm WHERE mm.mymusic.id=1 and mm.mymusic.user.id=1";
+	List<Music> musics=HibernateSessionFactory.getSession().createQuery(hql).list();
+	for (Music music : musics) {
+		System.out.println(music.getName());
 	}
+}
 }

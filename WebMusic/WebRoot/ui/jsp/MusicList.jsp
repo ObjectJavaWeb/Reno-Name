@@ -8,11 +8,26 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+<script type="text/javascript">
+	function open_add(o) {
+		var d = $(".s_add_musicTomusiclist_windows");
+		for (var i = 0; i < d.length; i++) {
+			$(".add_musicTomusiclist_windows" + i).css("display", "none");
+		}
+		$(".add_musicTomusiclist_windows" + o).css("display", "block");
+
+	}
+	function close(o) {
+		alert(o);
+		var d = $(".s_add_musicTomusiclist_windows");
+		$(".s_add_musicTomusiclist_windows" + o).css("display", "none");
+	}
+</script>
 <head>
 <base href="<%=basePath%>">
 
 <link href="ui/css/MusicList.css" rel="stylesheet" type="text/css" />
-<title>MusicaList</title>
+<title>MusicList</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -28,7 +43,7 @@
 <body>
 
 	<div class="div1">
-	<jsp:include page="carousel.jsp"></jsp:include>
+		<jsp:include page="carousel.jsp"></jsp:include>
 		<div class="div1-1">
 			<ul>
 				<li><a href="music!musicType?music.type=华语">华语</a></li>
@@ -41,7 +56,8 @@
 		<div class="div1-2">
 			<ul>
 				<c:forEach var="m" items="${musics }">
-					<li><a href="music!getMusicMessage.action?music.id=${m.id }"> <img src="ui/image/musical.jpg"> <span>${m.name }</span>
+					<li><a href="music!getMusicMessage.action?music.id=${m.id }">
+							<img src="ui/image/musical.jpg"> <span>${m.name }</span>
 					</a></li>
 				</c:forEach>
 			</ul>
@@ -61,15 +77,34 @@
 					<th>操作</th>
 				</tr>
 				<c:forEach var="p" items="${parade }" varStatus="pr">
+					<tr>
+						<td>${pr.index+1 }</td>
+						<td>${p.name }</td>
+						<td>${p.songer }</td>
+						<td>${p.type }</td>
+						<td>${p.hit }</td>
+						<td>
+							<span onclick="open_add(${pr.index})">添加到歌单</span>
+							<div
+								class="s_add_musicTomusiclist_windows add_musicTomusiclist_windows${pr.index }">
+								<h4>选择要添加到的歌单</h4>
+								<form action="addmusictomusiclist!addMusicToMusiclist.action" method="post">
+									 <select name="mymusic.id">
+										<c:forEach var="mymusic" items="${mymusic }">
+											<option value="${mymusic.id }" >${mymusic.name }</option>
+										</c:forEach>
+									</select> 
+									<!-- 歌单ID -->
+								<!-- 	<input type="text" value="33" name="mymusicMusic.mymusic"> -->
+									<!-- 歌曲ID -->
+									<input type="text" value="${p.id }" name="music.id">
+									<input type="button" value="取消">
+									<input type="submit" value="确认添加">
+								</form>
+							</div>
+						</td>
 
-				<tr>
-					<td>${pr.index+1 }</td>
-					<td>${p.name }</td>
-					<td>${p.songer }</td>
-					<td>${p.type }</td>
-					<td>${p.hit }</td>
-					<td>添加到歌单</td>
-				</tr>
+					</tr>
 				</c:forEach>
 			</table>
 		</div>
