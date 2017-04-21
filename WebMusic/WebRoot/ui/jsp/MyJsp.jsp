@@ -40,14 +40,10 @@
 			<div class="tabbable">
 				<ul class="nav nav-tabs ul-nav">
 					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
-<<<<<<< HEAD
 					<li><a href="Mymusic!getMymusicList.action">我的音乐</a></li>
-					<li><a href="#tab3" data-toggle="tab">个人设置</a></li>
-=======
-					<li><a href="#tab2">我的音乐</a></li>
 					<li><a
 						href="userlogin!queryPersonal.action?user.id=${user.id }">个人信息</a></li>
->>>>>>> branch 'master' of https://github.com/ObjectJavaWeb/Reno-Name.git
+
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="tab1">
