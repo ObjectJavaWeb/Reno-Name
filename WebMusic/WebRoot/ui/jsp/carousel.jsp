@@ -31,7 +31,7 @@
 </head>
 
 <body>
-	<div class="div5">
+	<div class="div5" style="margin: 0 auto; " >
 		<div id="myCarousel" class="carousel slide">
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
