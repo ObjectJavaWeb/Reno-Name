@@ -41,12 +41,18 @@
 				<ul class="nav nav-tabs ul-nav">
 					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
 
+
+					<li class="active"><a href="#tab1" data-toggle="tab">发现音乐</a></li>
+
 					<li><a href="Mymusic!getMymusicList.action">我的音乐</a></li>
+
 					<li><a href="#tab3" data-toggle="tab">个人设置</a></li>
 
 					<li><a href="#tab2">我的音乐</a></li>
+
 					<li><a
 						href="userlogin!queryPersonal.action?user.id=${user.id }">个人信息</a></li>
+
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane active" id="tab1">
@@ -70,15 +76,13 @@
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form class="form-search" action="music!musicList.action"
+				<form  action="music!musicList.action"
 					method="post">
-					<p class="input-append" style="margin-left: -100px;">
 						<input name="k" type="text" class="search"
 							id="appendedInputButton search"
 							value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
 							onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
 						<input type="submit" value="搜索" class="search1 ">
-					</p>
 				</form>
 			</div>
 			<div class="div_login" >
