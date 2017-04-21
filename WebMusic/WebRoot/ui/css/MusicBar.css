@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+#musicJinDuTiao{
+	/*border: 1px solid gray;*/
+	width: 100%;
+	height: 50px;
+	background-image: url("../image/sk-middleblock.png");
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+}
+ul{
+	margin-left: 300px;
+}
+#musicJinDuTiao ul li{
+	list-style-type: none;
+	float: left;
+}
+#span1_1{
+	display: block;
+	width: 40px;
+	height: 50px;
+	/*background-color: red;*/
+	margin-left: 5px;
+}
+#span2_2 img{
+	width: 40px;
+	height: 40px;
+	margin-left: 40px;
+	margin-top: 4px;
+}
+#img1{
+	margin: 18px 0px 0px 20px;
+}
+#img2{
+	margin: 8px 0px 0px 20px;
+}
+#img3{
+	margin: 18px 0px 0px 20px;
+}
+#musicJinDuTiao ul li span audio{
+	height: 42px;
+}
+#span3_3 audio{
+	margin-left: 12px;	
+}
+#span4_4{
+	margin-left: 20px;
+}
+#span4_4 img{
+	margin-top: 13px;
+}
+#span5_5{
+	margin-left: 12px;
+}
+#span5_5 img{
+	margin-top: 15px;
+}
+#span6_6{
+	margin-left: 12px;
+}
+#span6_6 img{
+	margin-top: 15px;
+}
