@@ -3,8 +3,19 @@
 <struts>
 	<package name="lcy" namespace="/" extends="struts-default">
 		<action name="music" class="org.music.action.MusicAction">
-			<result name="musicList">pro.jsp</result>
+			<result name="musicList">/ui/jsp/MusicList.jsp</result>
 			<result name="musicMessagge">/ui/jsp/MusicMessage.jsp</result>
+		</action>
+	</package>
+	<package name="lcy_ajax" namespace="/" extends="json-default">
+		<action name="musics" class="org.music.action.MusicAction"
+			method="musicType">
+			<!-- 返回类型为json 在sjon-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性 -->
+				<!-- 这里的result值即是 对应action中的 result -->
+				<param name="root">loginDuplicate</param>
+			</result>
 		</action>
 	</package>
 </struts>  

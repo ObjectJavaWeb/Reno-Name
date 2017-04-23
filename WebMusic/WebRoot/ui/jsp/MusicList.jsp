@@ -34,23 +34,32 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+<script type="text/javascript">
+	function musicType(o) {
+		
+		$.ajax({
+		url:"musics.action",
+		type:"POST",
+		data:{"music.type":o},
+		success:function(data){
+			console.log(data);
+		}
+		});
+	}
+</script>
 
 </head>
 
-<body>
-
+<body id="music_id">
 	<div class="div1">
 		<jsp:include page="carousel.jsp"></jsp:include>
 		<div class="div1-1">
-			<ul>
-				<li><a href="music!musicType?music.type=华语">华语</a></li>
-				<li><a href="music!musicType?music.type=流行">流行</a></li>
-				<li><a href="music!musicType?music.type=摇滚">摇滚</a></li>
-				<li><a href="music!musicType?music.type=民谣">民谣</a></li>
-				<li><a href="music!musicType?music.type=电子">电子</a></li>
+			<ul id="music_type">
+				<li><a href="javaScript:musicType('华语')">华语</a></li>
+				<li><a href="javaScript:musicType('流行')">流行</a></li>
+				<li><a href="javaScript:musicType('摇滚')">摇滚</a></li>
+				<li><a href="javaScript:musicType('民谣')">民谣</a></li>
+				<li><a href="javaScript:musicType('电子')">电子</a></li>
 			</ul>
 		</div>
 		<div class="div1-2">
@@ -103,7 +112,6 @@
 								</form>
 							</div>
 						</td>
-
 					</tr>
 				</c:forEach>
 			</table>
