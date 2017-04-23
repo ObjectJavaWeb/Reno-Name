@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music.html</title>
+
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script src="../jquery/jquery-2.0.0.js"></script>
+<script>
+	$(function() {
+		$("#play").click(function() {
+			var audio = document.getElementById("audio");
+			if (audio.paused) {
+				audio.play();
+				$("#play").val("暂停");
+			} else {
+				audio.pause();
+				$("#play").val("播放");
+			}
+
+		});
+	});
+	function songTime() {
+		var audio = document.getElementById("audio");
+		var maxTime = audio.duration;
+		var currtime = audio.currentTime;
+		$("#time").html(fomatTime(currtime) + "/" + fomatTime(maxTime));
+	}
+	function fomatTime(date) {
+		var time = "";
+		var m = Math.floor(date / 60);
+		var s = Math.floor(date) % 60;
+		time = m + ":" + s;
+		return time;
+	}
+	setInterval("songTime()", "1000");
+</script>
+
+</head>
+
+<body>
+	
+</body>
+</html>

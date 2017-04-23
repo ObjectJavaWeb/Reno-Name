@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+body{
+	margin: 0 auto;
+	height: 200px;
+}
+.div1{
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+.div2{
+	width: 49%;
+	height: 100%;
+	float: left;
+}
+ul{
+	list-style: none;
+}
+.ul2-2 li{
+	float: left;
+	margin-left: 20px;
+}
+.ul2-2 a{
+	text-decoration: none;
+}
+.div2-3{
+	width: 100%;
+	height: 300px;
+}
+.div3{
+	width: 85%;
+	margin: auto;
+}
+.div3 hr{
+	width: 100%;
+	border: 2px solid #C20C0C;
+}
+.div4{
+	width: 85%;
+	margin: auto;
+}
+.sreplys{
+	display: none;
+}
+.reply_windows{display: none;}
