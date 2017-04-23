@@ -2,8 +2,6 @@ package org.music.action;
 
 import java.util.List;
 
-import net.sf.json.JSONArray;
-
 import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
@@ -94,8 +92,6 @@ public class MusicAction extends ActionSupport {
 		System.out.println(music.getType());
 		musics = MusicServiceFactory.getMusicServiceInstace().getType(
 				music.getType());
-		JSONArray jArray=JSONArray.fromObject(musics);
-		result=jArray.toString();
 		System.out.println(result);
 		return SUCCESS;
 	}

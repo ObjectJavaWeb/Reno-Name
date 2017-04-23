@@ -2,12 +2,16 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 	<package name="wwx" namespace="/" extends="struts-default">
+		<action name="addmusictomusiclist" class="org.music.action.MymusicmymusicAction">
+			<result name="input">index.jsp</result>
+			<result name="music_list">/ui/jsp/Mymusic.jsp</result>
+		</action>
 
 		<action name="userlogin" class="org.music.action.UserAction">
-			<!--查询成功返回输入答案界面  -->
+			<!--查询成功返回输入答案界面 -->
 			<result name="Retrieve_Password">/ui/jsp/Retrieve_Password.jsp</result>
-			<!--查询失败  返回用户输入页面  -->
-			<result name="Userinput">/ui/jsp/Userinput.jsp</result>	
+			<!--查询失败 返回用户输入页面 -->
+			<result name="Userinput">/ui/jsp/Userinput.jsp</result>
 			<!-- 返回用户登录成功页 -->
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<!-- 返回登录页 -->
@@ -28,9 +32,6 @@
 			<result name="forward">/ui/jsp/forward.jsp</result>
 			<result name="Set_answer">/ui/jsp/Set_answer.jsp</result>
 		</action>
-		<!-- <action name="Personal_update" class="org.music.action.UserAction"> 
-			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result> 
-			</action> -->
 		<action name="readImgAction" class="org.music.action.ImgAction"
 			method="readImg">
 			<result type="stream">

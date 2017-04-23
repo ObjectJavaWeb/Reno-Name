@@ -47,8 +47,4 @@
 	</div>
 	<jsp:include page="ui/jsp/MyJsp.jsp"></jsp:include>
 	<div id="main"></div>
-	<%-- <div style="height: 500px;">
-		<include file="ui/html/Music.html"></include>
-		<jsp:include page="ui/jsp/MusicList.jsp"></jsp:include> 
-	</div>--%>
 </body>

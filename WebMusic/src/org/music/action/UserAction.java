@@ -124,6 +124,19 @@ public class UserAction extends ActionSupport {
 	}
 
 	/**
+	 * 修改密码
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String passwordUpdte() throws Exception {
+		
+		ServiceFactory.getIUserServiceInstance().update1(user);
+		
+		return "input";
+	}
+
+	/**
 	 * 查询个人信息
 	 * 
 	 * @throws Exception
@@ -202,19 +215,28 @@ public class UserAction extends ActionSupport {
 	/**
 	 * 验证用户名
 	 * 
-	 * @return 验证成功后跳转页面
+	 * @return 根据用户名查找输入正确登陆验证成功后跳转页面
 	 * @throws Exception
 	 */
+	private Integer id;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String userinput() throws Exception {
 
-		Integer id = ServiceFactory.getIUserServiceInstance().userInput(user);
+		id = ServiceFactory.getIUserServiceInstance().userInput(user);
 
 		if (id != null) {
 
 			allQuestions = ServiceFactory.getIQuestionServiceInstance()
 					.findByUserId(id);
-
+			System.out.println(id);
 			return "Retrieve_Password";
 		}
 		return "Userinput";

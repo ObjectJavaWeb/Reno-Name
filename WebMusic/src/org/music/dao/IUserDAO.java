@@ -30,5 +30,6 @@ public interface IUserDAO extends IDAO<Integer, User> {
 	public void doUpdate(User user) throws Exception;
 
 	public void doRemove(User user) throws Exception;
+	public void psUpdate (User user ) throws Exception;
 
 }

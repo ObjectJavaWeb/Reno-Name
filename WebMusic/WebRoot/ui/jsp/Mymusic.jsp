@@ -105,7 +105,7 @@
 			<div class="left_2">
 				<ul>
 					<c:forEach var="mymusiclist" items="${mymusicset}">
-						<li>${mymusiclist.name }<a
+						<li><a href="addmusictomusiclist!MusicList.action?mymusic.id=${mymusiclist.id }">${mymusiclist.name }</a><a
 							href="javaScript:open_UpdateSongList(${mymusiclist.id })"><span
 								class="glyphicon glyphicon-edit"></span></a> <a
 							href="Mymusic!removeMymusic.action?mymusic.id=${mymusiclist.id }">
@@ -113,6 +113,7 @@
 						</a></li>
 
 					</c:forEach>
+					
 				</ul>
 			</div>
 			<!-- 修改歌单弹窗 -->
@@ -201,26 +202,19 @@
 							<font size="0.5em">歌曲标题</font>
 						</th>
 						<th>
-							<font size="0.5em">时长</font>
-						</th>
-						<th>
 							<font size="0.5em">歌手</font>
 						</th>
 						<th>
 							<font size="0.5em">专辑</font>
 						</th>
 					</tr>
+					<c:forEach  var="m" items="${mList}">
 					<tr>
-						<td width="100px;"></td>
-						<td></td>
-
-						<td></td>
-
-						<td></td>
-
-						<td></td>
-
+						<td>${m.name }</td>
+						<td>${m.songer }</td>
+						<td>${m.abum }</td>
 					</tr>
+					</c:forEach>
 				</table>
 			</div>
 

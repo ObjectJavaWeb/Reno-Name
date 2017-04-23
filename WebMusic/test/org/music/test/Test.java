@@ -1,21 +1,20 @@
 package org.music.test;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import net.sf.json.JSONArray;
-
-import org.music.factory.MusicServiceFactory;
+import org.hibernate.Query;
+import org.music.dbc.HibernateSessionFactory;
+import org.music.factory.ServiceFactory;
 import org.music.pojo.Music;
-import org.music.pojo.User;
+
 
 public class Test {
-	private static int musicId;
-
 
 	public static void main(String[] args) throws Exception {
-	List<Music> musics=MusicServiceFactory.getMusicServiceInstace().getType("华语");
-	JSONArray jsonArray=JSONArray.fromObject(musics);
-	System.out.println(jsonArray);
+		
+		List<Music> musics=ServiceFactory.getIMymusicmusicServiceInstance().findByMyMusicIdByUserId(1, 1);
+				for (Music music : musics) {
+					System.out.println(music.getName());
+				}
 	}
 }

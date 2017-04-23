@@ -115,7 +115,20 @@ public class UserServiceImpl implements IUserService {
 		} finally {
 			HibernateSessionFactory.closeSession();
 		}
-
 	}
-
+	public void update1(User user) throws Exception {
+		// 加入事务处理功能
+		Transaction tx = HibernateSessionFactory.getSession()
+				.beginTransaction();
+		try {
+			DAOFactory.getIUserDAOInstance().psUpdate(user);
+			tx.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			tx.rollback();
+			// TODO: handle exception
+		} finally {
+			HibernateSessionFactory.closeSession();
+		}
+	}
 }

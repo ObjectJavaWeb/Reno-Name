@@ -13,4 +13,6 @@ public interface IMymusicDAO extends IDAO<Integer, Mymusic>{
 	public Set<Music> getMymusicList( int myMusicId) throws Exception;
 	
 	public List findAll(String column) throws Exception;
+	
+	
 }
