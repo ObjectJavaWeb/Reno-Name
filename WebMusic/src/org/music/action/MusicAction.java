@@ -1,9 +1,6 @@
 package org.music.action;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import javax.security.auth.kerberos.KerberosKey;
 
 import org.music.factory.MusicFactory;
@@ -11,8 +8,6 @@ import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
-import org.music.pojo.Mymusic;
-import org.music.pojo.User;
 import org.music.service.MusicService;
 import org.music.service.impl.MusicServiceImpl;
 import org.music.util.Tools;
@@ -21,7 +16,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.Key;
 
 public class MusicAction extends ActionSupport {
-	
 	private List<Comment> comments;
 
 	public List<Comment> getComments() {
@@ -77,7 +71,6 @@ public class MusicAction extends ActionSupport {
 		musics = (List<Music>) MusicServiceFactory.getMusicServiceInstace()
 				.list(1, 12, "", "name").get("allMusic");
 		parade = MusicServiceFactory.getMusicServiceInstace().parade();
-		
 		return "musicList";
 	}
 

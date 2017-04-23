@@ -5,6 +5,7 @@
 <action name="addmusictomusiclist" class="org.music.action.MymusicmymusicAction">
 <result name="input">index.jsp</result>
 </action>
+
 		<action name="userlogin" class="org.music.action.UserAction">
 			<!--查询成功返回输入答案界面  -->
 			<result name="Retrieve_Password">/ui/jsp/Retrieve_Password.jsp</result>

@@ -3,10 +3,8 @@ package org.music.action;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import org.music.factory.ServiceFactory;
-import org.music.pojo.Mymusic;
 import org.music.pojo.Question;
 import org.music.pojo.User;
 import org.music.util.Tools;
@@ -15,24 +13,6 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
-	private Set<Mymusic> mymusicset;
-	public Set<Mymusic> getMymusicset() {
-		return mymusicset;
-	}
-
-	public void setMymusicset(Set<Mymusic> mymusicset) {
-		this.mymusicset = mymusicset;
-	}
-
-	private Mymusic mymusic;
-	public Mymusic getMymusic() {
-		return mymusic;
-	}
-
-	public void setMymusic(Mymusic mymusic) {
-		this.mymusic = mymusic;
-	}
-
 	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
 	private List<Question> allQuestions;
 
@@ -134,6 +114,19 @@ public class UserAction extends ActionSupport {
 	}
 
 	/**
+	 * 修改密码
+	 * 
+	 * @return
+	 * @throws Exception
+	 */
+	public String passwordUpdte() throws Exception {
+		
+		ServiceFactory.getIUserServiceInstance().update1(user);
+		
+		return "input";
+	}
+
+	/**
 	 * 查询个人信息
 	 * 
 	 * @throws Exception
@@ -163,15 +156,6 @@ public class UserAction extends ActionSupport {
 			 */
 
 			// 登陆成功时，放入session时。
-			Map<String, Object> map = Tools.getSession();
-			User user = (User) map.get("user");
-			
-			mymusicset = ServiceFactory.getIMymusicServiceInstance().getMymusics(
-					user.getId());
-			// 获取session
-			Map<String, Object> session = Tools.getSession();
-			session.put("mymusic", mymusicset);
-			
 			return "suc";
 
 		}
@@ -219,19 +203,28 @@ public class UserAction extends ActionSupport {
 	/**
 	 * 验证用户名
 	 * 
-	 * @return 验证成功后跳转页面
+	 * @return 根据用户名查找输入正确登陆验证成功后跳转页面
 	 * @throws Exception
 	 */
+	private Integer id;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String userinput() throws Exception {
 
-		Integer id = ServiceFactory.getIUserServiceInstance().userInput(user);
+		id = ServiceFactory.getIUserServiceInstance().userInput(user);
 
 		if (id != null) {
 
 			allQuestions = ServiceFactory.getIQuestionServiceInstance()
 					.findByUserId(id);
-
+			System.out.println(id);
 			return "Retrieve_Password";
 		}
 		return "Userinput";

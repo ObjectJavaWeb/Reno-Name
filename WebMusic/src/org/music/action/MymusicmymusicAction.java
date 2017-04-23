@@ -48,8 +48,6 @@ public class MymusicmymusicAction extends ActionSupport {
 		mymusicmymusic=new MymusicMusic();
 		mymusicmymusic.setMusic(music);
 		mymusicmymusic.setMymusic(mymusic);
-		/*System.out.println(music.getId());
-		System.out.println(mymusic.getId());*/
 		ServiceFactory.getIMymusicmusicServiceInstance().insert(mymusicmymusic);
 		return "input";
 	}

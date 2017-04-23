@@ -12,14 +12,10 @@ import org.music.dao.impl.MymusicmusicDAOImpl;
 import org.music.dao.impl.QuestionDAOImpl;
 import org.music.dao.impl.ReplyDAOImpl;
 import org.music.dao.impl.UserDAOImpl;
-import org.music.service.IMymusicmusicService;
 
 public class DAOFactory {
 	public static IUserDAO getIUserDAOInstance() {
 		return new UserDAOImpl();
-	}
-	public static IMymusicmusicDAO getIMymusicmusicDAOInstance() {
-		return new MymusicmusicDAOImpl();
 	}
 	public static IMymusicDAO getIMymusicDAOInstance() {
 		
@@ -37,6 +33,9 @@ public class DAOFactory {
 	}
 	public static IReplyDAO getIReplyInstance(){
 		return new ReplyDAOImpl();
+	}
+	public  static IMymusicmusicDAO getIMymusicmusicDAOInstance(){
+		return new MymusicmusicDAOImpl();
 	}
 
 }

@@ -120,6 +120,7 @@ public class MymusicAction extends ActionSupport {
 		Map<String, Object> session = Tools.getSession();
 		User user = (User) session.get("user");
 		mymusic.setUser(user);
+
 		ServiceFactory.getIMymusicServiceInstance().update(mymusic);
 		mymusicset = ServiceFactory.getIMymusicServiceInstance().getMymusics(
 				user.getId());

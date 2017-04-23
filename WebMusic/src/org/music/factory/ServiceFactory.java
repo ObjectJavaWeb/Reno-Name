@@ -14,10 +14,6 @@ import org.music.service.impl.ReplyServiceImpl;
 import org.music.service.impl.UserServiceImpl;
 
 public class ServiceFactory {
-	public static IMymusicmusicService getIMymusicmusicServiceInstance() {
-		return new MymusicmusicServiceImpl();
-
-	}
 	public static IUserService getIUserServiceInstance() {
 		return new UserServiceImpl();
 
@@ -35,5 +31,8 @@ public class ServiceFactory {
 	}
 	public static IReplyService getIReplyServiceInstance(){
 		return new ReplyServiceImpl();
+	}
+	public static IMymusicmusicService getIMymusicmusicServiceInstance(){
+		return new MymusicmusicServiceImpl();
 	}
 }

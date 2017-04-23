@@ -142,12 +142,10 @@
 				</div>
 				<div class="tab-pane" id="tab3">
 					<ul class="ul2">
-
 					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
 	<div class="topbar_1_3">
 		<div class="div_search">
 			<form action="music!musicList.action" method="post">
@@ -156,6 +154,7 @@
 					value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
 					onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
 				<input type="submit" value="搜索" class="search1 ">
+
 			</form>
 		</div>
 		<div class="div_login">

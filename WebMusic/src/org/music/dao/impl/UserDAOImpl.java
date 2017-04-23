@@ -35,6 +35,18 @@ public class UserDAOImpl implements IUserDAO {
 		
 	}
 
+	/**
+	 * 通过回答问题进行修改密码
+	 * @param user
+	 * @throws Exception
+	 */
+	public void psUpdate (User user ) throws Exception{
+		String hql = " UPDATE User AS p SET p.password=? WHERE p.id=?";
+		Query query =HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, user.getPassword());
+		query.setInteger(1, user.getId());
+		query.executeUpdate();
+	}
 	@Override
 	public void doRemove(Integer id) throws Exception {
 		// TODO Auto-generated method stub

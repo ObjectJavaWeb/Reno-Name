@@ -43,13 +43,16 @@ $(function () {
 	<h3 class="h3" style="text-align: center;">请根据问题回答相应的答案</h3>
 	<form method="post" action="userregister!R_password.action"
 		class="form-inline" onsubmit="">
+		<input type="hidden" value="${id }" id="id">
 		<table class="table">
+		
 			<c:forEach var="q" items="${ allQuestions}">
 				<tr>
 					<th>问题：</th>
 					<td>
 						<input type="text" style="width: 202.2px" value="${q.question }">
-						<input type="hidden" value="${q.answer }" class="oanswer">
+						<input type="hidden" value="${q.
+						answer }" class="oanswer">
 						
 					</td>
 				</tr>
