@@ -30,15 +30,6 @@
 <script type="text/javascript">
 	function isLogin(o, j, url) {
 		if (o == "") {
-			/* $.ajax({
-				url:"ui/jsp/PromptBox.jsp",
-				type:"POST",
-				async:true,
-				cache:true,
-				success:function(data){
-					$(data).modal('show');
-				}
-			}); */
 			$('#myModal2').modal('show');
 			return;
 		}
@@ -87,109 +78,101 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="topbar_1_3">
+			<div class="div_search">
+				<form action="music!musicList.action" method="post">
+					<input name="k" type="text" class="search"
+						id="appendedInputButton search"
+						value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
+						onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
+					<input type="submit" value="搜索" class="search1 ">
+				</form>
 			</div>
-			<div class="topbar_1_3">
-				<div class="div_search">
-					<form action="music!musicList.action" method="post">
-						<input name="k" type="text" class="search"
-							id="appendedInputButton search"
-							value="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" onfocus="this.value=''"
-							onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
-						<input type="submit" value="搜索" class="search1 ">
+			<div class="div_login">
+				<%
+					if (request != null) {
+						User user = (User) request.getSession().getAttribute("user");
+						if (user != null) {
+				%>
+
+				<span class="dropdown"><span class="dropdown-toggle"
+					data-toggle="dropdown" >欢迎您：${user.nickname }
+					<span class="caret"></span>
+				</span>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+						<li ><a href="userlogin!personalExit.action ">退出登录 </a></li>
+					</ul></span>
+
+				<%
+					} else {
+				%>
+				<a href="" class="" data-toggle="modal" data-target="#myModal">
+					登录</a>|<a href="userlogin!preRegister.action">注册</a>
+				<%
+					}
+					}
+				%>
+
+
+			</div>
+		</div>
+		<div class="modal box" id="myModal2"
+			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
+			<div class="box_header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+			</div>
+			<div class="box_body">
+				<h4>登录网页云音乐</h4>
+				<h6>随时随地管理你的音乐库</h6>
+			</div>
+			<div class="box_footer">
+				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
+				<button type="submit" class="btn btn-primary data-toggle="
+					modal" data-target="#myModal" id="login">登录</button>
+			</div>
+		</div>
+		<!-- 登录模态框开始 -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<!--控制位置在中间 -->
+			<div class="modal-dialog">
+				<!--控制位置背景颜色为白色和宽度 -->
+				<div class="modal-content login_windows">
+					<div class="modal-header ">
+						<h1 class="modal-title" id="myModalLabel"
+							style="text-align: center;">登录</h1>
+					</div>
+					<form action="userlogin!login.action" method="post">
+						<div class="modal-header ">
+							<div class="login_user ">
+								<span class="glyphicon glyphicon-user"
+									style="color: rgb(82, 123, 232);"></span>
+								<input type="text" name="user.userName" placeholder="用户名">
+								<a href="userlogin!preRegister.action">没有注册？</a>
+							</div>
+						</div>
+						<div class="modal-header ">
+							<div class="login_password  ">
+								<span class="glyphicon glyphicon-lock"
+									style="color: rgb(82, 123, 232);"></span>
+								<input type="password" name="user.password" placeholder="密码">
+								<a href="ui/jsp/Userinput.jsp">找回密码</a>
+							</div>
+						</div>
+						<div class="modal_footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">关闭</button>
+							<button type="submit" class="btn btn-primary">登录</button>
+						</div>
 					</form>
 				</div>
-				<div class="div_login">
-					<%
-						if (request != null) {
-							User user = (User) request.getSession().getAttribute("user");
-							if (user != null) {
-					%>
-
-					<li class="dropdown"><span class="dropdown-toggle"
-						data-toggle="dropdown">欢迎您：${user.nickname }<b
-							class="caret"></b>
-					</span>
-						<ul class="dropdown-menu">
-							<%-- <li><a
-								href="userlogin!queryPersonal.action?user.id=${user.id }"
-								target="_blank" class="reg">个人信息</a></li> --%>
-							<li><a href="userlogin!personalExit.action " class="reg">退出登录
-							</a></li>
-						</ul></li>
-
-					<%
-						} else {
-					%>
-					<a href="" class="" data-toggle="modal" data-target="#myModal">
-						登录</a>|<a href="userlogin!preRegister.action">注册</a>
-					<%
-						}
-						}
-					%>
-
-					
-				</div>
+				<!-- /.modal-content -->
 			</div>
-			<div class="modal box" id="myModal2"
-						style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
-						<div class="box_header">
-							<button type="button" class="close" data-dismiss="modal"
-								aria-hidden="true">&times;</button>
-						</div>
-						<div class="box_body">
-							<h4>登录网页云音乐</h4>
-							<h6>随时随地管理你的音乐库</h6>
-						</div>
-						<div class="box_footer">
-							<button type="button" class="btn btn-default "
-								data-dismiss="modal">关闭</button>
-							<button type="submit" class="btn btn-primary data-toggle="
-								modal" data-target="#myModal" id="login">登录</button>
-
-
-							<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
-						</div>
-					</div>
-					<!-- 登录模态框开始 -->
-					<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-						aria-labelledby="myModalLabel" aria-hidden="true">
-						<!--控制位置在中间 -->
-						<div class="modal-dialog">
-							<!--控制位置背景颜色为白色和宽度 -->
-							<div class="modal-content login_windows">
-								<div class="modal-header ">
-									<h1 class="modal-title" id="myModalLabel"
-										style="text-align: center;">登录</h1>
-								</div>
-								<form action="userlogin!login.action" method="post">
-									<div class="modal-header ">
-										<div class="login_user ">
-											<span class="glyphicon glyphicon-user"
-												style="color: rgb(82, 123, 232);"></span>
-											<input type="text" name="user.userName" placeholder="用户名">
-											<a href="userlogin!preRegister.action">没有注册？</a>
-										</div>
-									</div>
-									<div class="modal-header ">
-										<div class="login_password  ">
-											<span class="glyphicon glyphicon-lock"
-												style="color: rgb(82, 123, 232);"></span>
-											<input type="password" name="user.password" placeholder="密码">
-											<a href="ui/jsp/Userinput.jsp">找回密码</a>
-										</div>
-									</div>
-									<div class="modal_footer">
-										<button type="button" class="btn btn-default"
-											data-dismiss="modal">关闭</button>
-										<button type="submit" class="btn btn-primary">登录</button>
-									</div>
-								</form>
-							</div>
-							<!-- /.modal-content -->
-						</div>
-						<!-- /.modal -->
-					</div>
-					<!--登录模态框结束  -->
-			<div style="clear: both;"></div>
+			<!-- /.modal -->
+		</div>
+		<!--登录模态框结束  -->
+		<div style="clear: both;"></div>
 </body>
 </html>

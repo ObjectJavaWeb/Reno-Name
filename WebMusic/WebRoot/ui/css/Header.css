@@ -128,9 +128,6 @@ a:hover {
 }
 
 .reg {
-	font-size: 0.5em;
-	margin-top: 30px;
-	float: left;
 }
 
 .topbar_1_3 a {
@@ -201,38 +198,27 @@ a:hover {
 
 .div_login {
 	padding-top: 20px;
-	line-height: 10px;
 	height: 100px;
 	width: 50%;
 	float: right;
 	font-size: 18px;
 	color: black;
-/* 	border: 1px solid red; */
-	line-height: 10px;
+
 }
 
-.div_login ul li {
-	margin-top: 0;
-	paddingt-top: 0;
-}
 
 .div_login a {
-	line-height: 10px;
 	color: black;
 }
 
 .div_login li {
 	display: block;
-	height: 65px;
 	list-style: none;
 	float: left;
-	line-height: 25px;
 	text-align: center;
 	color: black;
 	margin-left: 10px;
-}
-
-* /
+} 
 .div5 {
 	float: right;
 	width: 100%;

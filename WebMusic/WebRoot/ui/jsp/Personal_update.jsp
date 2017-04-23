@@ -19,13 +19,14 @@
 <meta name="keywords" content="keyword1,keyword2,keyword3">
 <meta name="description" content="this is my page">
 <meta name="content-type" content="text/html; charset=UTF-8">
+<script src="ui/jquery/jquery-2.0.0.js"></script>
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
-<meta http-equiv="pragma" content="no-cache">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-<meta http-equiv="description" content="This is my page">
+<script src="ui/bootstrap/js/bootstrap.min.js"></script>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -46,9 +47,37 @@
 						<li class="ul_1_1"><a href="index.jsp">返回主页</a></li>
 						<li class="ul_1_1">基本设置</li>
 						<li></li>
-						<li><a href="">修改密码</a></li>
+						<li><a href="" data-toggle="modal" data-target="#updatepassword" >修改密码</a></li>
 					</ul>
 				</div>
+					<!-- 修改密码模态框开始 -->
+				<div class="modal fade" id="updatepassword" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<!--控制位置在中间 -->
+					<div class="modal-dialog">
+						<!--控制位置背景颜色为白色和宽度 -->
+						<div class="modal-content login_windows">
+							<div class="modal-header ">
+								<h1 class="modal-title" id="myModalLabel"
+									style="text-align: center;">修改密码</h1>
+							</div>
+							<form action="userlogin!passwordUpdte.action" method="post">
+								<div class="modal-header ">
+								<input type="text" name="user.password" placeholder="请输入新密码">
+								<input type="text" value="${user.id }" name="user.id">
+								</div>
+								<div class="modal_footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">取消</button>
+									<button type="submit" class="btn btn-primary">完成</button>
+								</div>
+							</form>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
+				</div>
+				<!--修改密码模态框结束  -->
 			</div>
 
 			<div style="clear:both"></div>

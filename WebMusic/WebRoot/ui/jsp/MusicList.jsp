@@ -21,12 +21,19 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script type="text/javascript">
-	function open_add(o) {
+	function open_add(o,user) {
 		var d = $(".s_add_musicTomusiclist_windows");
+		if (user== "") {
+			$('#myModal2').modal('show');
+			return;
+		}
 		for (var i = 0; i < d.length; i++) {
 			$(".add_musicTomusiclist_windows" + i).css("display", "none");
 		}
 		$(".add_musicTomusiclist_windows" + o).css("display", "block");
+
+	}
+	function close_add(o) {
 
 	}
 	function close(o) {
@@ -34,10 +41,10 @@
 		var d = $(".s_add_musicTomusiclist_windows");
 		$(".s_add_musicTomusiclist_windows" + o).css("display", "none");
 	}
-	
-	$(function () {
-		$("#canl").click(function () {
-			$(".s_add_musicTomusiclist_windows").css("display","none");
+
+	$(function() {
+		$(".canl").click(function() {
+			$(".s_add_musicTomusiclist_windows").css("display", "none");
 		});
 	});
 	function musicType(o) {
@@ -53,6 +60,15 @@
 			}
 		});
 	}
+	/*判断用户是否登录  打开相应窗口  */
+	function isLogin(o, j) {
+		
+	}
+	$(function() {
+		$("#closewindows").click(function() {
+			$('#myModal2').modal('hide');
+		});
+	});
 </script>
 
 </head>
@@ -100,10 +116,12 @@
 						<td>${p.type }</td>
 						<td>${p.hit }</td>
 						<td>
-							<span onclick="open_add(${pr.index})">添加到歌单</span>
+							<span onclick="open_add(${pr.index},'${user}')"><a
+								href="javascript:void(0);">添加到歌单</a></span>
 							<div
 								class="s_add_musicTomusiclist_windows add_musicTomusiclist_windows${pr.index }">
 								<h4>选择要添加到的歌单</h4>
+								<!-- 歌单ID -->
 								<form action="addmusictomusiclist!addMusicToMusiclist.action"
 									method="post">
 									<select name="mymusic.id">
@@ -111,13 +129,33 @@
 											<option value="${mymusic.id }">${mymusic.name }</option>
 										</c:forEach>
 									</select>
-									<!-- 歌单ID -->
-									<!-- 	<input type="text" value="33" name="mymusicMusic.mymusic"> -->
 									<!-- 歌曲ID -->
-									<input type="text" value="${p.id }" name="music.id">
-									<input type="button" id="canl" value="取消">
+									<input type="hidden" value="${p.id }" name="music.id">
+									<input type="button" class="canl" value="取消">
 									<input type="submit" value="确认添加">
 								</form>
+							</div>
+							<div class="modal box" id="myModal2"
+								style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
+								<div class="box_header">
+									<button type="button" class="close" data-dismiss="modal"
+										aria-hidden="true">&times;</button>
+								</div>
+								<!-- 用户没有登录 打开的窗口开始 -->
+								<div class="box_body">
+									<h4>登录网页云音乐</h4>
+									<h6>随时随地管理你的音乐库</h6>
+								</div>
+								<div class="box_footer">
+									<button type="button" class="btn btn-default "
+										data-dismiss="modal" id="closewindows">关闭</button>
+									<button type="submit" class="btn btn-primary data-toggle="
+										modal" data-target="#myModal" id="login">登录</button>
+
+
+									<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
+								</div>
+								<!-- 用户没有登录 打开的窗口结束 -->
 							</div>
 						</td>
 					</tr>

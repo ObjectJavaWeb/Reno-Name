@@ -68,7 +68,10 @@
 	height: 50px;
 	float: right;
 }
-
+.left_1_2 a{
+	text-decoration:none;
+	font-size:20px;
+}
 .left_1_2_btn {
 	width: 40px;
 	height: 20px;
@@ -84,7 +87,13 @@
 	margin-top: 100px;
 	float: left;
 }
-
+.left_2 li{
+	list-style:none;
+	font-size:20px;
+}
+.mymusiclistli{
+	float:left;
+}
 .right {
 	float: right;
 	width: 74%;

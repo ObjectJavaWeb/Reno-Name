@@ -25,27 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <body style="background:url('ui/image/bg_1.jpg');">
 	<div style="height: 50px;"></div>
 	<h3 class="h3" style="text-align: center;">请设置新密码</h3>
-<<<<<<< HEAD
-	<form method="post" action="userregister!M_password.action"
-		class="form-inline">
-		<table class="table">
-
-			<tr>
-				<th>新密码：</th>
-				<td>
-					<input type="password"  style="width: 202.2px" class="" name="">
-					
-				</td>
-			</tr>
-
-			<tr>
-				<th>再输入一次:</th>
-				<td>
-					<input type="password" style="width: 202.2px;" class=""
-						name="">
-				</td>
-			</tr>
-			<tr>
 	<form method="post" action="userlogin!passwordUpdte.action"
 		class="form-inline">
 		<table class="table">
@@ -56,10 +35,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<th>新密码：</th>
 				<td>
 					<input type="password"  style="width: 202.2px"  name="user.password">
-					<input type="text"  name="user.id" value="<%=id%>">
+					<input type="hidden"  name="user.id" value="<%=id%>">
 					
 				</td>
 			</tr>
+
 
 				<th></th>
 				<td>

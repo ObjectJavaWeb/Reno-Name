@@ -14,8 +14,6 @@
 <base href="<%=basePath%>">
 
 <title>我的音乐</title>
-<link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-	media="screen">
 
 <link href="ui/css/MyMusic.css" rel="stylesheet" type="text/css" />
 
@@ -25,9 +23,13 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script src="ui/jquery/jquery-2.0.0.js"></script>
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+<link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen">
+<script src="ui/bootstrap/js/bootstrap.min.js"></script>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
 </head>
 <script type="text/javascript">
@@ -52,76 +54,71 @@
 <body>
 	<jsp:include page="MyJsp.jsp"></jsp:include>
 	<div calss="1"
-		style="width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;top: 0; "></div>
+		style="  width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;top: 0; "></div>
 	<div class="Mymusic">
 
 		<div class="left">
 			<div class="left_1">
 				<div class="left_1_1">
-					<a href="" target="_blank">创建的歌单</a>
+					<p style="margin-top: 90px; font-size: 20px;">创建的歌单</p>
 				</div>
 				<div class="left_1_2">
-					<!-- <a href="javaScript:open_NewSongList()" >+新建</a> -->
-					<button class="btn btn-mini btn-primary left_1_2_btn" type="button"
-						style="background-color:#FBEEEB;text-align: center; "
-						onclick="open_NewSongList()">
-						<font size="0.2em" ; color="black"
-							style="background-color: #FBEEEB;margin-left: -8px;line-height: 8px;">+新建</font>
-					</button>
+					<a href="" data-toggle="modal" data-target="#myModaladdmusiclist"
+						class="btn  left_1_2_btn ">+新建</a>
 				</div>
-				<!-- 添加歌单弹窗 -->
-				<div id="open_NewSongList">
-					<form action="Mymusic!insertMymusic.action" method="post">
-						<table width="30%" border="0" cellpadding="3" cellspacing="1"
-							style="background: url('ui/image/bg_login.jpg');	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
-							align="center">
-							<tr>
-								<th></th>
-								<td>
-									<font size="10">新建歌单</font>
-								</td>
-							</tr>
-							<tr>
-								<th align="center">歌单名：</th>
-								<td>
+				<!-- 新建歌单模态框开始 -->
+				<div class="modal fade" id="myModaladdmusiclist" tabindex="-1"
+					role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<!--控制位置在中间 -->
+					<div class="modal-dialog">
+						<!--控制位置背景颜色为白色和宽度 -->
+						<div class="modal-content login_windows">
+							<div class="modal-header ">
+								<h1 class="modal-title" id="myModalLabel"
+									style="text-align: center;">新建歌单</h1>
+							</div>
+							<form action="Mymusic!insertMymusic.action" method="post">
+								<div class="modal-header ">
 									<input type="text" name="mymusic.name" placeholder="歌单名">
-								</td>
-							</tr>
-							<tr>
-								<th></th>
-								<td>
-									&nbsp;&nbsp;&nbsp;
-									<input type="submit" value="新建">
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<input type="reset" value="退出" onClick="closeme()">
-								</td>
-							</tr>
-						</table>
-					</form>
+								</div>
+								<div class="modal_footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">取消</button>
+									<button type="submit" class="btn btn-primary">完成</button>
+								</div>
+							</form>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal -->
 				</div>
-
+				<!--新建歌单模态框结束  -->
 			</div>
 			<!--显示歌单列表  -->
 			<div class="left_2">
 				<ul>
 					<c:forEach var="mymusiclist" items="${mymusicset}">
-						<li><a href="addmusictomusiclist!MusicList.action?mymusic.id=${mymusiclist.id }">${mymusiclist.name }</a><a
-							href="javaScript:open_UpdateSongList(${mymusiclist.id })"><span
-								class="glyphicon glyphicon-edit"></span></a> <a
-							href="Mymusic!removeMymusic.action?mymusic.id=${mymusiclist.id }">
-								<span class="glyphicon glyphicon-trash"></span>
-						</a></li>
+						<li><a class="mymusiclistli"
+							href="addmusictomusiclist!MusicList.action?mymusic.id=${mymusiclist.id }">${mymusiclist.name }</a>
+							
+				<span style="float:right;">
+				<a href="javaScript:open_UpdateSongList(${mymusiclist.id })"><span
+									class="glyphicon glyphicon-edit"></span></a>
+				<a href="Mymusic!removeMymusic.action?mymusic.id=${mymusiclist.id }">
+									<span class="glyphicon glyphicon-trash"></span>
+							</a></span>
+							</li>
 
 					</c:forEach>
-					
+
 				</ul>
 			</div>
-			<!-- 修改歌单弹窗 -->
+	<!-- 修改歌单弹窗开始 -->
 			<div id="open_updateSongList">
 				<form action="Mymusic!updateMymusic.action" method="post">
 					<input type="hidden" id="mymusic" name="mymusic.id">
 					<table width="30%" border="0" cellpadding="3" cellspacing="1"
-						style="background: url('ui/image/bg_login.jpg');	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
+						style="background:white;	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
 						align="center">
 						<tr>
 							<th></th>
@@ -147,7 +144,8 @@
 						</tr>
 					</table>
 				</form>
-			</div>
+			</div> 
+<!-- 修改歌单弹窗结束 -->
 
 		</div>
 		<div class="right">
@@ -208,12 +206,12 @@
 							<font size="0.5em">专辑</font>
 						</th>
 					</tr>
-					<c:forEach  var="m" items="${mList}">
-					<tr>
-						<td>${m.name }</td>
-						<td>${m.songer }</td>
-						<td>${m.abum }</td>
-					</tr>
+					<c:forEach var="m" items="${mList}">
+						<tr>
+							<td>${m.name }</td>
+							<td>${m.songer }</td>
+							<td>${m.abum }</td>
+						</tr>
 					</c:forEach>
 				</table>
 			</div>
