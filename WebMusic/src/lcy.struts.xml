@@ -14,7 +14,7 @@
 			<result type="json">
 				<!-- root的值对应要返回的值的属性 -->
 				<!-- 这里的result值即是 对应action中的 result -->
-				<param name="root">loginDuplicate</param>
+				<param name="root">result</param>
 			</result>
 		</action>
 	</package>

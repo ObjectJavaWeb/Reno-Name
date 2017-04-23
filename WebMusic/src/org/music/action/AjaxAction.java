@@ -3,6 +3,8 @@ package org.music.action;
 import java.util.List;
 import java.util.Map;
 
+import org.music.pojo.User;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -24,14 +26,14 @@ public class AjaxAction extends ActionSupport {
 		this.loginDuplicate = loginDuplicate;
 	}
 
-	private String userName;
+	private User user;
 
-	public String getUserName() {
-		return userName;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	/**
@@ -44,12 +46,9 @@ public class AjaxAction extends ActionSupport {
 	public String loginDuplicate() throws Exception {
 		ActionContext aContext = ActionContext.getContext();
 		Map<String, Object> session = aContext.getSession();
-		// Map<String, Object> request = (Map<String, Object>) aContext
-		// .get("request");
-		// String userName = (String) request.get("userName");
-		System.out.println(userName);
 		List<String> userNameList = (List<String>) session.get("userNames");
-		loginDuplicate = userNameList.contains(userName.trim());
+		loginDuplicate = userNameList.contains(user.getUserName().trim());
 		return SUCCESS;
 	}
+	
 }

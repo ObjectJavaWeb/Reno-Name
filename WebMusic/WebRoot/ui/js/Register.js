@@ -10,13 +10,11 @@ $(function() {
 			url : "ajaxLogin.action",
 			type : "post",
 			data:{
-				"userName":userName
+				"user.userName":userName
 			},
-			type:"json",
 			success : function(data) {
-				$("#v").remove();
 				if (data) {
-					$("#userName").after("<span id='v'>用户名已存在</span>");
+					$(".userName").html("用户名已经存在！");
 				}
 			}
 		});

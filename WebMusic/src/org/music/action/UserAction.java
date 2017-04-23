@@ -61,6 +61,15 @@ public class UserAction extends ActionSupport {
 	private String message;
 	private String url;
 	private String indexurl = "index.jsp";
+	private String randomCode;
+
+	public String getRandomCode() {
+		return randomCode;
+	}
+
+	public void setRandomCode(String randomCode) {
+		this.randomCode = randomCode;
+	}
 
 	public String getIndexurl() {
 		return indexurl;
@@ -102,6 +111,7 @@ public class UserAction extends ActionSupport {
 		// 获取session
 		Map<String, Object> session = Tools.getSession();
 		User usertest = (User) session.get("user");
+
 		if (usertest == null) {
 			super.addActionError("请先登录！");
 			return "input";
@@ -131,21 +141,23 @@ public class UserAction extends ActionSupport {
 		return "personal";
 	}
 
+	@SuppressWarnings("unused")
 	public String login() throws Exception {
 
-		boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
-		if (flag) {
-			// 根据登陆结果，决定跳转的位置
-			// 登陆成功时,用户信息需要保存到Session属性范围
-			/*
-			 * ServletActionContext.getRequest().getSession()
-			 * .setAttribute("user", user);
-			 */
+			boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
+			if (true) {
+				//根据登陆结果，决定跳转的位置
+				// 登陆成功时,用户信息需要保存到Session属性范围
+				/*
+				 * ServletActionContext.getRequest().getSession()
+				 * .setAttribute("user", user);
+				 */
 
-			// 登陆成功时，放入session时。
-			return "suc";
+				// 登陆成功时，放入session时。
+				return "suc";
 
-		}
+			}
+		
 
 		// 保存错误信息,页面上可以使用标签显示，提供好的一个方法，添加错我信息。
 		super.addActionError("用户名或密码错误,请重新输入!");

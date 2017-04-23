@@ -2,7 +2,6 @@
 <html>
 <head>
 <title>Music.html</title>
-
 <meta name="keywords" content="keyword1,keyword2,keyword3">
 <meta name="description" content="this is my page">
 <meta name="content-type" content="text/html; charset=UTF-8">
@@ -10,9 +9,34 @@
 <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 <script src="../jquery/jquery-2.0.0.js"></script>
 <script>
+var song=["sh.mp3","sxdqw.mp3","sxdqw.mp3","wbda.mp3"];
+var audio = document.getElementById("audio");
+	function serchSongs(o){
+		var item=0;
+		for ( var i=0;i<song.length;i++) {
+			if (song[i]==o) {
+				item=i;
+			}
+		}
+		return item;
+	}
 	$(function() {
+		$("#pro").click(function(){
+			
+			var name=$("#audio").find("source").attr("src");
+			var url=name.substring(0,name.lastIndexOf("/")+1);
+			var songer=name.substring(name.lastIndexOf("/")+1);
+			var index=serchSongs(songer);
+			if (index==0) {
+				index=song.length-1;
+			}else{
+				index--;
+			}
+			name=url+song[index];
+			$("#audio").find("source").attr("src",name);
+			audio.play();
+		});
 		$("#play").click(function() {
-			var audio = document.getElementById("audio");
 			if (audio.paused) {
 				audio.play();
 				$("#play").val("暂停");
@@ -20,7 +44,7 @@
 				audio.pause();
 				$("#play").val("播放");
 			}
-
+		
 		});
 	});
 	function songTime() {
@@ -42,6 +66,13 @@
 </head>
 
 <body>
-	
+	<div class="mp3play">
+	<input type="button" id="pro" value="上一首">
+		<audio id="audio" controls="controls">
+			<source src="../music/sh.mp3" type="audio/mpeg" >
+		</audio>
+		<span id="time"></span>
+	</div>
+
 </body>
 </html>

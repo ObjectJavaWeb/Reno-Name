@@ -62,7 +62,7 @@
 				style="color: rgb(0, 0, 0);"> <input type="date"
 					name="user.birthday" value="${ user.birthday}" class="a1">
 			</span> <br> 
-			<input type="text" name="randCode" class="a1" placeholder="请输入验证码">
+			<input type="text" name="randomCode" class="a1" placeholder="请输入验证码">
 			<img alt="" src="readImgAction" onclick="verificatCodeClick()" >
 			<span class="randCode">${randCode }</span><br>
 			<div class="submit_reset">

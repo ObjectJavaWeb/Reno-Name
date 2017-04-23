@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="../css/MusicBar.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	function show1() {
+		var img1 = document.getElementById("img1");
+		img1.src = "../image/shangyisou1.jpg";
+	}
+	function show1_1() {
+		var img1 = document.getElementById("img1");
+		img1.src = "../image/shangyisou.jpg";
+
+	}
+	function show2() {
+		var img1 = document.getElementById("img2");
+		img1.src = "../image/bofang1.jpg";
+	}
+	function show2_2() {
+		var img1 = document.getElementById("img2");
+		img1.src = "../image/bofang.jpg";
+
+	}
+	function show3() {
+		var img1 = document.getElementById("img3");
+		img1.src = "../image/xiayisou1.jpg";
+	}
+	function show3_3() {
+		var img1 = document.getElementById("img3");
+		img1.src = "../image/xiayisou.jpg";
+
+	}
+	function show4() {
+		var img1 = document.getElementById("img4");
+		img1.src = "../image/shoucang1.jpg";
+	}
+	function show4_4() {
+		var img1 = document.getElementById("img4");
+		img1.src = "../image/shoucang.jpg";
+
+	}
+	function show5() {
+		var img1 = document.getElementById("img5");
+		img1.src = "../image/yinliang1.jpg";
+	}
+	function show5_5() {
+		var img1 = document.getElementById("img5");
+		img1.src = "../image/yinliang.jpg";
+
+	}
+	function dianji() {
+		var img1 = document.getElementById("img5");
+
+	}
+	function show6() {
+		var img1 = document.getElementById("img6");
+		img1.src = "../image/xunhuan1.jpg";
+	}
+	function show6_6() {
+		var img1 = document.getElementById("img6");
+		img1.src = "../image/xunhuan.jpg";
+
+	}
+	function xunhuan() {
+		var img1 = document.getElementById("img6");
+		img1.loop = "loop";
+	}
+</script>
+</head>
+<body>
+	<div id="musicJinDuTiao">
+		<ul>
+			<li><span id="span1_1"><a href=""><img
+						src="../image/shangyisou.jpg" onmousemove="show1()"
+						onmouseout="show1_1()" id="img1" title="上一曲"></a></span></li>
+			<li><span id="span1_1"><a href=""><img
+						src="../image/bofang.jpg" onmousemove="show2()"
+						onmouseout="show2_2()" id="img2" title="播放/暂停"></a></span></li>
+			<li><span id="span1_1"><a href=""><img
+						src="../image/xiayisou.jpg" onmousemove="show3()"
+						onmouseout="show3_3()" id="img3" title="下一曲"></a></span></li>
+			<li><span id="span2_2"><a href=""><img
+						src="../image/bofangtu1.jpg"></a></span></li>
+			<li><span id="span3_3"><audio controls="controls"></audio></span></li>
+			<li><span id="span4_4"><a href=""><img
+						src="../image/shoucang.jpg" onmousemove="show4()"
+						onmouseout="show4_4()" id="img4" title="收藏"></a></span></li>
+			<li><span id="span5_5"><a href=""><img
+						src="../image/yinliang.jpg" onmousemove="show5()"
+						onmouseout="show5_5()" onclick="dianji()" id="img5"></a></span></li>
+			<li><span id="span6_6"><a href=""><img
+						src="../image/xunhuan.jpg" onmousemove="show6()"
+						onmouseout="show6_6()" onclick="xunhuan()" id="img6" title="循环"></a></span></li>
+		</ul>
+	</div>
+</body>
+</html>
