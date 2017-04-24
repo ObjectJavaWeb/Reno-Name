@@ -135,13 +135,14 @@
 									<input type="submit" value="确认添加">
 								</form>
 							</div>
+							<!-- 用户没有登录 打开的窗口开始 -->
 							<div class="modal box" id="myModal2"
 								style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 								<div class="box_header">
 									<button type="button" class="close" data-dismiss="modal"
 										aria-hidden="true">&times;</button>
 								</div>
-								<!-- 用户没有登录 打开的窗口开始 -->
+								
 								<div class="box_body">
 									<h4>登录网页云音乐</h4>
 									<h6>随时随地管理你的音乐库</h6>
@@ -155,8 +156,9 @@
 
 									<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
 								</div>
-								<!-- 用户没有登录 打开的窗口结束 -->
+								
 							</div>
+							<!-- 用户没有登录 打开的窗口结束 -->
 						</td>
 					</tr>
 				</c:forEach>
