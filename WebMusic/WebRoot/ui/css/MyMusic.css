@@ -1,42 +1,18 @@
 @CHARSET "UTF-8";
 
-#open_NewSongList {
-	display: none;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	padding-top: 10%;
-	z-index: 1001;
-	left: 0px;
-	top: 0px;
-}
 
-#open_updateSongList {
-	display: none;
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	padding-top: 10%;
-	z-index: 1001;
-	left: 0px;
-	top: 0px;
-}
 
 .Mymusic {
-	position: absolute;
-	top: 0;
 	width: 70%;
+	height:300px;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 65px;
-	margin-left: 223px;
 }
 
 .left {
 	float: left;
 	width: 25%;
 	height: 100%;
-	border: 1px solid #FBEEEB;
 	background-color: #FFF3F0;
 }
 
@@ -68,7 +44,10 @@
 	height: 50px;
 	float: right;
 }
-
+.left_1_2 a{
+	text-decoration:none;
+	font-size:20px;
+}
 .left_1_2_btn {
 	width: 40px;
 	height: 20px;
@@ -84,7 +63,14 @@
 	margin-top: 100px;
 	float: left;
 }
-
+.left_2 li{
+	list-style:none;
+	font-size:20px;
+	float: none;
+}
+.mymusiclistli{
+	float:left;
+}
 .right {
 	float: right;
 	width: 74%;

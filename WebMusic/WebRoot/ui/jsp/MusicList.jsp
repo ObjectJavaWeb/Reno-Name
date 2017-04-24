@@ -21,19 +21,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script type="text/javascript">
-	function musicMessage(url, id) {
-		/* $.ajax({
-			url:url,
-			type:"POST",
-			data:{'music.id':id},
-			async:true,
-			cache:false,
-			success:function(data){
-				$("#main").html(data);
-			}
-		}); */
-		window.location = url + "?"
-	}
+
 </script>
 
 </head>
@@ -42,9 +30,11 @@
 	<jsp:include page="/ui/jsp/MyJsp.jsp">
 		<jsp:param value="1" name="index" />
 	</jsp:include>
+	<%--  --%>
 	<div class="div1">
-
-		<jsp:include page="carousel.jsp"></jsp:include>
+		<div style="height: 450px">
+			<jsp:include page="carousel.jsp"></jsp:include>
+		</div>
 		<div class="div1-2" style="margin-top: 34px">
 			<ul>
 				<c:forEach var="m" items="${musics }">
@@ -54,8 +44,6 @@
 				</c:forEach>
 			</ul>
 		</div>
-
-
 	</div>
 </body>
 </html>

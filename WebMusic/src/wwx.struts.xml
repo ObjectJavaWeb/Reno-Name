@@ -8,6 +8,8 @@
 		</action>
 
 		<action name="userlogin" class="org.music.action.UserAction">
+			<!-- 登录失败跳转页0 -->
+			<result name="LoginError">/ui/jsp/loginError.jsp</result>
 			<!--查询成功返回输入答案界面 -->
 			<result name="Retrieve_Password">/ui/jsp/Retrieve_Password.jsp</result>
 			<!--查询失败 返回用户输入页面 -->
@@ -16,8 +18,10 @@
 			<result name="suc">/ui/jsp/suc.jsp</result>
 			<!-- 返回登录页 -->
 			<result name="input">index.jsp</result>
-			<!--返回注册页 -->
-			<result name="register">/ui/jsp/Register.jsp</result>
+			<!--验证码输入错误，返回注册失败提示页 -->
+			<result name="registerError">/ui/jsp/registerError.jsp</result>
+			<!--验证码输入错误，返回注册页 -->
+			<result name="register">/ui/jsp/TableRegister.jsp</result>
 			<!-- 返回个人信息修改成功页 -->
 			<result name="personal_Update_suc">/ui/jsp/personal_Update_suc.jsp</result>
 			<!-- 返回个人信息显示页 -->
@@ -31,6 +35,8 @@
 		<action name="userregister" class="org.music.action.UserAction">
 			<result name="forward">/ui/jsp/forward.jsp</result>
 			<result name="Set_answer">/ui/jsp/Set_answer.jsp</result>
+			<!--验证码输入错误，返回注册失败提示页 -->
+			<result name="registerError">/ui/jsp/registerError.jsp</result>
 		</action>
 		<action name="readImgAction" class="org.music.action.ImgAction"
 			method="readImg">

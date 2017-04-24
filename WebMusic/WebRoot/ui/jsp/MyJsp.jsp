@@ -33,7 +33,7 @@
 			$('#myModal2').modal('show');
 			return;
 		}
-		window.location=url;
+		window.location = url;
 		return;
 	}
 	$(function() {
@@ -41,40 +41,28 @@
 			$('#myModal2').modal('hide');
 			$('#myModal').modal('show');
 		});
-		$("#btnSearch").click(function() {
-			var k = $(".search").val();
-			$.ajax({
-				url:"music!musicList.action",
-				data:{"k":k},
-				type:"POST",
-				async:true,
-				cache:false,
-				success:function(data){
-					$("#main html").remove();
-					$("#main").html(data);
-				}
-			});
-		});
+		
 	});
 	function toIndex() {
-		window.location="music!musicList.action";
+		window.location = "music!musicList.action";
 	}
 	function trans(url) {
-		window.location=url;
+		window.location = url;
 	}
 	function transa(url) {
-		window.location=url;
+		window.location = url;
 	}
 	function musicType(o) {
-		
-		window.location="music!msicType.action?type="+o;
+
+		window.location = "music!msicType.action?type=" + o;
 	}
+	 
 </script>
 </head>
 <body>
-<%
-int index = Integer.parseInt(request.getParameter("index"));
-%>
+	<%
+		int index = Integer.parseInt(request.getParameter("index"));
+	%>
 	<!-- 顶部导航条 黑色背景 -->
 	<div class="body">
 		<!-- 网页图标 -->
@@ -83,23 +71,26 @@ int index = Integer.parseInt(request.getParameter("index"));
 			<!-- 发现音乐 -->
 			<div class="tabbable">
 				<ul class="nav nav-tabs ul-nav">
-					<li <%=index==1?"class='active'":"" %>><a href="#tab1" onclick="toIndex()" data-toggle="tab">发现音乐</a></li>
+					<li <%=index == 1 ? "class='active'" : ""%>><a href="#tab1"
+						onclick="toIndex()" data-toggle="tab">发现音乐</a></li>
 					<!-- 使a标签不能跳转 -->
-					<li <%=index==2?"class='active'":"" %> ><a href="#tab2"
+					<li <%=index == 2 ? "class='active'" : ""%>><a href="#tab2"
 						onclick="onclick=musicType('华语')" data-toggle="tab">音乐分类</a></li>
-					<li <%=index==3?"class='active'":"" %>><a href="#tab3" onclick="isLogin('${user}', this, 'Mymusic!getMusicList.action')"
-						 data-toggle="tab">个人</a></li>
+					<li <%=index == 3 ? "class='active'" : ""%>><a href="#tab3"
+						onclick="isLogin('${user}', this, 'Mymusic!getMymusicList.action')"
+						data-toggle="tab">个人</a></li>
 
 				</ul>
 				<div class="tab-content">
-					<div class="tab-pane <%=index==1?"active":"" %>" id="tab1">
+					<div class="tab-pane <%=index == 1 ? "active" : ""%>" id="tab1">
 						<ul class="ul2">
-							<li><a href="javascript:void(0);" onclick="transa('music!musicList.action')">推荐</a></li>
-							<li><a href="javascript:void(0);" onclick="trans('music!parade.action')">排行榜</a></li>
-							<li><a href="javascript:void(0);" onclick="trans('')">歌手</a></li>
+							<li><a href="javascript:void(0);"
+								onclick="transa('music!musicList.action')">推荐</a></li>
+							<li><a href="javascript:void(0);"
+								onclick="trans('music!parade.action')">排行榜</a></li>
 						</ul>
 					</div>
-					<div class="tab-pane <%=index==2?"active":"" %>" id="tab2">
+					<div class="tab-pane <%=index == 2 ? "active" : ""%>" id="tab2">
 						<ul class="ul2">
 							<li><a href="javascript:void(0);" onclick="musicType('华语')">华语</a></li>
 							<li><a href="javascript:void(0);" onclick="musicType('流行')">流行</a></li>
@@ -108,10 +99,12 @@ int index = Integer.parseInt(request.getParameter("index"));
 							<li><a href="javascript:void(0);" onclick="musicType('电子')">电子</a></li>
 						</ul>
 					</div>
-					<div class="tab-pane <%=index==3?"active":"" %>" id="tab3">
+					<div class="tab-pane <%=index == 3 ? "active" : ""%>" id="tab3">
 						<ul class="ul2">
-						<li><a href="#">我的音乐</a></li>
-						<li><a href="#">个人信息</a></li>
+							<li><a href="Mymusic!getMymusicList.action">我的音乐</a></li>
+							<li><a
+								href="userlogin!queryPersonal.action?user.id=${user.id }">个人信息</a></li>
+							<li><a href="userlogin!personalExit.action ">退出登录 </a></li>
 						</ul>
 					</div>
 				</div>
@@ -119,13 +112,12 @@ int index = Integer.parseInt(request.getParameter("index"));
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form action="music!musicList.action" method="post"
-					onsubmit="return false;">
+				<form action="music!searchMusicBykeyword.action" method="post">
 					<input name="k" type="text" class="search"
 						id="appendedInputButton search"
-						placeholder="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑"
-						onblur="if(this.value==''){this.value='&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑'}" />
+						placeholder="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑"/>
 					<input type="submit" id="btnSearch" value="搜索" class="search1 ">
+
 				</form>
 			</div>
 			<div class="div_login">
@@ -134,18 +126,7 @@ int index = Integer.parseInt(request.getParameter("index"));
 						User user = (User) request.getSession().getAttribute("user");
 						if (user != null) {
 				%>
-
-				<li class="dropdown"><span class="dropdown-toggle"
-					data-toggle="dropdown">欢迎您：${user.nickname }<b class="caret"></b>
-				</span>
-					<ul class="dropdown-menu">
-						<%-- <li><a
-								href="userlogin!queryPersonal.action?user.id=${user.id }"
-								target="_blank" class="reg">个人信息</a></li> --%>
-						<li><a href="userlogin!personalExit.action " class="reg">退出登录
-						</a></li>
-					</ul></li>
-
+				欢迎您：${user.nickname }
 				<%
 					} else {
 				%>
@@ -171,6 +152,21 @@ int index = Integer.parseInt(request.getParameter("index"));
 			</div>
 			<div class="box_footer">
 				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
+				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="login">登录</button>
+			</div>
+		</div>
+		<div class="modal box" id="myModal2"
+			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
+			<div class="box_header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+			</div>
+			<div class="box_body">
+				<h4>登录网页云音乐</h4>
+				<h6>随时随地管理你的音乐库</h6>
+			</div>
+			<div class="box_footer">
+				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
 				<button type="submit" class="btn btn-primary data-toggle="
 					modal" data-target="#myModal" id="login">登录</button>
 
@@ -178,12 +174,13 @@ int index = Integer.parseInt(request.getParameter("index"));
 				<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
 			</div>
 		</div>
-		<!-- 登录模态框开始 -->
+
+		<!--登录模态框开始  -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true">
-			<!--控制位置在中间 -->
+			控制位置在中间
 			<div class="modal-dialog">
-				<!--控制位置背景颜色为白色和宽度 -->
+				控制位置背景颜色为白色和宽度
 				<div class="modal-content login_windows">
 					<div class="modal-header ">
 						<h1 class="modal-title" id="myModalLabel"
@@ -213,11 +210,9 @@ int index = Integer.parseInt(request.getParameter("index"));
 						</div>
 					</form>
 				</div>
-				<!-- /.modal-content -->
 			</div>
-			<!-- /.modal -->
 		</div>
-		<!--登录模态框结束  -->
+		<!-- 登录模态框结束  -->
 		<div style="clear: both;"></div>
 </body>
 </html>

@@ -152,17 +152,21 @@ public class MusicServiceImpl implements MusicService{
 	}
 
 	@Override
-	public List<Music> getMusicType(int pageNo, int pageSize, String Key,
+	public Map<String, Object> getMusicType(int pageNo, int pageSize, String Key,
 			String type) throws Exception {
 		List<Music> musics=null;
+		Map<String, Object> map=new HashMap<String, Object>();
 		try {
 			musics=MusicFactory.getMusicDAO().getMusicType(pageNo, pageSize, Key, type);
+			map.put("musicList", musics);
+			int n=MusicFactory.getMusicDAO().getMusicTypeCount(Key, type);
+			map.put("count", n);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			HibernateSessionFactory.closeSession();
 		}
-		return musics;
+		return map;
 	}
 
 

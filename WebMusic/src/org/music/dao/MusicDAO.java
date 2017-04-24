@@ -48,4 +48,12 @@ public interface MusicDAO extends IDAO<Integer, Music> {
 	 * @throws Exception
 	 */
 	public List<Music> getMusicType(int pageNo,int pageSize,String Key,String type) throws Exception;
+	/**
+	 * 根据类型和关键字查询总记录数
+	 * @param keyword 关键字
+	 * @param type 类型
+	 * @return 总记录数
+	 * @throws Exception
+	 */
+	public int getMusicTypeCount(String keyword,String type) throws Exception ;
 }

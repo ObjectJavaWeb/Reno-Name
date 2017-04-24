@@ -28,8 +28,10 @@ $(function () {
 	$("#btn").click(function () {
 		var oquestion=$(".oanswer").val();
 		var nanswer=$(".nanswer").val();
+		var id=$("#id").val();
+		var url="<%=basePath%>";
 		if (oquestion==nanswer) {
-			window.location="<%=basePath%>"+"ui/jsp/Modify_Password.jsp";
+			window.location=url+"ui/jsp/Modify_Password.jsp?id="+id;
 			return;
 		}
 		$(".error").html("答案错误，请重新输入");

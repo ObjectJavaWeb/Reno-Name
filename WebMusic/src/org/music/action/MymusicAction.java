@@ -1,10 +1,8 @@
 package org.music.action;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.taglibs.standard.tag.common.xml.ForEachTag;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Music;
 import org.music.pojo.Mymusic;
@@ -43,7 +41,7 @@ public class MymusicAction extends ActionSupport {
 	public String getMymusicList() throws Exception {
 		Map<String, Object> map = Tools.getSession();
 		User user = (User) map.get("user");
-		
+		System.out.println(user.getId());
 		mymusicset = ServiceFactory.getIMymusicServiceInstance().getMymusics(
 				user.getId());
 		// 获取session

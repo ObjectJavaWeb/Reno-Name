@@ -18,6 +18,7 @@ import java.util.List;
 
 
 
+
 import org.hibernate.Query;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
@@ -128,6 +129,15 @@ public class MusicDAOImpl implements MusicDAO {
 		query.setFirstResult(pageNo);
 		query.setMaxResults(pageSize);
 		return query.list();
+	}
+
+	@Override
+	public int getMusicTypeCount(String keyword, String type) throws Exception {
+		String hql="SELECT COUNT(m) FROM Music AS m WHERE m.type=? AND m.name LIKE ?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, type);
+		query.setString(1, "%"+keyword+"%");
+		return ((Long)query.uniqueResult()).intValue();
 	}
 
 

@@ -16,7 +16,15 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MymusicmymusicAction extends ActionSupport {
 	private Mymusic mymusic;
 	private Music music;
-	private List<Music> mList;
+	private List<Music> musiclist;
+	public List<Music> getMusiclist() {
+		return musiclist;
+	}
+
+	public void setMusiclist(List<Music> musiclist) {
+		this.musiclist = musiclist;
+	}
+
 	private Set<Mymusic> mymusicset;
 
 	public Set<Mymusic> getMymusicset() {
@@ -27,13 +35,7 @@ public class MymusicmymusicAction extends ActionSupport {
 		this.mymusicset = mymusicset;
 	}
 
-	public List<Music> getmList() {
-		return mList;
-	}
-
-	public void setmList(List<Music> mList) {
-		this.mList = mList;
-	}
+	
 
 	
 
@@ -81,8 +83,8 @@ public class MymusicmymusicAction extends ActionSupport {
 		Map<String, Object> session=Tools.getSession();
 		User user=(User)session.get("user");
 		mymusicset=ServiceFactory.getIMymusicServiceInstance().getMymusics(user.getId());
-		mList=ServiceFactory.getIMymusicmusicServiceInstance().findByMyMusicIdByUserId(mymusic.getId(), user.getId());
-		for (Music iterable : mList) {
+		musiclist=ServiceFactory.getIMymusicmusicServiceInstance().findByMyMusicIdByUserId(mymusic.getId(), user.getId());
+		for (Music iterable : musiclist) {
 			System.out.println(iterable.getName());
 		}
 		return "music_list";

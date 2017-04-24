@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Question;
 import org.music.pojo.User;
@@ -13,6 +14,17 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserAction extends ActionSupport {
+	// 验证码
+	private String valliCode;
+
+	public String getValliCode() {
+		return valliCode;
+	}
+
+	public void setValliCode(String valliCode) {
+		this.valliCode = valliCode;
+	}
+
 	private Question question;// 要接受的参数叫question，要生成他的set和get方法。
 	private List<Question> allQuestions;
 
@@ -130,9 +142,17 @@ public class UserAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String passwordUpdte() throws Exception {
-		
+		System.out.println(user.getId());
+		/*
+		 * // 获取session Map<String, Object> session = Tools.getSession(); User
+		 * usertest = (User) session.get("user");
+		 */
+
 		ServiceFactory.getIUserServiceInstance().update1(user);
-		
+		// 修改完成后，更新信息
+		ServiceFactory.getIUserServiceInstance().findById(user.getId());
+		/* session.put("user", user); */
+
 		return "input";
 	}
 
@@ -156,26 +176,17 @@ public class UserAction extends ActionSupport {
 
 	@SuppressWarnings("unused")
 	public String login() throws Exception {
-
-			boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
-			if (true) {
-				//根据登陆结果，决定跳转的位置
-				// 登陆成功时,用户信息需要保存到Session属性范围
-				/*
-				 * ServletActionContext.getRequest().getSession()
-				 * .setAttribute("user", user);
-				 */
-
-				// 登陆成功时，放入session时。
-				return "suc";
-
-			}
-		
-
-		// 保存错误信息,页面上可以使用标签显示，提供好的一个方法，添加错我信息。
-		super.addActionError("用户名或密码错误,请重新输入!");
-
-		return "input";// 默认input,当然自己可随便起名。
+		boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
+		if (flag) {
+			// 根据登陆结果，决定跳转的位置
+			return "suc";
+		} else {
+			// 保存错误信息,页面上可以使用标签显示，提供好的一个方法，添加错误信息。
+			super.addActionError("用户名或密码错误,请重新输入!");
+			message = "用户名或密码错误,请重新输入!";
+			url = "index.jsp";
+			return "LoginError";// 当然自己可随便起名。
+		}
 	}
 
 	/**
@@ -185,14 +196,22 @@ public class UserAction extends ActionSupport {
 	 * @throws Exception
 	 */
 	public String Register() throws Exception {
-		user.setRegistDate(new Date());
-		ServiceFactory.getIUserServiceInstance().insert(user);
-		// 获取session
+		System.out.println(valliCode);
 		Map<String, Object> session = Tools.getSession();
-		session.put("user", user);
-		message = "恭喜您已注册成功！";
-		url = "index.jsp";
-		return "Set_answer";
+		String code = (String) session.get("randomCode");
+		System.out.println(code);
+		if (valliCode.equals(code)) {
+			user.setRegistDate(new Date());
+			ServiceFactory.getIUserServiceInstance().insert(user);
+			// 获取session
+			Map<String, Object> session1 = Tools.getSession();
+			session1.put("user", user);
+			return "Set_answer";
+		} 
+			message = "验证码错误！请重新输入！";
+			url = "ui/jsp/TableRegister.jsp";
+			return "registerError";
+		
 	}
 
 	/**

@@ -46,3 +46,21 @@ ul{
 .reply_windows{display: none;}
 
 .reply_windows{display: none;}
+.box{
+	width:350px;
+	height:300px;
+	margin:auto;
+}
+
+.box_body{
+	text-align: center;
+	margin-top: 100px;
+}
+.box_footer button{
+	margin-left:80px;
+	margin-top: 70px;
+}
+
+.box_header button{
+	margin-left:327px;
+}

@@ -46,6 +46,7 @@ public class UserDAOImpl implements IUserDAO {
 		query.setString(0, user.getPassword());
 		query.setInteger(1, user.getId());
 		query.executeUpdate();
+		
 	}
 	@Override
 	public void doRemove(Integer id) throws Exception {

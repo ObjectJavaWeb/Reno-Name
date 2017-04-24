@@ -47,5 +47,5 @@ public interface MusicService {
 	 * @return 歌曲列表
 	 * @throws Exception
 	 */
-	public List<Music> getMusicType(int pageNo,int pageSize,String Key,String type) throws Exception;
+	public Map<String, Object> getMusicType(int pageNo,int pageSize,String Key,String type) throws Exception;
 }

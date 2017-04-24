@@ -1,6 +1,7 @@
 package org.music.action;
 
 import java.util.List;
+import java.util.Map;
 
 import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
@@ -11,6 +12,51 @@ import org.music.util.Tools;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MusicAction extends ActionSupport {
+	private List<Music> searchResult;
+	private int pageNo=1;
+	private int  pageSize=10;
+	private String	keyword="";
+	private int count;
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public int getPageNo() {
+		return pageNo;
+	}
+
+	public void setPageNo(int pageNo) {
+		this.pageNo = pageNo;
+	}
+
+	public int getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(int pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public List<Music> getSearchResult() {
+		return searchResult;
+	}
+
+	public void setSearchResult(List<Music> searchResult) {
+		this.searchResult = searchResult;
+	}
+
 	private List<Comment> comments;
 	private String type;
 
@@ -76,7 +122,19 @@ public class MusicAction extends ActionSupport {
 	public void setMusic(Music music) {
 		this.music = music;
 	}
-
+	/**
+	 * 
+	 * @return 搜索结果
+	 * @throws Exception
+	 */
+public String searchMusicBykeyword()throws Exception{
+	searchResult = (List<Music>) MusicServiceFactory.getMusicServiceInstace().list(1, 12, k, "name").get("allMusic");
+	for (Music m : searchResult) {
+		System.out.println(m.getName());
+	}
+	
+	return "searchlist";
+}
 	@SuppressWarnings("unchecked")
 	public String musicList() throws Exception {
 		System.out.println(k);
@@ -116,7 +174,9 @@ public class MusicAction extends ActionSupport {
 	}
 	public String msicType() throws Exception{
 		type=Tools.decoder(type, "UTF-8");
-		musics=MusicServiceFactory.getMusicServiceInstace().getMusicType(0, 10, "", type);
+		Map<String, Object> map= MusicServiceFactory.getMusicServiceInstace().getMusicType(pageNo, pageSize, keyword, type);
+		musics=(List<Music>) map.get("musicList");
+		count=(Integer) map.get("count");
 		return "musicType";
 	}
 }
