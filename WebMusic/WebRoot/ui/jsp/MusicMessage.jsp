@@ -111,26 +111,21 @@
 
 									<c:forEach var="reply" items="${replys}">
 										<div style="border-bottom: 1px solid #C0C0C0;">
-											${reply.content}</div>
+										${reply.user.nickname}:${reply.content}</div>
 									</c:forEach>
 
 									<div>
 										${comments.user.userName }:${ comments.content}<br> <span>${comments.cdate }</span><span
 											style="float: right" onclick="reply(${c.index })">|回复</span>
 									</div>
-									<!--以下注释是回复功能的隐藏域  -->
-									<%-- <div class="sreplys reply${c.index }" >
-												<textarea rows="2" cols="20" id="content"></textarea>
-												<input type="submit" id="sum" value="回复">
-												<input type="hidden" id="userId" value="${comments.user.id }">
-												<input type="hidden" id="commentId" value="${comments.id }">
-										</div> --%>
 									<div class="sreplys reply${c.index }">
 										<form action="reply!insertReply.action" method="post">
 											<textarea rows="2" cols="20" name="reply.content"></textarea>
 											<input type="submit" value="回复">
 											<input type="hidden" value="${comments.id }"
 												name="comment.id">
+												<input type="hidden" value="${user.id }"
+												name="user.id">
 											<input type="hidden" value="${music.id }" name="music.id">
 										</form>
 									</div>

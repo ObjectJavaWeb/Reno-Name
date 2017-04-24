@@ -88,12 +88,13 @@ public class ReplyAction extends ActionSupport {
 	}
 
 	public String insertReply() throws Exception {
-		Map<String, Object> session = Tools.getSession();
-		User user = (User) session.get("user");
+	/*	Map<String, Object> session = Tools.getSession();
+		User user = (User) session.get("user");*/
 		comment.setUser(user);
 		comment.setMusic(music);
 		// 传入被评论的内容ID
 		reply.setComment(comment);
+		reply.setUser(user);
 		// 设置回复时间
 		reply.setReplyDate(Tools.getNewDate());
 		ServiceFactory.getIReplyServiceInstance().insert(reply);
@@ -102,9 +103,6 @@ public class ReplyAction extends ActionSupport {
 		// 根据歌曲ID查询所有评论
 		comments = ServiceFactory.getICommentDAOInstance().getComments(
 				music.getId());
-		for (Reply r : replys) {
-			System.out.println(r.getContent());
-		}
 		return "musicmessage";
 	}
 }
