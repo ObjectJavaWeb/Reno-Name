@@ -58,8 +58,9 @@
 </head>
 
 <body>
-	<jsp:include page="/ui/jsp/MyJsp.jsp"></jsp:include>
-
+	<jsp:include page="/ui/jsp/MyJsp.jsp">
+		<jsp:param value="1" name="index" />
+	</jsp:include>
 	<div style="width: 85%; margin: 0 auto;">
 		<div style="height: 150px;margin-top: 20px">
 			<div style="float: left;margin-left: 140px">

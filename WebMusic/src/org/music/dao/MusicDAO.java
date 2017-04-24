@@ -3,6 +3,7 @@ package org.music.dao;
 import java.util.List;
 
 import org.music.pojo.Music;
+import org.music.pojo.SongerMusic;
 
 public interface MusicDAO extends IDAO<Integer, Music> {
 	public List<Music> findAll() throws Exception;
@@ -28,4 +29,23 @@ public interface MusicDAO extends IDAO<Integer, Music> {
 	 * @throws Exception
 	 */
 	public List<Music> parade() throws Exception; 
+	/**
+	 * 歌手列表
+	 * @param pageNo 当前页
+	 * @param pageSize 页面大小
+	 * @param Key 关键字
+	 * @return 歌手列表
+	 * @throws Exception
+	 */
+	public List<SongerMusic> getSonger(int pageNo,int pageSize,String Key) throws Exception;
+	/**
+	 * 根据歌曲类别获取歌曲列表
+	 * @param pageNo 当前页
+	 * @param pageSize 页面大小
+	 * @param Key 关键字
+	 * @param type 歌曲类型
+	 * @return 歌曲列表
+	 * @throws Exception
+	 */
+	public List<Music> getMusicType(int pageNo,int pageSize,String Key,String type) throws Exception;
 }

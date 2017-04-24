@@ -151,5 +151,19 @@ public class MusicServiceImpl implements MusicService{
 		return list;
 	}
 
+	@Override
+	public List<Music> getMusicType(int pageNo, int pageSize, String Key,
+			String type) throws Exception {
+		List<Music> musics=null;
+		try {
+			musics=MusicFactory.getMusicDAO().getMusicType(pageNo, pageSize, Key, type);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			HibernateSessionFactory.closeSession();
+		}
+		return musics;
+	}
+
 
 }

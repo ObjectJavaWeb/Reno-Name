@@ -6,11 +6,21 @@ import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
+import org.music.util.Tools;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 public class MusicAction extends ActionSupport {
 	private List<Comment> comments;
+	private String type;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public List<Comment> getComments() {
 		return comments;
@@ -69,15 +79,24 @@ public class MusicAction extends ActionSupport {
 
 	@SuppressWarnings("unchecked")
 	public String musicList() throws Exception {
+		System.out.println(k);
 		musics=(List<Music>) MusicServiceFactory.getMusicServiceInstace().list(1, 12, k, "name").get("allMusic");
-		parade=MusicServiceFactory.getMusicServiceInstace().parade();
+		
 
 		musics = (List<Music>) MusicServiceFactory.getMusicServiceInstace()
-				.list(1, 12, "", "name").get("allMusic");
+				.list(1, 15, "", "name").get("allMusic");
 		parade = MusicServiceFactory.getMusicServiceInstace().parade();
 		return "musicList";
 	}
-
+	/**
+	 * 音乐排行榜
+	 * @return
+	 * @throws Exception
+	 */
+	public String  parade() throws Exception{
+		parade=MusicServiceFactory.getMusicServiceInstace().parade();
+		return "parade";
+	}
 	public String getMusicMessage() throws Exception {
 		MusicServiceFactory.getMusicServiceInstace().addHit(music.getId());
 		music = MusicServiceFactory.getMusicServiceInstace().findById(
@@ -94,5 +113,10 @@ public class MusicAction extends ActionSupport {
 				music.getType());
 		System.out.println(result);
 		return SUCCESS;
+	}
+	public String msicType() throws Exception{
+		type=Tools.decoder(type, "UTF-8");
+		musics=MusicServiceFactory.getMusicServiceInstace().getMusicType(0, 10, "", type);
+		return "musicType";
 	}
 }

@@ -45,6 +45,6 @@
 		<a href="#top">回到<br>顶部
 		</a>
 	</div>
-	<jsp:include page="ui/jsp/MyJsp.jsp"></jsp:include>
+	
 	<div id="main"></div>
 </body>

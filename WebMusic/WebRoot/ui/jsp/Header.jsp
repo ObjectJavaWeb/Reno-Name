@@ -72,9 +72,9 @@
 		</div>
 		<div class="topbar_1_3">
 			<div class="div_search">
-				<form class="form-search">
+				<form class="form-search" action="music!musicList.action" method="post">
 					<p class="input-append">
-						<input type="text" class="span2 search"
+						<input type="text" class="span2 search" name=""
 							id="appendedInputButton search" placeholder="请输入您想收索的歌曲名/歌手">
 						<input type="submit" value="搜索" class="btn search">
 					</p>

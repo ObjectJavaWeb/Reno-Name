@@ -313,3 +313,6 @@ a:hover {
 .box_header button{
 	margin-left:327px;
 }
+.pager span{
+	cursor: pointer;
+}

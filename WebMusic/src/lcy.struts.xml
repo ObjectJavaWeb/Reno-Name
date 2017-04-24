@@ -5,6 +5,8 @@
 		<action name="music" class="org.music.action.MusicAction">
 			<result name="musicList">/ui/jsp/MusicList.jsp</result>
 			<result name="musicMessagge">/ui/jsp/MusicMessage.jsp</result>
+			<result name="parade">/ui/jsp/Music_list.jsp</result>
+			<result name="musicType">/ui/jsp/Music_List_type.jsp</result>
 		</action>
 	</package>
 	<package name="lcy_ajax" namespace="/" extends="json-default">

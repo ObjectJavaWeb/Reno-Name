@@ -1,6 +1,11 @@
 package org.music.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
+
+
+
+
 
 
 
@@ -17,6 +22,7 @@ import org.hibernate.Query;
 import org.music.dao.MusicDAO;
 import org.music.dbc.HibernateSessionFactory;
 import org.music.pojo.Music;
+import org.music.pojo.SongerMusic;
 
 public class MusicDAOImpl implements MusicDAO {
 
@@ -94,6 +100,33 @@ public class MusicDAOImpl implements MusicDAO {
 		Query query=HibernateSessionFactory.getSession().createQuery(hql);
 		query.setFirstResult(0);
 		query.setMaxResults(10);
+		return query.list();
+	}
+
+	@Override
+	public List<SongerMusic> getSonger(int pageNo, int pageSize, String Key)
+			throws Exception {
+		String hql="SELECT m.songer as name, COUNT(m) as num FROM Music AS m WHERE m.songer LIKE ? ORDER BY m.songer ";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, "%"+Key+"%");
+		query.setFirstResult(pageNo);
+		query.setMaxResults(pageSize);
+		List<Object> objects=query.list();
+		List<SongerMusic> songerMusics=new ArrayList<SongerMusic>();
+		System.out.println(((SongerMusic)objects.get(0)).getName());
+		return songerMusics;
+	}
+
+	@Override
+	public List<Music> getMusicType(int pageNo, int pageSize, String Key,
+			String type) throws Exception {
+		String hql="FROM Music AS m WhERE m.type=? AND m.name LIKE ?";
+		Query query=HibernateSessionFactory.getSession().createQuery(hql);
+		query.setString(0, type);
+		query.setString(1, "%"+Key+"%");
+
+		query.setFirstResult(pageNo);
+		query.setMaxResults(pageSize);
 		return query.list();
 	}
 

@@ -50,7 +50,6 @@
 </script>
 
 <body>
-	<jsp:include page="MyJsp.jsp"></jsp:include>
 	<div calss="1"
 		style="width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;top: 0; "></div>
 	<div class="Mymusic">

@@ -38,4 +38,14 @@ public interface MusicService {
 	 * @throws Exception
 	 */
 	public List<Music> parade() throws Exception;
+	/**
+	 * 根据歌曲类别获取歌曲列表
+	 * @param pageNo 当前页
+	 * @param pageSize 页面大小
+	 * @param Key 关键字
+	 * @param type 歌曲类型
+	 * @return 歌曲列表
+	 * @throws Exception
+	 */
+	public List<Music> getMusicType(int pageNo,int pageSize,String Key,String type) throws Exception;
 }

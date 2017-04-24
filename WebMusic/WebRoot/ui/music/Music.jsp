@@ -42,28 +42,27 @@
 		$("#next").click(function() {
 			myplay(audio, "下一首");
 		});
-		$("audio").bind("ended",function(){
-			var typePlay=$("#playmusic").val();
-				myplay(audio, "下一首");
-			
-			
+		$("audio").bind("ended", function() {
+			var typePlay = $("#playmusic").val();
+			myplay(audio, "下一首");
+
 		});
-		$("#playmusic").click(function () {
-			var type=["单曲","顺序","随机"];
-			var t=$("#playmusic").val();
-			var item=0;
-			for ( var i=0;i<type.length;i++) {
-				if (t==type[i]) {
-					item=i;
+		$("#playmusic").click(function() {
+			var type = [ "单曲", "顺序", "随机" ];
+			var t = $("#playmusic").val();
+			var item = 0;
+			for (var i = 0; i < type.length; i++) {
+				if (t == type[i]) {
+					item = i;
 					break;
 				}
 			}
-			if (item>=(type.length-1)) {
-				item=0;
-			}else{
-				item=item+1;
+			if (item >= (type.length - 1)) {
+				item = 0;
+			} else {
+				item = item + 1;
 			}
-			$("#playmusic").attr("value",type[item]);
+			$("#playmusic").attr("value", type[item]);
 		});
 	});
 	function serchSongs(o) {
@@ -102,19 +101,34 @@
 	}
 </script>
 <style type="text/css">
-audio{
-width: 100%;
-height: 50px;
+.ul_m {
+	margin: 0;
+	padding: 0;
+	margin-left: 15px;
+}
+
+.ul_m li {
+	list-style: none;
+	line-height: 36px;
 }
 </style>
 </head>
 
 <body>
-	<audio  id="audio" > <source
-		src="ui/music/sgz.mp3" type="audio/mpeg" /> </audio>
-	<input type="button" id="pro" value="上一首">
-	<input type="button" id="play" value="播放">
-	<input type="button" id="next" value="下一首">
-	<input type="button" id="playmusic" value="单曲">
+	<audio id="audio"> <source src="ui/music/sgz.mp3"
+		type="audio/mpeg" /> </audio>
+	<div>
+		<img alt="" src="ui/music/musical.jpg" style="float: left;">
+		<ul style="float: left;" class="ul_m">
+			<li>歌名：是否</li>
+			<li>歌手：邓紫棋</li>
+			<li>专辑：邓紫棋</li>
+			<li><input type="button" id="pro" value="上一首"> <input
+					type="button" id="play" value="播放"> <input type="button"
+					id="next" value="下一首"> <input type="button" id="playmusic"
+					value="单曲"><button><a href="ui/music/sgz.mp3">下载</a></button> </li>
+		</ul>
+	</div>
+
 </body>
 </html>
