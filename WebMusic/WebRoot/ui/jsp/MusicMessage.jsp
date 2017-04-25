@@ -118,7 +118,7 @@
 	<div style="width: 85%; margin: 0 auto;">
 		<div style="height: 150px;margin-top: 20px">
 			<div style="float: left;margin-left: 140px">
-				<img src="ui/image/musical.jpg">
+				<img src="ui/music/image/${music.image}.jpg">
 			</div>
 			<div class="div2">
 				<ul>
@@ -129,7 +129,7 @@
 				<ul class="ul2-2">
 					<li><a href="#">播放</a></li>
 					<li><a href="#">收藏</a></li>
-					<li><a href="#">下载</a></li>
+					<li><a href="/ui/image/${music.image }.mp3">下载</a></li>
 					<li><a href="#">评论</a></li>
 				</ul>
 				<div class="div2-3"></div>

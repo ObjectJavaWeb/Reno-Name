@@ -24,7 +24,7 @@
 
 <body>
 	<div class="grid-music-container f-usn" style="background-color: #FDF8F7">
-		<div class="m-music-play-wrap" style="float: left;">
+		<div class="m-music-play-wrap">
 			<div class="u-cover"></div>
 			<div class="m-now-info">
 				<h1 class="u-music-title">

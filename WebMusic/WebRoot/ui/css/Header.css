@@ -302,3 +302,17 @@ a:hover {
 .pager span{
 	cursor: pointer;
 }
+.mybfq{
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 20px;
+	cursor: pointer;
+}
+.mybfqm{
+	position: absolute;
+	right: 0px;
+	top: 60px;
+	z-index: 1;
+	
+}
