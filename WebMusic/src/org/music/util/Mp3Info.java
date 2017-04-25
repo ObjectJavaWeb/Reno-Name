@@ -10,8 +10,17 @@ public class Mp3Info {
      * 歌手名字
      */
     private String singer;
+    private String txt;
 
-    /**
+    public String getTxt() {
+		return txt;
+	}
+
+	public void setTxt(String txt) {
+		this.txt = txt;
+	}
+
+	/**
      * 时长（秒）
      */
     private Integer duration;

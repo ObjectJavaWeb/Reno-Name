@@ -56,6 +56,40 @@
 		<jsp:param value="3" name="index" />
 	</jsp:include>
 	<div style="clear: both;"></div>
+	<!-- 修改歌单弹窗开始 -->
+			<div id="open_updateSongList">
+				<form action="Mymusic!updateMymusic.action" method="post">
+					<input type="hidden" id="mymusic" name="mymusic.id">
+					<table width="30%" border="0" cellpadding="3" cellspacing="1"
+						style="background:white;	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
+						align="center">
+						<tr>
+							<th></th>
+							<td>
+								<font size="5">修改歌单信息</font>
+							</td>
+						</tr>
+						<tr>
+							<th align="center">歌单名：</th>
+							<td>
+								<input type="text" name="mymusic.name" placeholder="歌单名">
+							</td>
+						</tr>
+						<tr>
+							<th></th>
+							<td>
+								&nbsp;&nbsp;&nbsp;
+								<input type="submit" value="保存">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="reset" value="退出"
+									onClick="closeme_UpdateSongList()">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<!-- 修改歌单弹窗结束 -->
+	
 	<div class="Mymusic">
 
 		<div class="left">
@@ -127,40 +161,7 @@
 
 				</ul>
 			</div>
-			<!-- 修改歌单弹窗开始 -->
-			<div id="open_updateSongList">
-				<form action="Mymusic!updateMymusic.action" method="post">
-					<input type="hidden" id="mymusic" name="mymusic.id">
-					<table width="30%" border="0" cellpadding="3" cellspacing="1"
-						style="background:white;	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
-						align="center">
-						<tr>
-							<th></th>
-							<td>
-								<font size="5">修改歌单信息</font>
-							</td>
-						</tr>
-						<tr>
-							<th align="center">歌单名：</th>
-							<td>
-								<input type="text" name="mymusic.name" placeholder="歌单名">
-							</td>
-						</tr>
-						<tr>
-							<th></th>
-							<td>
-								&nbsp;&nbsp;&nbsp;
-								<input type="submit" value="保存">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="reset" value="退出"
-									onClick="closeme_UpdateSongList()">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
-			<!-- 修改歌单弹窗结束 -->
-
+			
 		</div>
 		<div class="right">
 			<div class="right_1">

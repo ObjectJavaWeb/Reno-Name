@@ -86,7 +86,7 @@
 			title : '寂寞在唱歌',
 			singer : '阿桑',
 			cover : 'ui/bdPlayer/images/yangcong.jpg',
-			src : 'ui/bdPlayer/mp3/jmzcg.mp3'
+			src : 'ui/bdPlayer/mp3/123.mp3'
 		},
 		
 		];

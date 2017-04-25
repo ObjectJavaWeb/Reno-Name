@@ -191,7 +191,7 @@
 									</c:forEach>
 
 									<div>
-										${comments.user.userName }:${ comments.content}<br> <span>${comments.cdate }</span><span
+										${comments.user.nickname }:${ comments.content}<br> <span>${comments.cdate }</span><span
 											style="float: right" onclick="reply(${c.index},'${user }')">|回复</span>
 									</div>
 									<div class="sreplys reply${c.index }">

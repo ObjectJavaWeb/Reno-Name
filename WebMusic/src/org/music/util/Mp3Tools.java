@@ -19,13 +19,17 @@ public class Mp3Tools {
 	 * @param mp3File
 	 * @return
 	 */
-	public static Mp3Info getMP3Info(File mp3File) {
+	public static Mp3Info getMP3Info(File mp3File,String txt) {
 		Mp3Info mp3Info = new Mp3Info();
 		try {
 			MP3File file = new MP3File(mp3File);
-			mp3Info.setAublm(toGB2312(file.getID3v1Tag().getFirstAlbum()));
-			mp3Info.setSinger(toGB2312(file.getID3v1Tag().getFirstArtist()));
-			mp3Info.setSongName(toGB2312(file.getID3v1Tag().getFirstTitle()));
+			if (file.getID3v1Tag()!=null) {
+				mp3Info.setAublm(toGB2312(file.getID3v1Tag().getFirstAlbum()));
+				mp3Info.setSinger(toGB2312(file.getID3v1Tag().getFirstArtist()));
+				mp3Info.setSongName(toGB2312(file.getID3v1Tag().getFirstTitle()));
+				mp3Info.setTxt(txt);
+			}
+			
 			
 		} catch (IOException e) {
 			e.printStackTrace();
