@@ -23,8 +23,9 @@
 </head>
 
 <body>
-	<div class="grid-music-container f-usn" style="background-color: #FDF8F7">
+	<div class="grid-music-container f-usn" style="background-color: red">
 		<div class="m-music-play-wrap">
+
 			<div class="u-cover"></div>
 			<div class="m-now-info">
 				<h1 class="u-music-title">
@@ -42,14 +43,19 @@
 						</div>
 						<a class="volume-control"></a>
 					</div>
+
 				</div>
+
 				<div class="m-play-controls">
-					<a class="u-play-btn prev" title="上一曲"></a> <a
-						class="u-play-btn ctrl-play play" title="暂停"></a> <a
-						class="u-play-btn next" title="下一曲"></a> <a
-						class="u-play-btn mode mode-list current" title="列表循环"></a> <a
+					<a class="u-play-btn mode mode-list current" title="列表循环"></a> <a
 						class="u-play-btn mode mode-random" title="随机播放"></a> <a
 						class="u-play-btn mode mode-single" title="单曲循环"></a>
+				</div>
+				<div class="m-play-controls"
+					style="width:180px; height:20px; float:left; margin-left:20px; margin-top:-60px;z-index: 1;">
+					<a class="u-play-btn prev" title="上一曲"></a> <a
+						class="u-play-btn ctrl-play play" title="暂停"></a> <a
+						class="u-play-btn next" title="下一曲"></a>
 				</div>
 			</div>
 		</div>
@@ -78,13 +84,13 @@
 			singer : 'internetke.com',
 			cover : 'ui/bdPlayer/images/yangcong.jpg',
 			src : 'ui/bdPlayer/mp3/pg.mp3'
-		},  {
+		}, {
 			title : '寂寞在唱歌',
 			singer : '阿桑',
 			cover : 'ui/bdPlayer/images/yangcong.jpg',
 			src : 'ui/bdPlayer/mp3/123.mp3'
 		},
-		
+
 		];
 		new SMusic({
 			musicList : musicList

@@ -330,14 +330,16 @@ html,body{
 }
 
 .grid-music-container .m-music-play-wrap {
-	height: 150px;
+	height: 80px;
+	
 	position: relative;
-	padding-left: 140px;
+	padding-left: 30px;
+	background-color: blue;
 }
 
 .grid-music-container .u-cover {
-	width: 121px;
-	height: 121px;
+	width: 50px;
+	height: 50px;
 	overflow: hidden;
 	background: url(../img/music_icons.png) 0 0 no-repeat;
 	position: absolute;
@@ -356,6 +358,8 @@ html,body{
 .grid-music-container .u-cover.play {
 	-webkit-animation: Circle 10s linear infinite 0s forwards;
 	animation: Circle 10s linear infinite 0s forwards;
+	margin-left:250px;
+	margin-top:15px;
 }
 
 .grid-music-container .u-cover.paused {
@@ -389,22 +393,26 @@ to {
 
 .grid-music-container .m-now-info h1 {
 	font-weight: normal;
+	padding-top:15px;
+	padding-left:250px;
 }
 
 .grid-music-container .m-now-info h1 strong {
-	font-size: 18px;
+	font-size: 10px;
 	color: #111210;
 	font-weight: normal;
+	margin-left:30px;
 }
 
 .grid-music-container .m-now-info h1 small {
 	margin-left: 20px;
-	font-size: 14px;
+	font-size: 10px;
 	color: #313230;
 }
 
 .grid-music-container .m-now-controls {
 	padding-top: 30px;
+	width:1100px;
 	position: relative;
 }
 
@@ -416,10 +424,12 @@ to {
 }
 
 .grid-music-container .m-now-controls .u-process {
-	width: 220px;
-	height: 4px;
+	width: 680px;
+	height: 6px;
 	position: relative;
 	background-color: #cecfd4;
+	margin-left:280px;
+	margin-top:-60px;
 }
 
 .grid-music-container .m-now-controls .u-process .buffer-process,.grid-music-container .m-now-controls .u-process .current-process
@@ -441,6 +451,7 @@ to {
 
 .grid-music-container .m-now-controls .u-time {
 	margin-left: 10px;
+	margin-top:-60px;
 	font-size: 12px;
 	color: #585957;
 }
@@ -450,6 +461,7 @@ to {
 	text-align: center;
 	position: relative;
 	margin-left: 20px;
+	margin-top:-60px;
 }
 
 .grid-music-container .u-volume .volume-process {
@@ -563,7 +575,7 @@ to {
 }
 
 .grid-music-container .m-play-controls {
-	margin-top: 10px;
+	
 }
 
 .grid-music-container .m-play-controls a {
@@ -643,6 +655,24 @@ to {
 	background-position: -221px -80px;
 }
 .f-usn{
-	width: 400px;
+	width: 100%;
 	margin: 0;
+}
+.m-play-controls{
+	width:200px;
+	margin-top:-50px;
+	margin-right:50px;
+	float:right;
+	
+}
+
+.con{
+	width:180px;
+	height:20px;
+	float:left;
+	margin-left:20px;
+	margin-top:30px;
+}
+.u-music-title{
+	font-size: 5em;
 }
