@@ -102,6 +102,7 @@
 									<input type="submit" value="确认添加">
 								</form>
 							</div>
+							<a href="javascript:void(0);" onclick="play('${p.name}','${p.image}','${p.songer }')">播放</a>
 						</td>
 					</tr>
 				</c:forEach>

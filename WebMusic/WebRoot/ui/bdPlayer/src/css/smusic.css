@@ -318,10 +318,6 @@ html,body{
 
 /*SMusic*/
 .grid-music-container {
-	width: 520px;
-	height: 276px;
-	padding: 20px;
-	position: relative;
 	background-color: rgba(255, 255, 255, .7);
 	font-family: "Microsoft Yahei", "寰蒋闆呴粦", "Helvetica Neue",
 		"Hiragino Sans GB", Helvetica, Tahoma, sans-serif;
@@ -334,7 +330,9 @@ html,body{
 	
 	position: relative;
 	padding-left: 30px;
-	background-color: blue;
+	background-color: #FFF4F3;
+	width: 100%;
+	margin-right: 0;
 }
 
 .grid-music-container .u-cover {
@@ -655,13 +653,10 @@ to {
 	background-position: -221px -80px;
 }
 .f-usn{
-	width: 100%;
-	margin: 0;
 }
 .m-play-controls{
 	width:200px;
 	margin-top:-50px;
-	margin-right:50px;
 	float:right;
 	
 }

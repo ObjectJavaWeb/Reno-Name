@@ -19,11 +19,14 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" href="ui/bdPlayer/src/css/smusic.css" />
-
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+	
+</script>
 </head>
 
 <body>
-	<div class="grid-music-container f-usn" style="background-color: red">
+	<div class="grid-music-container f-usn">
 		<div class="m-music-play-wrap">
 
 			<div class="u-cover"></div>
@@ -54,7 +57,7 @@
 				<div class="m-play-controls"
 					style="width:180px; height:20px; float:left; margin-left:20px; margin-top:-60px;z-index: 1;">
 					<a class="u-play-btn prev" title="上一曲"></a> <a
-						class="u-play-btn ctrl-play play" title="暂停"></a> <a
+						class="u-play-btn ctrl-play play" title="播放"></a> <a
 						class="u-play-btn next" title="下一曲"></a>
 				</div>
 			</div>
@@ -62,39 +65,6 @@
 		<div class="f-cb">&nbsp;</div>
 		<div class="m-music-list-wrap" style="display: none;"></div>
 	</div>
-	<script src="ui/bdPlayer/src/js/smusic.min.js"></script>
-	<script>
-		var musicList = [ {
-			title : '亡灵序曲',
-			singer : 'internetke.com',
-			cover : 'ui/bdPlayer/images/Maroon5.jpg',
-			src : 'ui/bdPlayer/mp3/The Dawn.mp3'
-		}, {
-			title : '苹果手机铃声',
-			singer : 'internetke.com',
-			cover : 'ui/bdPlayer/images/yangcong.jpg',
-			src : 'ui/bdPlayer/mp3/pg.mp3'
-		}, {
-			title : '亡灵序曲2',
-			singer : 'internetke.com',
-			cover : 'ui/bdPlayer/images/Maroon5.jpg',
-			src : 'ui/bdPlayer/mp3/The Dawn.mp3'
-		}, {
-			title : '苹果手机铃声2',
-			singer : 'internetke.com',
-			cover : 'ui/bdPlayer/images/yangcong.jpg',
-			src : 'ui/bdPlayer/mp3/pg.mp3'
-		}, {
-			title : '寂寞在唱歌',
-			singer : '阿桑',
-			cover : 'ui/bdPlayer/images/yangcong.jpg',
-			src : 'ui/bdPlayer/mp3/123.mp3'
-		},
-
-		];
-		new SMusic({
-			musicList : musicList
-		});
-	</script>
+	
 </body>
 </html>

@@ -309,10 +309,10 @@ a:hover {
 	top: 20px;
 	cursor: pointer;
 }
-.mybfqm{
-	position: absolute;
-	right: 0px;
-	top: 60px;
+
+.myplay{
+	width:100%;
+	position: fixed;
+	bottom:0;
 	z-index: 1;
-	
 }

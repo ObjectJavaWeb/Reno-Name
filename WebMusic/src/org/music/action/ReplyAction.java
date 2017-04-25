@@ -4,6 +4,7 @@ import java.security.Provider.Service;
 import java.util.List;
 import java.util.Map;
 
+import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
@@ -95,6 +96,7 @@ public class ReplyAction extends ActionSupport {
 		// 传入被评论的内容ID
 		reply.setComment(comment);
 		reply.setUser(user);
+		music=MusicServiceFactory.getMusicServiceInstace().findById(music.getId());
 		// 设置回复时间
 		reply.setReplyDate(Tools.getNewDate());
 		ServiceFactory.getIReplyServiceInstance().insert(reply);

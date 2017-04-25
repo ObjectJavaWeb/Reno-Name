@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.music.factory.MusicServiceFactory;
 import org.music.factory.ServiceFactory;
 import org.music.pojo.Comment;
 import org.music.pojo.Music;
@@ -94,6 +95,7 @@ public class CommentAction extends ActionSupport {
 		comment.setUser(user);
 		comment.setMusic(music);
 		//设置评论时间 
+		music=MusicServiceFactory.getMusicServiceInstace().findById(music.getId());
 		
 		comment.setCdate(Tools.getNewDate());
 		//插入评论

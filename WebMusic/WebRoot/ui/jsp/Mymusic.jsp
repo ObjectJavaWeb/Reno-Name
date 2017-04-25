@@ -163,7 +163,7 @@
 			
 		</div>
 		<div class="right">
-			<div class="right_1">
+			<!-- <div class="right_1">
 				<div class="right_1_1">
 					<img alt="" src="">
 				</div>
@@ -194,18 +194,17 @@
 					</button>
 				</div>
 
-			</div>
+			</div> -->
 			<div class="right_2">
 				<span
 					style="display: block;float: left;margin-left: 20px;margin-top: 30px; font-weight: bold;font-size:20px;">歌曲列表</span>
-				<span
+				<!-- <span
 					style="display: block;float: left;margin-left: 10px;margin-top: 40px;font-size: 10px;">165首歌</span>
 				<span
 					style="display: block;float: left;margin-left: 420px;margin-top: 40px;font-size: 10px;">播放
 					：51次</span>
-
+ -->
 			</div>
-			<div class="right_3"></div>
 			<div class="right_4">
 				<table width="100%" border="1" bordercolor="#FBE5DE">
 					<tr>

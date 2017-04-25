@@ -41,7 +41,7 @@
 			$('#myModal2').modal('hide');
 			$('#myModal').modal('show');
 		});
-		
+
 	});
 	function toIndex() {
 		window.location = "music!musicList.action";
@@ -56,7 +56,6 @@
 
 		window.location = "music!msicType.action?type=" + o;
 	}
-	 
 </script>
 </head>
 <body>
@@ -115,7 +114,7 @@
 				<form action="music!searchMusicBykeyword.action" method="post">
 					<input name="k" type="text" class="search"
 						id="appendedInputButton search"
-						placeholder="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑"/>
+						placeholder="&nbsp单曲&nbsp/&nbsp歌手&nbsp/&nbsp专辑" />
 					<input type="submit" id="btnSearch" value="搜索" class="search1 ">
 
 				</form>
@@ -152,11 +151,12 @@
 			</div>
 			<div class="box_footer">
 				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
-				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="login">登录</button>
+				<button type="submit" class="btn btn-primary" data-toggle="modal"
+					data-target="#myModal" id="login">登录</button>
 			</div>
-			
+
 		</div>
-		
+
 		<div class="modal box" id="myModal2"
 			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 			<div class="box_header">
@@ -216,11 +216,57 @@
 		</div>
 		<!-- 登录模态框结束  -->
 		<div style="clear: both;"></div>
-		<span class="mybfq">
-		播放器
-		</span>
-		<div class="mybfqm">
+		<div class="myplay">
 			<jsp:include page="/ui/bdPlayer/MyJsp.jsp"></jsp:include>
 		</div>
+		<script src="ui/bdPlayer/src/js/smusic.min.js"></script>
+		<script>
+			/* var musicList = [ {
+				title : '亡灵序曲',
+				singer : 'internetke.com',
+				cover : 'ui/bdPlayer/images/Maroon5.jpg',
+				src : 'ui/bdPlayer/mp3/The Dawn.mp3'
+			}, {
+				title : '苹果手机铃声',
+				singer : 'internetke.com',
+				cover : 'ui/bdPlayer/images/yangcong.jpg',
+				src : 'ui/bdPlayer/mp3/pg.mp3'
+			}, {
+				title : '亡灵序曲2',
+				singer : 'internetke.com',
+				cover : 'ui/bdPlayer/images/Maroon5.jpg',
+				src : 'ui/bdPlayer/mp3/The Dawn.mp3'
+			}, {
+				title : '苹果手机铃声2',
+				singer : 'internetke.com',
+				cover : 'ui/bdPlayer/images/yangcong.jpg',
+				src : 'ui/bdPlayer/mp3/pg.mp3'
+			}, {
+				title : '寂寞在唱歌',
+				singer : '阿桑',
+				cover : 'ui/bdPlayer/images/yangcong.jpg',
+				src : 'ui/bdPlayer/mp3/123.mp3'
+			},
+
+			]; */
+			/* $(function() {
+				/* new SMusic({
+					musicList : musicList
+				}); 
+			}); */
+			var mlist = [];
+			function play(name, title, songer) {
+				mlist.push({
+					title : name,
+					singer : songer,
+					cover : 'ui/music/image/' + title + '.jpg',
+					src : 'ui/music/mp3/' + title + '.mp3'
+				});
+					o = new SMusic({
+						musicList : mlist
+					});
+
+			}
+		</script>
 </body>
 </html>

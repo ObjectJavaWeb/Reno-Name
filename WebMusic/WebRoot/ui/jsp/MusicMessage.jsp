@@ -126,12 +126,12 @@
 					<li>歌手：${music.songer }</li>
 					<li>专辑：${music.abum }</li>
 				</ul>
-				<ul class="ul2-2">
+				<%-- <ul class="ul2-2">
 					<li><a href="#">播放</a></li>
 					<li><a href="#">收藏</a></li>
-					<li><a href="/ui/image/${music.image }.mp3">下载</a></li>
+					<li><a href="ui/image/${music.image }.mp3">下载</a></li>
 					<li><a href="#">评论</a></li>
-				</ul>
+				</ul> --%>
 				<div class="div2-3"></div>
 			</div>
 		</div>
@@ -158,9 +158,8 @@
 		<div class="div3">
 
 			<h4 class="h4" style="display: inline-block;">评论</h4>
-			<span>共100条评论</span>
+			<!-- <span>共100条评论</span> -->
 			<hr>
-			<img alt="" src="" style="width: 10%;float: left;">
 			<form action="Comment!insertComment.action"
 				onsubmit="return islogin('${user}');" style="float: left; width:90%"
 				method="post">
@@ -185,7 +184,7 @@
 							<li>
 								<div style="border-bottom: 1px solid #C0C0C0;">
 
-									<c:forEach var="reply" items="${replys}">
+									 <c:forEach var="reply" items="${comments.replies}">
 										<div style="border-bottom: 1px solid #C0C0C0;">
 											${reply.user.nickname}:${reply.content}</div>
 									</c:forEach>

@@ -39,13 +39,15 @@
 		<div class="div1-2" style="margin-top: 34px">
 			<ul>
 				<c:forEach var="m" items="${musics }">
-					<li style="height: 250px"><a href="music!getMusicMessage.action?music.id=${m.id}">
-
-							<img src="ui/music/image/${m.image }.jpg" style="width: 150px"> <span>${m.name }</span>
+					<li style="height: 250px"><a
+						href="music!getMusicMessage.action?music.id=${m.id}"> <img
+							src="ui/music/image/${m.image }.jpg" style="width: 150px">
+							<span>${m.name }</span>
 					</a></li>
 				</c:forEach>
 			</ul>
 		</div>
 	</div>
+	
 </body>
 </html>
