@@ -158,3 +158,6 @@
 	background-color: #FDF8F7;
 	border: 1px solid #FBEEEB;
 }
+.open_updateSongList{
+	display:none;
+}
