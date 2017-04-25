@@ -56,8 +56,10 @@
 		<jsp:param value="3" name="index" />
 	</jsp:include>
 	<div style="clear: both;"></div>
-	<!-- 修改歌单弹窗开始 -->
-			<div id="open_updateSongList">
+	
+	<div class="Mymusic">
+<!-- 修改歌单弹窗开始 -->
+			<div id="open_updateSongList" style="display: n">
 				<form action="Mymusic!updateMymusic.action" method="post">
 					<input type="hidden" id="mymusic" name="mymusic.id">
 					<table width="30%" border="0" cellpadding="3" cellspacing="1"
@@ -89,9 +91,6 @@
 				</form>
 			</div>
 			<!-- 修改歌单弹窗结束 -->
-	
-	<div class="Mymusic">
-
 		<div class="left">
 			<div class="left_1">
 				<div class="left_1_1">

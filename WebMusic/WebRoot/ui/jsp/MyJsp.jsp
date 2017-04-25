@@ -155,6 +155,7 @@
 				<button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="login">登录</button>
 			</div>
 		</div>
+		<div style="float: left;">我的音乐</div>
 		<div class="modal box" id="myModal2"
 			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 			<div class="box_header">

@@ -3,6 +3,7 @@
 >>>>>>>=branch 'master' of https\://github.com/ObjectJavaWeb/Reno-Name.git
 eclipse.preferences.version=1
 encoding//WebRoot/index.jsp=UTF-8
+encoding//WebRoot/ui/bdPlayer/src/css/smusic.css=UTF-8
 encoding//WebRoot/ui/html/Header.html=UTF-8
 encoding//WebRoot/ui/html/MusicMessage.html=UTF-8
 encoding/<project>=UTF-8

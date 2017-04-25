@@ -1,3 +1,4 @@
+<%@page import="org.music.pojo.Music"%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 	String path = request.getContextPath();
@@ -21,7 +22,7 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script type="text/javascript">
-
+	
 </script>
 
 </head>
@@ -38,8 +39,9 @@
 		<div class="div1-2" style="margin-top: 34px">
 			<ul>
 				<c:forEach var="m" items="${musics }">
-					<li><a href="music!getMusicMessage.action?music.id=${m.id}">
-							<img src="ui/image/musical.jpg"> <span>${m.name }</span>
+					<li style="height: 250px"><a href="music!getMusicMessage.action?music.id=${m.id}">
+
+							<img src="ui/music/image/${m.image }.jpg" style="width: 150px"> <span>${m.name }</span>
 					</a></li>
 				</c:forEach>
 			</ul>

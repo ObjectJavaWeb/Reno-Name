@@ -23,12 +23,8 @@
 </head>
 
 <body>
-	<jsp:include page="/ui/jsp/MyJsp.jsp">
-		<jsp:param value="1" name="index" />
-	</jsp:include>
-	<!--效果html开始-->
-	<div class="grid-music-container f-usn">
-		<div class="m-music-play-wrap">
+	<div class="grid-music-container f-usn" style="background-color: #FDF8F7">
+		<div class="m-music-play-wrap" style="float: left;">
 			<div class="u-cover"></div>
 			<div class="m-now-info">
 				<h1 class="u-music-title">
@@ -58,7 +54,7 @@
 			</div>
 		</div>
 		<div class="f-cb">&nbsp;</div>
-		<div class="m-music-list-wrap"></div>
+		<div class="m-music-list-wrap" style="display: none;"></div>
 	</div>
 	<script src="ui/bdPlayer/src/js/smusic.min.js"></script>
 	<script>
