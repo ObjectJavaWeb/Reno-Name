@@ -336,9 +336,10 @@ html,body{
 
 .grid-music-container .u-cover {
 	width: 50px;
-	height: 50px;/* 
-	overflow: hidden; */
-	background: url(../img/music_icons.png) 0 0 no-repeat;
+	height: 50px;
+    overflow: hidden; 
+	background: url(../img/music_icons.png) -50px -30px no-repeat;
+	border-radius: 50%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -366,11 +367,10 @@ html,body{
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 	position: absolute;
-	top: 15px;
-	left: 250px;
+	
 }
 
-@
+
 -webkit-keyframes Circle {from { -webkit-transform:rotate(0deg);
 	
 }
@@ -380,7 +380,7 @@ to {
 }
 
 }
-@
+
 keyframes Circle {from { transform:rotate(0deg);
 	
 }
@@ -675,4 +675,8 @@ to {
 }
 .u-music-title{
 	font-size: 5em;
+}
+.u-cover{
+	margin-left:250px;
+	margin-top:15px;
 }
