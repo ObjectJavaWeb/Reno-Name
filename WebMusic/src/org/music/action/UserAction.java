@@ -176,7 +176,8 @@ public class UserAction extends ActionSupport {
 
 	@SuppressWarnings("unused")
 	public String login() throws Exception {
-		boolean flag = ServiceFactory.getIUserServiceInstance().login(user);
+		boolean flag  = false;
+		flag = ServiceFactory.getIUserServiceInstance().login(user);
 		if (flag) {
 			// 根据登陆结果，决定跳转的位置
 			return "suc";

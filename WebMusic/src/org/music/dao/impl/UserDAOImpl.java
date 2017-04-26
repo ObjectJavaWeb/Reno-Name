@@ -1,4 +1,4 @@
- package org.music.dao.impl;
+package org.music.dao.impl;
 
 import java.util.List;
 
@@ -32,28 +32,29 @@ public class UserDAOImpl implements IUserDAO {
 		query.setString(3, user.getEmail());
 		query.setString(4, user.getUserName());
 		query.executeUpdate();
-		
+
 	}
 
 	/**
 	 * 通过回答问题进行修改密码
+	 * 
 	 * @param user
 	 * @throws Exception
 	 */
-	public void psUpdate (User user ) throws Exception{
+	public void psUpdate(User user) throws Exception {
 		String hql = " UPDATE User AS p SET p.password=? WHERE p.id=?";
-		Query query =HibernateSessionFactory.getSession().createQuery(hql);
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
 		query.setString(0, user.getPassword());
 		query.setInteger(1, user.getId());
 		query.executeUpdate();
-		
+
 	}
+
 	@Override
 	public void doRemove(Integer id) throws Exception {
 		// TODO Auto-generated method stub
 
 	}
-
 
 	public User findById(Integer id) throws Exception {
 		// 根据主键完成查询功能,需要传入类型,以及主键值
@@ -74,24 +75,27 @@ public class UserDAOImpl implements IUserDAO {
 		if (allUser != null && allUser.size() > 0) {
 			User result = (User) allUser.get(0);
 
-			// 将结果设置到user中,根据按引用传递,外面的对象也自动设置好了属性.
-			user.setRegistDate(result.getRegistDate());
-
-			ServletActionContext.getRequest().getSession()
-					.setAttribute("user", result);
+			
+			 // 将结果设置到user中,根据按引用传递,外面的对象也自动设置好了属性.
+		
+			
+			 ServletActionContext.getRequest().getSession()
+			 .setAttribute("user", result);
+			 
 			return true;
 		}
 		return false;
 	}
 
-	//找回密码中，对用户名的查询
-		public Integer isInput(User user) throws Exception {
-			String hql = "SELECT u.id FROM User AS u WHERE u.userName = ? ";
-			Query query = HibernateSessionFactory.getSession().createQuery(hql);
+	// 找回密码中，对用户名的查询
+	public Integer isInput(User user) throws Exception {
+		String hql = "SELECT u.id FROM User AS u WHERE u.userName = ? ";
+		Query query = HibernateSessionFactory.getSession().createQuery(hql);
 
-			query.setString(0, user.getUserName());
-			return (Integer)query.list().get(0);
-		}
+		query.setString(0, user.getUserName());
+		return (Integer) query.list().get(0);
+	}
+
 	@Override
 	public boolean loginDuplicate(String userName) {
 		String hql = "FROM User AS u where u.userName=?";
@@ -111,6 +115,7 @@ public class UserDAOImpl implements IUserDAO {
 		List<String> userNames = query.list();
 		return userNames;
 	}
+
 	@Override
 	public void doRemove(User user) throws Exception {
 		// TODO Auto-generated method stub

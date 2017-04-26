@@ -23,6 +23,9 @@
 <meta http-equiv="description" content="This is my page">
 <link rel="stylesheet" type="text/css" href="ui/css/MusicMessage.css" />
 <script src="ui/jquery/jquery-2.0.0.js"></script>
+<link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	media="screen">
+<script src="ui/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 	function reply(o, user) {
 		if (user == "") {

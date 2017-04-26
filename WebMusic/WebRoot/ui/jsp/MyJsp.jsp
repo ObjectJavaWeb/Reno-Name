@@ -24,7 +24,8 @@
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
 <title>顶部导航</title>
 <script type="text/javascript">
-	function isLogin(o, j, url) {
+/* 这是判断用户是否登录的弹窗  */
+ 	function MyjspisLogin(o, j, url) {
 		if (o == "") {
 			$("#myModal2InLogin").modal('show');
 			return;
@@ -42,7 +43,7 @@
 			$("#myModalLogin").modal('show');
 		});
 
-	});
+	}); 
 	function toIndex() {
 		window.location = "music!musicList.action";
 	}
@@ -72,11 +73,10 @@
 				<ul class="nav nav-tabs ul-nav">
 					<li <%=index == 1 ? "class='active'" : ""%>><a href="#tab1"
 						onclick="toIndex()" data-toggle="tab">发现音乐</a></li>
-					<!-- 使a标签不能跳转 -->
 					<li <%=index == 2 ? "class='active'" : ""%>><a href="#tab2"
 						onclick="onclick=musicType('华语')" data-toggle="tab">音乐分类</a></li>
 					<li <%=index == 3 ? "class='active'" : ""%>><a href="#tab3"
-						onclick="isLogin('${user}', this, 'Mymusic!getMymusicList.action')"
+						onclick="MyjspisLogin('${user}', this, 'Mymusic!getMymusicList.action')"
 						data-toggle="tab">个人</a></li>
 
 				</ul>
@@ -139,7 +139,7 @@
 
 			</div>
 		</div>
-		<div class="modal box" id="myModal2"
+	<!-- 	<div class="modal box" id="myModal2"
 			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 			<div class="box_header">
 				<button type="button" class="close" data-dismiss="modal"
@@ -155,9 +155,9 @@
 					data-target="#myModal" id="login">登录</button>
 			</div>
 
-		</div>
-
-		<div class="modal box" id="myModal2InLogin"
+		</div> -->
+<!--没有 登录 弹出的窗口  -->
+	 	<div class="modal box" id="myModal2InLogin"
 			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 			<div class="box_header">
 				<button type="button" class="close" data-dismiss="modal"
@@ -168,21 +168,18 @@
 				<h6>随时随地管理你的音乐库</h6>
 			</div>
 			<div class="box_footer">
-				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-default " data-dismiss="modal" onclick="toIndex()">关闭</button>
 				<button type="submit" class="btn btn-primary data-toggle="
 					modal" data-target="#myModal" id="loginin">登录</button>
-
-
-				<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
 			</div>
-		</div>
+		</div> 
 
 		<!--登录模态框开始  -->
 		<div class="modal fade" id="myModalLogin" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true">
-			控制位置在中间
+			<!-- 控制位置在中间 -->
 			<div class="modal-dialog">
-				控制位置背景颜色为白色和宽度
+				<!-- 控制位置背景颜色为白色和宽度 -->
 				<div class="modal-content login_windows">
 					<div class="modal-header ">
 						<h1 class="modal-title" id="myModalLabel"
@@ -207,7 +204,7 @@
 						</div>
 						<div class="modal_footer">
 							<button type="button" class="btn btn-default"
-								data-dismiss="modal">关闭</button>
+								data-dismiss="modal" onclick="toIndex()">关闭</button>
 							<button type="submit" class="btn btn-primary">登录</button>
 						</div>
 					</form>
