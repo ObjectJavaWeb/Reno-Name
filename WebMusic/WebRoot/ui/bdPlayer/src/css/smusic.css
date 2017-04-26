@@ -327,7 +327,6 @@ html,body{
 
 .grid-music-container .m-music-play-wrap {
 	height: 80px;
-	
 	position: relative;
 	padding-left: 30px;
 	background-color: #FFF4F3;
@@ -337,8 +336,8 @@ html,body{
 
 .grid-music-container .u-cover {
 	width: 50px;
-	height: 50px;
-	overflow: hidden;
+	height: 50px;/* 
+	overflow: hidden; */
 	background: url(../img/music_icons.png) 0 0 no-repeat;
 	position: absolute;
 	top: 0;
@@ -351,6 +350,9 @@ html,body{
 	height: auto;
 	max-height: 100%;
 	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .grid-music-container .u-cover.play {
@@ -363,6 +365,9 @@ html,body{
 .grid-music-container .u-cover.paused {
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
+	position: absolute;
+	top: 15px;
+	left: 250px;
 }
 
 @

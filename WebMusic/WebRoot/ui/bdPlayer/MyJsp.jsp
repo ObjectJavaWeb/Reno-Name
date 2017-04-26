@@ -55,7 +55,7 @@
 						class="u-play-btn mode mode-single" title="单曲循环"></a>
 				</div>
 				<div class="m-play-controls"
-					style="width:180px; height:20px; float:left; margin-left:20px; margin-top:-60px;z-index: 1;">
+					style="width:180px; height:50px; float:left; margin-left:20px; margin-top:-60px;z-index: 1;">
 					<a class="u-play-btn prev" title="上一曲"></a> <a
 						class="u-play-btn ctrl-play play" title="播放"></a> <a
 						class="u-play-btn next" title="下一曲"></a>
