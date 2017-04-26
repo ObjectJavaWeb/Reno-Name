@@ -102,17 +102,19 @@
 									<input type="submit" value="确认添加">
 								</form>
 							</div>
-							<a href="javascript:void(0);" onclick="play('${p.name}','${p.image}','${p.songer }')">播放</a>
+							<a href="javascript:void(0);"
+								onclick="play('${p.name}','${p.image}','${p.songer }')">播放</a> <a
+								href="music!getMusicMessage.action?music.id=${p.id}">查看</a>
 						</td>
 					</tr>
 				</c:forEach>
 			</table>
 			<jsp:include page="/ui/jsp/pager.jsp">
-				<jsp:param value="${pageNo}" name="pageNo"/>
-				<jsp:param value="${pageSize}" name="pageSize"/>
-				<jsp:param value="${count}" name="count"/>
-				<jsp:param value="music!msicType.action" name="URL"/>
-				<jsp:param value="${type }" name="Type"/>
+				<jsp:param value="${pageNo}" name="pageNo" />
+				<jsp:param value="${pageSize}" name="pageSize" />
+				<jsp:param value="${count}" name="count" />
+				<jsp:param value="music!msicType.action" name="URL" />
+				<jsp:param value="${type }" name="Type" />
 			</jsp:include>
 
 		</div>

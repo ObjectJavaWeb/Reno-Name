@@ -64,10 +64,11 @@
 	/* 判断用户是否登录*/
 	function islogin(o) {
 		if (o == "") {
-			$('#myModal22').modal('show');
+			$("#myModal22").modal('show');
 			return false;
+		} else {
+			return true;
 		}
-		return true;
 	}
 </script>
 </head>
@@ -151,7 +152,8 @@
 			<div class="box_footer">
 				<button type="button" class="btn btn-default " data-dismiss="modal"
 					id="closewindows">关闭</button>
-				<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal" id="loginn">登录</button>
+				<button type="button" class="btn btn-primary " data-toggle="modal"
+					data-target="#myModal" id="loginn">登录</button>
 			</div>
 		</div>
 		<!-- 用户没有登录 打开的窗口结束 -->
@@ -184,7 +186,7 @@
 							<li>
 								<div style="border-bottom: 1px solid #C0C0C0;">
 
-									 <c:forEach var="reply" items="${comments.replies}">
+									<c:forEach var="reply" items="${comments.replies}">
 										<div style="border-bottom: 1px solid #C0C0C0;">
 											${reply.user.nickname}:${reply.content}</div>
 									</c:forEach>

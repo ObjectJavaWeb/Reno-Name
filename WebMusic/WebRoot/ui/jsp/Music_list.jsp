@@ -21,12 +21,12 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 <script type="text/javascript">
-function open_add(o,user) {
-	
-	if(user==""){
-		$('#myModal2').modal('show');
-		return;
-	}
+	function open_add(o, user) {
+
+		if (user == "") {
+			$('#myModal2').modal('show');
+			return;
+		}
 		var d = $(".s_add_musicTomusiclist_windows");
 		for (var i = 0; i < d.length; i++) {
 			$(".add_musicTomusiclist_windows" + i).css("display", "none");
@@ -87,7 +87,11 @@ function open_add(o,user) {
 					<td>${p.type }</td>
 					<td>${p.hit }</td>
 					<td>
-						<span onclick="open_add(${pr.index},'${user }')">添加到歌单</span>
+						<span onclick="open_add(${pr.index},'${user }')">添加到歌单</span> <a
+							href="javascript:void(0);"
+							onclick="play('${p.name}','${p.image}','${p.songer }')">播放</a>
+							<a
+						href="music!getMusicMessage.action?music.id=${p.id}">查看</a>
 						<div
 							class="s_add_musicTomusiclist_windows add_musicTomusiclist_windows${pr.index }">
 							<h4>选择要添加到的歌单</h4>
@@ -102,7 +106,8 @@ function open_add(o,user) {
 								<!-- 	<input type="text" value="33" name="mymusicMusic.mymusic"> -->
 								<!-- 歌曲ID -->
 								<input type="hidden" value="${p.id }" name="music.id">
-								<input type="button"  value="取消" onclick="mycloses('${pr.index}')">
+								<input type="button" value="取消"
+									onclick="mycloses('${pr.index}')">
 								<input type="submit" value="确认添加">
 							</form>
 						</div>

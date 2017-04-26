@@ -22,24 +22,21 @@
 <link href="ui/bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	media="screen">
 <script src="ui/bootstrap/js/bootstrap.min.js"></script>
-<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"
-	rel="stylesheet">
-<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <title>顶部导航</title>
 <script type="text/javascript">
 	function isLogin(o, j, url) {
 		if (o == "") {
-			$('#myModal2').modal('show');
+			$("#myModal2InLogin").modal('show');
+			return;
+		} else {
+			window.location = url;
 			return;
 		}
-		window.location = url;
-		return;
 	}
 	$(function() {
-		$("#login").click(function() {
-			$('#myModal2').modal('hide');
-			$('#myModal').modal('show');
+		$("#loginin").click(function() {
+			$("#myModal2InLogin").modal('hide');
+			$("#myModalLogin").modal('show');
 		});
 
 	});
@@ -157,7 +154,7 @@
 
 		</div>
 
-		<div class="modal box" id="myModal2"
+		<div class="modal box" id="myModal2InLogin"
 			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
 			<div class="box_header">
 				<button type="button" class="close" data-dismiss="modal"
@@ -170,7 +167,7 @@
 			<div class="box_footer">
 				<button type="button" class="btn btn-default " data-dismiss="modal">关闭</button>
 				<button type="submit" class="btn btn-primary data-toggle="
-					modal" data-target="#myModal" id="login">登录</button>
+					modal" data-target="#myModal" id="loginin">登录</button>
 
 
 				<!-- <a href="#" class="btn">登录</a> <a href="#" class="btn btn-primary">关闭</a> -->
@@ -178,7 +175,7 @@
 		</div>
 
 		<!--登录模态框开始  -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		<div class="modal fade" id="myModalLogin" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true">
 			控制位置在中间
 			<div class="modal-dialog">
@@ -262,9 +259,9 @@
 					cover : 'ui/music/image/' + title + '.jpg',
 					src : 'ui/music/mp3/' + title + '.mp3'
 				});
-					o = new SMusic({
-						musicList : mlist
-					});
+				o = new SMusic({
+					musicList : mlist
+				});
 
 			}
 		</script>
