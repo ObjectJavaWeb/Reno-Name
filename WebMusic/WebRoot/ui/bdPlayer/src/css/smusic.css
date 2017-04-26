@@ -367,7 +367,8 @@ html,body{
 	-webkit-animation-play-state: paused;
 	animation-play-state: paused;
 	position: absolute;
-	
+	top: 15px;
+	left: 250px;
 }
 
 
@@ -679,4 +680,9 @@ to {
 .u-cover{
 	margin-left:250px;
 	margin-top:15px;
+}
+.music_onclick{
+	width:100%;
+	height:80px;
+	position:relative;
 }

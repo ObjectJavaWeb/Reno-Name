@@ -23,10 +23,22 @@
 <script type="text/javascript">
 	
 </script>
+<script>
+function MM_over(mmObj) {
+	var mSubObj = mmObj.getElementsByTagName("div")[0];
+	mSubObj.style.display = "block";
+}
+function MM_out(mmObj) {
+	var mSubObj = mmObj.getElementsByTagName("div")[0];
+	mSubObj.style.display = "none";
+	
+}
+</script>
 </head>
 
 <body>
-	<div class="grid-music-container f-usn">
+<div onmouseover="MM_over(this)" onmouseout="MM_out(this)" class="music_onclick">
+	<div  class="grid-music-container f-usn">
 		<div class="m-music-play-wrap">
 
 			<div class="u-cover"></div>
@@ -65,6 +77,6 @@
 		<div class="f-cb">&nbsp;</div>
 		<div class="m-music-list-wrap" style="display: none;"></div>
 	</div>
-	
+	</div>
 </body>
 </html>
