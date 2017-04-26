@@ -38,6 +38,9 @@
 			$("#myModal2InLogin").modal('hide');
 			$("#myModalLogin").modal('show');
 		});
+		$("#loginmodal").click(function () {
+			$("#myModalLogin").modal('show');
+		});
 
 	});
 	function toIndex() {
@@ -126,7 +129,7 @@
 				<%
 					} else {
 				%>
-				<a href="" class="" data-toggle="modal" data-target="#myModal">
+				<a href="" class="" data-toggle="modal" data-target="#myModal" id="loginmodal">
 					登录</a>|<a href="userlogin!preRegister.action">注册</a>
 				<%
 					}
