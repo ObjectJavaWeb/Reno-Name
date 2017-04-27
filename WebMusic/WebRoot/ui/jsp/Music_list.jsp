@@ -45,7 +45,7 @@
 	}
 	/*提示登录页点击登录 弹出登录窗口  */
 	function rankinglist_openlogin(){
-			$('#rankinglist_myModal2InLogin').css("display", "none");	
+		$("#rankinglist_myModal2InLogin").css("display", "none");	
 			 $("#rankinglist_myModalLogin").modal('show');
 	}
 	function close(o) {
@@ -84,59 +84,7 @@
 		<jsp:param value="1" name="index" />
 	</jsp:include>
 	<div class="div1">
-		<!--没有 登录 弹出的窗口  -->
-		<div class="modal box" id="rankinglist_myModal2InLogin"
-			style="background:url('ui/images/box_bg.jpg') no-repeat; border: 1px solid black;">
-			<div class="box_header">
-			</div>
-			<div class="box_body">
-				<h4>登录网页云音乐</h4>
-				<h6>随时随地管理你的音乐库</h6>
-			</div>
-			<div class="box_footer">
-				<button type="button" class="btn btn-default " data-dismiss="modal" onclick="close_rankinglist_open_add()">关闭</button>
-				<button type="submit" class="btn btn-primary data-toggle="
-					modal" data-target="#rankinglist_myModalLogin" onclick="rankinglist_openlogin()">登录</button>
-			</div>
-		</div>
-		<!--登录模态框开始  -->
-		<div class="modal fade" id="rankinglist_myModalLogin" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<!-- 控制位置在中间 -->
-			<div class="modal-dialog">
-				<!-- 控制位置背景颜色为白色和宽度 -->
-				<div class="modal-content login_windows">
-					<div class="modal-header ">
-						<h1 class="modal-title" id="myModalLabel"
-							style="text-align: center;">登录</h1>
-					</div>
-					<form action="userlogin!login.action" method="post">
-						<div class="modal-header ">
-							<div class="login_user ">
-								<span class="glyphicon glyphicon-user"
-									style="color: rgb(82, 123, 232);"></span>
-								<input type="text" name="user.userName" placeholder="用户名">
-								<a href="userlogin!preRegister.action">没有注册？</a>
-							</div>
-						</div>
-						<div class="modal-header ">
-							<div class="login_password  ">
-								<span class="glyphicon glyphicon-lock"
-									style="color: rgb(82, 123, 232);"></span>
-								<input type="password" name="user.password" placeholder="密码">
-								<a href="ui/jsp/Userinput.jsp">找回密码</a>
-							</div>
-						</div>
-						<div class="modal_footer">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">关闭</button>
-							<button type="submit" class="btn btn-primary">登录</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- 登录模态框结束  -->
+		
 		<table class="table">
 			<tr>
 				<th>排名</th>
@@ -182,8 +130,6 @@
 				</tr>
 			</c:forEach>
 		</table>
-	</div>
-
 	</div>
 </body>
 </html>
