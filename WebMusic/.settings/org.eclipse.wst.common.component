@@ -3,6 +3,7 @@
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/org.music.test.tc"/>
         <property name="context-root" value="WebMusic"/>
         <property name="java-output-path" value="/WebMusic/WebRoot/WEB-INF/classes"/>
     </wb-module>

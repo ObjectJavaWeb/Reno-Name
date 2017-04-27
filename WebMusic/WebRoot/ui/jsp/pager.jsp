@@ -46,7 +46,7 @@
 			onclick="changePage(<%=allPages%>);" />
 			<input type="hidden" name="pageNo" id="pageNo" value="<%=pageNo %>"/>
 			<input type="hidden" name="type" value="<%=type %>"/>
-			<input type="hidden" name="pageSize" value="10"/>
+			<input type="hidden" name="pageSize" value="9"/>
 			<input type="hidden" name="keyword" value=""/>
 		<span>第<%=pageNo %>页,共<%=allPages %>页</span>
 	</form>
