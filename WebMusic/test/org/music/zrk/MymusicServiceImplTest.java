@@ -1,6 +1,6 @@
 package org.music.zrk;
 
-import static org.junit.Assert.*;
+import static  org.junit.Assert.*;
 
 import java.security.Provider.Service;
 import java.util.Map;
