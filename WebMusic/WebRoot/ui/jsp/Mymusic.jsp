@@ -56,45 +56,44 @@
 		<jsp:param value="3" name="index" />
 	</jsp:include>
 	<div style="clear: both;"></div>
-	
+
 	<div class="Mymusic">
-<!-- 修改歌单弹窗开始 -->
-			<div id="open_updateSongList" style="display: n">
-				<form action="Mymusic!updateMymusic.action" method="post">
-					<input type="hidden" id="mymusic" name="mymusic.id">
-					<table width="30%" border="0" cellpadding="3" cellspacing="1"
-						style="background:white;	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
-						align="center">
-						<tr>
-							<th></th>
-							<td>
-								<font size="5">修改歌单信息</font>
-							</td>
-						</tr>
-						<tr>
-							<th align="center">歌单名：</th>
-							<td>
-								<input type="text" name="mymusic.name" placeholder="歌单名">
-							</td>
-						</tr>
-						<tr>
-							<th></th>
-							<td>
-								&nbsp;&nbsp;&nbsp;
-								<input type="submit" value="保存">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<input type="reset" value="退出"
-									onClick="closeme_UpdateSongList()">
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
-			<!-- 修改歌单弹窗结束 -->
+		<!-- 修改歌单弹窗开始 -->
+		<div id="open_updateSongList" style="display: n">
+			<form action="Mymusic!updateMymusic.action" method="post">
+				<input type="hidden" id="mymusic" name="mymusic.id">
+				<table width="30%" border="0" cellpadding="3" cellspacing="1"
+					style="background:white;	position:static;filter:progid:DXImageTransform.Microsoft.DropShadow(color=#666666,offX=4,offY=4,positives=true)"
+					align="center">
+					<tr>
+						<th></th>
+						<td>
+							<font size="5">修改歌单信息</font>
+						</td>
+					</tr>
+					<tr>
+						<th align="center">歌单名：</th>
+						<td>
+							<input type="text" name="mymusic.name" placeholder="歌单名">
+						</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td>
+							&nbsp;&nbsp;&nbsp;
+							<input type="submit" value="保存">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<input type="reset" value="退出" onClick="closeme_UpdateSongList()">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<!-- 修改歌单弹窗结束 -->
 		<div class="left">
 			<div class="left_1">
 				<div class="left_1_1">
-					<p style="margin-top: 90px; font-size: 20px;">创建的歌单</p>
+					<p style="margin-top: 60px;margin-left:20px; font-size: 20px;">创建的歌单</p>
 				</div>
 				<div class="left_1_2">
 					<a href="" data-toggle="modal" data-target="#myModaladdmusiclist"
@@ -143,14 +142,14 @@
 							</a></span>
 							</li>
  --%>
-						<li >
+						<li>
 							<p style="float: left;">
 								<a class="mymusiclistli"
 									href="addmusictomusiclist!MusicList.action?mymusic.id=${mymusiclist.id }">${mymusiclist.name }</a>
 							</p>
-							<p >
+							<p>
 								<a href="javaScript:open_UpdateSongList(${mymusiclist.id })"><span
-									class="glyphicon glyphicon-edit"></span></a> <a
+									class="glyphicon glyphicon-edit" style="margin-left: 20px;"></span></a> <a
 									href="Mymusic!removeMymusic.action?mymusic.id=${mymusiclist.id }">
 									<span class="glyphicon glyphicon-trash"></span>
 								</a>
@@ -160,7 +159,7 @@
 
 				</ul>
 			</div>
-			
+
 		</div>
 		<div class="right">
 			<!-- <div class="right_1">
@@ -231,6 +230,6 @@
 		</div>
 	</div>
 	<div calss="2"
-		style="width:223px;height:35px;background-color: white;float: left;position: absolute;margin-top: 65px;margin-left:1126px;top:0; "></div>
+		style="width:223px;height:35px;background-color: #FFEFEF;float: left;position: absolute;margin-top: 65px;margin-left:1126px;top:0; "></div>
 </body>
 </html>

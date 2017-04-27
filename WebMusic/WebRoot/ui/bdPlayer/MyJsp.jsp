@@ -61,13 +61,13 @@ function MM_out(mmObj) {
 
 				</div>
 
-				<div class="m-play-controls">
+				<div class="m-play-controls" style="margin-right: 60px;">
 					<a class="u-play-btn mode mode-list current" title="列表循环"></a> <a
 						class="u-play-btn mode mode-random" title="随机播放"></a> <a
 						class="u-play-btn mode mode-single" title="单曲循环"></a>
 				</div>
 				<div class="m-play-controls"
-					style="width:180px; height:50px; float:left; margin-left:20px; margin-top:-60px;z-index: 1;">
+					style="width:180px; height:50px; float:left; margin-left:60px; margin-top:-60px;z-index: 1;">
 					<a class="u-play-btn prev" title="上一曲"></a> <a
 						class="u-play-btn ctrl-play play" title="播放"></a> <a
 						class="u-play-btn next" title="下一曲"></a>

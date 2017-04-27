@@ -74,7 +74,8 @@
 						%>
 						<th class="birthday">出生年月</th>
 						<td>
-							<%=sformat.format(user.getBirthday())%>
+							
+							<%=user.getBirthday()==null?"":sformat.format(user.getBirthday()) %>
 						</td>
 					</tr>
 					<tr>
