@@ -12,7 +12,7 @@
 .left {
 	float: left;
 	width: 25%;
-	height: 100%;
+	height: 600px;
 	background-color: #FFF3F0;
 }
 
@@ -46,7 +46,7 @@
 }
 .left_1_2 a{
 	text-decoration:none;
-	font-size:20px;
+	font-size:10px;
 }
 .left_1_2_btn {
 	width: 40px;
@@ -54,14 +54,16 @@
 	text-decoration: none;
 	text-align: center;
 	display: block;
-	margin-top: 85px;
+	margin-top: 56px;
+	margin-left:20px;
 }
 
 .left_2 {
 	width: 100%;
-	height: 480px;
+	height: 100%;
 	margin-top: 100px;
 	float: left;
+	margin-left:10px;
 }
 .left_2 li{
 	list-style:none;
@@ -69,15 +71,19 @@
 	float: none;
 }
 .mymusiclistli{
+	width:150px;
+	height:20px;
 	float:left;
+	text-align: left;
 }
 .right {
-	float: right;
 	width: 74%;
 	height: 200px;
 	margin-left: 0px;
 	background-color: #FDF8F7;
 	border: 1px solid #FBEEEB;
+	float:left;
+	margin-left: 0px;
 }
 
 .right_1 {
@@ -153,10 +159,11 @@
 
 .right_4 {
 	width: 100%;
-	height: 430px;
+	height: 600px;
 	margin-top: 0px;
 	background-color: #FDF8F7;
 	border: 1px solid #FBEEEB;
+	
 }
 #open_updateSongList{
 	display:none;
