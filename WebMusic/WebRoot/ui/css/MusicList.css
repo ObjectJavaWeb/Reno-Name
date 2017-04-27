@@ -1,69 +1,81 @@
-
-.div1{
+.div1 {
 	width: 1000px;
 	margin: 0 auto;
 }
-a{
+
+a {
 	text-decoration: none;
 }
-li{
+
+li {
 	list-style-type: none;
 }
-.div1-1{
+
+.div1-1 {
 	width: 100%;
 	height: 50px;
 	margin-top: 0px;
 }
 
-.div1-1 ul li{
+.div1-1 ul li {
 	float: left;
 	margin-left: 50px;
 }
-hr{
+
+hr {
 	width: 100%;
 	height: 2px;
-	border:none;
-	border-top:2px solid #CC3333;
+	border: none;
+	border-top: 2px solid #CC3333;
 }
-.div1-1 ul li a{
+
+.div1-1 ul li a {
 	font-size: 26px;
 }
-.div1-1{
+
+.div1-1 {
 	border-bottom: 3px solid #CC3333;
 }
-.div1-2 ul li{
+
+.div1-2 ul li {
 	width: 150px;
 	float: left;
 	margin-left: 30px;
 }
-.div1-2 ul li span{
-	margin-top:12px;
+
+.div1-2 ul li span {
+	margin-top: 12px;
 	display: block;
 	height: 70px;
 	font-size: 20px;
 }
+
 table {
 	border-top: 3px solid #CC3333;
 }
-.s_add_musicTomusiclist_windows{display: none;
-border:1px solid gray;}
-.box{
-	width:350px;
-	height:300px;
-	margin:auto;
-	display:block;
+
+.s_add_musicTomusiclist_windows {
+	display: none;
+	border: 1px solid gray;
 }
 
-.box_body{
+.box {
+	width: 350px;
+	height: 300px;
+	margin: auto;
+	display: block;
+}
+
+.box_body {
 	text-align: center;
 	margin-top: 100px;
 }
 
-.box_footer button{
-	margin-left:80px;
+.box_footer button {
+	margin-left: 80px;
 	margin-top: 70px;
 }
 
-.box_header button{
-	margin-left:327px;
+.box_header button {
+	margin-left: 327px;
 }

@@ -1,4 +1,4 @@
-package org.music.test;
+package org.music.test.wwx;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
