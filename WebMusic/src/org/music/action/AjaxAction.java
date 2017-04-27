@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * 
  */
 @SuppressWarnings("serial")
-public class AjaxAction extends ActionSupport {
+public class  AjaxAction extends ActionSupport {
 	private boolean loginDuplicate;
 
 	public boolean isLoginDuplicate() {
