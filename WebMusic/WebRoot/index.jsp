@@ -46,6 +46,8 @@
 		</a>
 	</div>
 	
-	<div id="main"></div>
+	<div id="main" style="width: 100%;height: 100%">
+	<img style="margin-left: 300px" alt="" src="ui/image/bgload.gif">
+	</div>
 	
 </body>

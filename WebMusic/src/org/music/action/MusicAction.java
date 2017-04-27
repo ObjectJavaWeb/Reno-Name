@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class MusicAction extends ActionSupport {
 	private List<Music> searchResult;
 	private int pageNo=1;
-	private int  pageSize=10;
+	private int  pageSize=9;
 	private String	keyword="";
 	private int count;
 	public int getCount() {
